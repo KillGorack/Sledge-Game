@@ -12,12 +12,13 @@ extends Control
 @onready var background = $Background
 @onready var login_timer = Timer.new()
 
-var api_config = {
+var api_keyFile = "res://UI/APIKeys/api_key.txt"
+var api_url = "https://www.killgorack.com/PX4/api.php"
+var api_credentials = {
 	"API_ID": "",
 	"API_KEY": ""
 }
 
-var api_url = "https://www.killgorack.com/PX4/api.php"
 var backdrop_paths: Array = []
 
 var login_attempts: int = 0
@@ -30,22 +31,21 @@ var is_cooldown: bool = false
 
 
 func _ready():
-		
 	username_field.grab_focus()
 	quit_button.connect("pressed", Callable(self, "_on_close"))
 	login_button.connect("pressed", Callable(self, "_on_login"))
 	register_button.connect("pressed", Callable(self, "_on_register"))
 	http_request.connect("request_completed", Callable(self, "_on_request_completed"))
-	
 	add_child(login_timer)
 	login_timer.connect("timeout", Callable(self, "_on_cooldown_finished"))
 	login_timer.one_shot = true
-	
 	load_backdrop_paths("res://UI/backdrops/")
 	set_random_backdrop()
-
 	login_group.show()
 	load_group.hide()
+
+
+
 
 
 func load_api_keys(file_path: String) -> bool:
@@ -56,7 +56,7 @@ func load_api_keys(file_path: String) -> bool:
 		var line = file.get_line().strip_edges()
 		var key_value = line.split("=")
 		if key_value.size() == 2:
-			api_config[key_value[0].strip_edges()] = key_value[1].strip_edges()
+			api_credentials[key_value[0].strip_edges()] = key_value[1].strip_edges()
 	file.close()
 	return true
 
@@ -115,7 +115,7 @@ func _on_close():
 
 
 func _on_login():
-	load_api_keys("res://UI/APIKeys/api_key.txt")
+	load_api_keys(api_keyFile)
 	if is_cooldown:
 		welcome_label.text = "Please wait 30 seconds before trying again."
 		return
@@ -142,9 +142,9 @@ func _on_login():
 	}
 	var api_params = {
 		"ap": "sledge",
-		"apikeyid": api_config["API_ID"],
+		"apikeyid": api_credentials["API_ID"],
 		"api": "json",
-		"vc": api_config["API_KEY"]
+		"vc": api_credentials["API_KEY"]
 	}
 	var post_data_encoded = encode_dict_string(post_data)
 	var full_url = api_url + "?" + encode_dict_string(api_params)
@@ -159,7 +159,6 @@ func encode_dict_string(data: Dictionary) -> String:
 	var query_string = []
 	for key in data.keys():
 		var encoded_key = String(key).uri_encode()
-		api_config["API_ID"]
 		var encoded_value = str(data[key]).uri_encode()
 		query_string.append(encoded_key + "=" + encoded_value)
 	return String(",").join(query_string).replace(",", "&")
