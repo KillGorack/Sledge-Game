@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://5eeruw0y76t5"]
+[gd_scene load_steps=8 format=3 uid="uid://5eeruw0y76t5"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_3sdc8"]
-[ext_resource type="Texture2D" uid="uid://dch0jkiqfdb16" path="res://UI/backdrops/space1.jpg" id="2_0si3g"]
 [ext_resource type="AudioStream" uid="uid://cyyvtim5tqac0" path="res://Sounds/music/cinematic.mp3" id="2_rl3ga"]
 [ext_resource type="Texture2D" uid="uid://c0ye6wiguocqi" path="res://UI/Graphics/CP_Back.png" id="3_1sv6t"]
 [ext_resource type="Texture2D" uid="uid://bpodpjdvrj4p" path="res://UI/Graphics/SledgeTitle.png" id="3_6wny1"]
@@ -33,7 +32,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_0si3g")
 expand_mode = 1
 stretch_mode = 6
 

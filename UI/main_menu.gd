@@ -14,8 +14,8 @@ extends Control
 @onready var music_player = $AmbientMusic
 @onready var play_button = $btn_musicBool
 @onready var volume_slider = $sld_musicVolume
-@onready var play_icon = preload("res://UI/icons/audio_muted.svg")  # Update with the correct path to your SVG file
-@onready var stop_icon = preload("res://UI/icons/audio.svg")  # Update with the correct path to your SVG file
+@onready var play_icon = preload("res://UI/icons/audio_muted.svg")
+@onready var stop_icon = preload("res://UI/icons/audio.svg")
 
 
 var api_keyFile = "res://UI/APIKeys/api_key.txt"
@@ -39,10 +39,10 @@ var is_cooldown: bool = false
 func _on_play_button_pressed():
 	if music_player.playing:
 		music_player.stop()
-		play_button.icon = play_icon  # Set icon to "play" when music stops
+		play_button.icon = play_icon
 	else:
 		music_player.play()
-		play_button.icon = stop_icon  # Set icon to "stop" when music plays
+		play_button.icon = stop_icon
 
 
 
