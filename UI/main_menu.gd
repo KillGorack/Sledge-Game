@@ -162,7 +162,7 @@ func _on_login():
 		"function" : "authenticate",
 		"userName": username,
 		"password": password,
-		"formidentifier": "alacarte\\sledge\\unityAuth"
+		"formidentifier": "alacarte\\game\\gameAPI"
 	}
 	var api_params = {
 		"ap": "sledge",
