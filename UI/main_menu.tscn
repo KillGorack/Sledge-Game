@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://5eeruw0y76t5"]
+[gd_scene load_steps=9 format=3 uid="uid://5eeruw0y76t5"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_3sdc8"]
 [ext_resource type="Texture2D" uid="uid://dch0jkiqfdb16" path="res://UI/backdrops/space1.jpg" id="2_0si3g"]
+[ext_resource type="AudioStream" uid="uid://cyyvtim5tqac0" path="res://Sounds/music/cinematic.mp3" id="2_rl3ga"]
 [ext_resource type="Texture2D" uid="uid://c0ye6wiguocqi" path="res://UI/Graphics/CP_Back.png" id="3_1sv6t"]
 [ext_resource type="Texture2D" uid="uid://bpodpjdvrj4p" path="res://UI/Graphics/SledgeTitle.png" id="3_6wny1"]
 [ext_resource type="Script" path="res://UI/load_game.gd" id="5_bmbm4"]
 [ext_resource type="Theme" uid="uid://ehwvvgpd7w2t" path="res://UI/Graphics/Theme_chip.tres" id="7_l55rl"]
+[ext_resource type="Texture2D" uid="uid://ssbma0t65dqa" path="res://UI/icons/audio.svg" id="8_fh4hf"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -18,6 +20,11 @@ script = ExtResource("1_3sdc8")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 accept_gzip = false
+
+[node name="AmbientMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rl3ga")
+volume_db = -15.0
+autoplay = true
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -230,3 +237,36 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("7_l55rl")
 text = "Quit"
+
+[node name="btn_musicBool" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -81.0
+offset_right = -5.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+icon = ExtResource("8_fh4hf")
+icon_alignment = 1
+
+[node name="sld_musicVolume" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -71.0
+offset_right = -52.0
+offset_bottom = -51.0
+grow_horizontal = 0
+grow_vertical = 0
+min_value = -30.0
+max_value = 1.0
+value = -15.0

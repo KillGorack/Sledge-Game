@@ -11,6 +11,12 @@ extends Control
 @onready var load_group = $LoadGroup
 @onready var background = $Background
 @onready var login_timer = Timer.new()
+@onready var music_player = $AmbientMusic
+@onready var play_button = $btn_musicBool
+@onready var volume_slider = $sld_musicVolume
+@onready var play_icon = preload("res://UI/icons/audio_muted.svg")  # Update with the correct path to your SVG file
+@onready var stop_icon = preload("res://UI/icons/audio.svg")  # Update with the correct path to your SVG file
+
 
 var api_keyFile = "res://UI/APIKeys/api_key.txt"
 var api_url = "https://www.killgorack.com/PX4/api.php"
@@ -30,6 +36,21 @@ var is_cooldown: bool = false
 
 
 
+func _on_play_button_pressed():
+	if music_player.playing:
+		music_player.stop()
+		play_button.icon = play_icon  # Set icon to "play" when music stops
+	else:
+		music_player.play()
+		play_button.icon = stop_icon  # Set icon to "stop" when music plays
+
+
+
+func _on_volume_slider_value_changed(value):
+	music_player.volume_db = value
+
+
+
 func _ready():
 	username_field.grab_focus()
 	quit_button.connect("pressed", Callable(self, "_on_close"))
@@ -43,6 +64,9 @@ func _ready():
 	set_random_backdrop()
 	login_group.show()
 	load_group.hide()
+	play_button.connect("pressed", Callable(self, "_on_play_button_pressed"))
+	volume_slider.connect("value_changed", Callable(self, "_on_volume_slider_value_changed"))
+
 
 
 

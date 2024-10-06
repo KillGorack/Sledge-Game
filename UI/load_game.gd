@@ -1,66 +1,82 @@
 extends TextureRect
 
-var levels : Array = []
-var levels_dropdown : ItemList
-var crafts : Array = []
-var crafts_dropdown : ItemList
-
 const LEVELS_PATH = "res://Levels/"
 const CRAFTS_PATH = "res://Crafts/"
 
+var levels: Array = []
+var crafts: Array = []
+
+@onready var levels_dropdown: ItemList = $Levels as ItemList
+@onready var crafts_dropdown: ItemList = $Crafts as ItemList
 @onready var userInfo_label = get_parent().get_node("UserInfo")
 
-func _ready():
-	levels_dropdown = $Levels
-	crafts_dropdown = $Crafts
+func _ready() -> void:
+	pass
+	#load_all()
 
-func load_levels():
-	var dir = DirAccess.open(LEVELS_PATH)
+
+
+
+
+func load_levels() -> void:
+	load_resources(LEVELS_PATH, levels)
+
+
+
+
+
+func load_crafts() -> void:
+	load_resources(CRAFTS_PATH, crafts)
+
+
+
+
+
+func load_resources(path: String, resource_array: Array) -> void:
+	var dir = DirAccess.open(path)
 	if dir:
 		dir.list_dir_begin()
 		var folder_name = dir.get_next()
 		while folder_name != "":
 			if dir.current_is_dir() and folder_name != "." and folder_name != "..":
-				var level_path = LEVELS_PATH + folder_name + "/" + folder_name + ".tscn"
-				if ResourceLoader.exists(level_path):
-					levels.append(level_path)
+				var resource_path = path + folder_name + "/" + folder_name + ".tscn"
+				if ResourceLoader.exists(resource_path):
+					resource_array.append(resource_path)
 			folder_name = dir.get_next()
 		dir.list_dir_end()
 
 
-func load_crafts():
-	var dir = DirAccess.open(CRAFTS_PATH)
-	if dir:
-		dir.list_dir_begin()
-		var folder_name = dir.get_next()
-		while folder_name != "":
-			if dir.current_is_dir() and folder_name != "." and folder_name != "..":
-				var craft_path = CRAFTS_PATH + folder_name + "/" + folder_name + ".tscn"
-				if ResourceLoader.exists(craft_path):
-					crafts.append(craft_path)
-			folder_name = dir.get_next()
-		dir.list_dir_end()
 
 
-func populate_item_lists():
+
+func populate_item_lists() -> void:
 	levels_dropdown.clear()
 	crafts_dropdown.clear()
 	for level in levels:
 		levels_dropdown.add_item(level.get_file().get_basename())
 	for craft in crafts:
 		crafts_dropdown.add_item(craft.get_file().get_basename())
-	populateUserInfo()
+	populate_user_info()
 
 
-func populateUserInfo():
-	var usrTxt = ""
-	usrTxt = UserData.username + ", " + "Level: " + str(UserData.game_level) + "\n"
-	usrTxt += "Score: " + str(UserData.game_score) + "\n"
-	usrTxt += "Vanquishes: " + str(UserData.game_vanquishes)+ ", " + "Falls: " + str(UserData.game_falls) 
+
+
+
+func populate_user_info() -> void:
+	var usrTxt = "%s, Level: %d\nScore: %d\nVanquishes: %d, Falls: %d" % [
+		UserData.username,
+		UserData.game_level,
+		UserData.game_score,
+		UserData.game_vanquishes,
+		UserData.game_falls
+	]
 	userInfo_label.text = usrTxt
-	
 
-func load_all():
+
+
+
+
+func load_all() -> void:
 	load_levels()
 	load_crafts()
 	populate_item_lists()
