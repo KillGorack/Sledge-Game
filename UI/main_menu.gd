@@ -26,7 +26,6 @@ var api_credentials = {
 }
 
 var backdrop_paths: Array = []
-
 var login_attempts: int = 0
 var max_attempts: int = 5
 var cooldown_seconds: int = 30
@@ -53,19 +52,23 @@ func _on_volume_slider_value_changed(value):
 
 func _ready():
 	username_field.grab_focus()
+	add_child(login_timer)
+	
+	# Event stuff here
 	quit_button.connect("pressed", Callable(self, "_on_close"))
 	login_button.connect("pressed", Callable(self, "_on_login"))
 	register_button.connect("pressed", Callable(self, "_on_register"))
 	http_request.connect("request_completed", Callable(self, "_on_request_completed"))
-	add_child(login_timer)
+	play_button.connect("pressed", Callable(self, "_on_play_button_pressed"))
+	volume_slider.connect("value_changed", Callable(self, "_on_volume_slider_value_changed"))
 	login_timer.connect("timeout", Callable(self, "_on_cooldown_finished"))
+	
 	login_timer.one_shot = true
 	load_backdrop_paths("res://UI/backdrops/")
 	set_random_backdrop()
 	login_group.show()
 	load_group.hide()
-	play_button.connect("pressed", Callable(self, "_on_play_button_pressed"))
-	volume_slider.connect("value_changed", Callable(self, "_on_volume_slider_value_changed"))
+
 
 
 
@@ -228,6 +231,7 @@ func resetForm():
 
 
 func _on_cooldown_finished():
+	login_attempts = 4
 	is_cooldown = false
 	username_field.editable = true
 	password_field.editable = true

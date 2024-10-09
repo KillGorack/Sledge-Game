@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://5eeruw0y76t5"]
+[gd_scene load_steps=9 format=3 uid="uid://5eeruw0y76t5"]
 
 [ext_resource type="Script" path="res://UI/main_menu.gd" id="1_3sdc8"]
 [ext_resource type="AudioStream" uid="uid://cyyvtim5tqac0" path="res://Sounds/music/cinematic.mp3" id="2_rl3ga"]
 [ext_resource type="Texture2D" uid="uid://c0ye6wiguocqi" path="res://UI/Graphics/CP_Back.png" id="3_1sv6t"]
 [ext_resource type="Texture2D" uid="uid://bpodpjdvrj4p" path="res://UI/Graphics/SledgeTitle.png" id="3_6wny1"]
+[ext_resource type="Texture2D" uid="uid://bbynjvqiceo11" path="res://UI/backdrops/Space2.png" id="3_36yhb"]
 [ext_resource type="Script" path="res://UI/load_game.gd" id="5_bmbm4"]
 [ext_resource type="Theme" uid="uid://ehwvvgpd7w2t" path="res://UI/Graphics/Theme_chip.tres" id="7_l55rl"]
 [ext_resource type="Texture2D" uid="uid://ssbma0t65dqa" path="res://UI/icons/audio.svg" id="8_fh4hf"]
@@ -22,7 +23,7 @@ accept_gzip = false
 
 [node name="AmbientMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_rl3ga")
-volume_db = -15.0
+volume_db = -20.0
 autoplay = true
 
 [node name="Background" type="TextureRect" parent="."]
@@ -32,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_36yhb")
 expand_mode = 1
 stretch_mode = 6
 
@@ -267,4 +269,4 @@ grow_horizontal = 0
 grow_vertical = 0
 min_value = -30.0
 max_value = 1.0
-value = -15.0
+value = -20.0
