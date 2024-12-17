@@ -1,0 +1,549 @@
+[gd_scene load_steps=30 format=4 uid="uid://b56g3vl48tsbq"]
+
+[ext_resource type="Material" uid="uid://cjx3tugs85ut2" path="res://Materials/turf.material" id="1_7myq6"]
+[ext_resource type="PhysicsMaterial" uid="uid://dh2rif6n2skrg" path="res://Physics/Physics_Floor.tres" id="2_5bhps"]
+[ext_resource type="Material" uid="uid://d3so0uf5vdp45" path="res://Materials/tile_dark.material" id="2_h07ux"]
+[ext_resource type="Material" uid="uid://bdqno5amsvn33" path="res://Materials/brick_muted.material" id="4_4fvx7"]
+[ext_resource type="Material" uid="uid://dt8oxakqp7tta" path="res://Materials/base_pad_gray.material" id="4_kwhck"]
+[ext_resource type="PhysicsMaterial" uid="uid://2kde5d2xtkbe" path="res://Physics/Physics_Walls.tres" id="5_ql7b0"]
+[ext_resource type="PhysicsMaterial" uid="uid://0sp7q4t6oufs" path="res://Physics/Physics_Tips.tres" id="7_e661c"]
+[ext_resource type="Material" uid="uid://bgvkgfr23imv1" path="res://Materials/nothing.material" id="8_n4q5p"]
+[ext_resource type="Texture2D" uid="uid://5pvabpe3g8ql" path="res://Skybox/AllSkyFree_Sky_AnotherPlanet_Equirect.png" id="8_n8y4k"]
+[ext_resource type="PackedScene" uid="uid://b6a3gx01yx2ne" path="res://Creatives/Buildings/base_green.tscn" id="11_veo5o"]
+[ext_resource type="PackedScene" uid="uid://b6103mbjf27cm" path="res://Creatives/Buildings/base_blue.tscn" id="12_kswuk"]
+[ext_resource type="PackedScene" uid="uid://bwxd6swwr57pl" path="res://Creatives/Buildings/base_red.tscn" id="12_spbta"]
+[ext_resource type="PackedScene" uid="uid://c3cshjoqktdf" path="res://Creatives/Buildings/base_gray.tscn" id="13_jra3b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lf4re"]
+resource_name = "defaultMat"
+cull_mode = 2
+albedo_color = Color(0.957641, 0.957641, 0.957641, 1)
+roughness = 0.552786
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2fcte"]
+_surfaces = [{
+"aabb": AABB(100, -12800, -100, 12700, 12700, 1e-05),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAACAAEAAAADAAIA"),
+"name": "defaultMat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAD//wAAAAD/////AAAAAP//AAAAAAAAAAAAAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_veh5o"]
+resource_name = "empty_Scene_001"
+_surfaces = [{
+"aabb": AABB(100, -12800, -100, 12700, 12700, 1e-05),
+"attribute_data": PackedByteArray("//8AAP9/AAD/fwOB//8DgQ=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAACAAEAAAADAAIA"),
+"material": SubResource("StandardMaterial3D_lf4re"),
+"name": "defaultMat",
+"primitive": 3,
+"uv_scale": Vector4(254, 252, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAD//wAA////////AAD/////AAAAAP//AAAAAAAA////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2fcte")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cdwvo"]
+custom_solver_bias = 1.0
+data = PackedVector3Array(100, -100, -100, 12800, -12800, -100, 12800, -100, -100, 100, -100, -100, 100, -12800, -100, 12800, -12800, -100)
+backface_collision = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_56bld"]
+_surfaces = [{
+"aabb": AABB(0, -12900, -1600, 12900, 12900, 1e-05),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAACAAEAAAADAAIAAAAEAAMAAAAFAAQAAQAHAAYAAQACAAcABQAHAAQABQAGAAcA"),
+"name": "defaultMat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAPwB/AEAAAAAAv78AQAAAAAC/gL+AAAAAP////8AAAAAAAD//wAAAAD8AQL+AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g66m4"]
+resource_name = "empty_Scene_003"
+_surfaces = [{
+"aabb": AABB(0, -12900, -1600, 12900, 12900, 1e-05),
+"attribute_data": PackedByteArray("/3//gP///4AA//9//YD/f/2A/wD/fwAA//8AAAD//wA="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAACAAEAAAADAAIAAAAEAAMAAAAFAAQAAQAHAAYAAQACAAcABQAHAAQABQAGAAcA"),
+"material": SubResource("StandardMaterial3D_lf4re"),
+"name": "defaultMat",
+"primitive": 3,
+"uv_scale": Vector4(258, 256, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAA//8AAAAAAAD///wB/AEAAP//Av78AQAA//8C/gL+AAD///////8AAP//AAD//wAA///8AQL+AAD///9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_56bld")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ba86f"]
+custom_solver_bias = 1.0
+data = PackedVector3Array(12900, -12900, -1600, 99.9954, -12800, -1600, 0, -12900, -1600, 12900, -12900, -1600, 12799.8, -12800, -1600, 99.9954, -12800, -1600, 12900, -12900, -1600, 12799.8, -100.192, -1600, 12799.8, -12800, -1600, 12900, -12900, -1600, 12900, 0, -1600, 12799.8, -100.192, -1600, 0, -12900, -1600, 99.9954, -100.192, -1600, 0, 0, -1600, 0, -12900, -1600, 99.9954, -12800, -1600, 99.9954, -100.192, -1600, 12900, 0, -1600, 99.9954, -100.192, -1600, 12799.8, -100.192, -1600, 12900, 0, -1600, 0, 0, -1600, 99.9954, -100.192, -1600)
+backface_collision = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1kxtn"]
+_surfaces = [{
+"aabb": AABB(100, -12800, -1600, 12700, 12700, 1500),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAADAAUABAACAAMABQAGAAQABQAHAAYAAQAHAAAAAQAGAAcA"),
+"name": "defaultMat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAAAAAAAAAAAA//8AAAAAAAD/////AAD/////AAAAAP///////wAA//8AAAAAAAD//wAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_keqc1"]
+resource_name = "empty_Scene"
+_surfaces = [{
+"aabb": AABB(100, -12800, -1600, 12700, 12700, 1500),
+"attribute_data": PackedByteArray("//8kif//AAD/fwAA/38kif9/AAD/fySJ//8kif//AAD//ySJ//8AAP9/AAD/fySJ/38AAP9/JIn//ySJ//8AAA=="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYACAAKAAkACAALAAoADAAOAA0ADAAPAA4A"),
+"material": SubResource("StandardMaterial3D_lf4re"),
+"name": "defaultMat",
+"primitive": 3,
+"uv_scale": Vector4(254, 28, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAAAAAABU1QAA//8AAFTVAAD/////VNX/////AAD/////////////AAD///////8AAP//AAD//////////1TV/////wAAVNX//wAAAABU1f//AAD//1TVAAAAAAAA/78AAAAA////v///AAD///+///8AAAAA/7+qqlRVqqpUVaqqVFWqqlRV/3//P/9//z//f/8//3//P1TVVNVU1VTVVNVU1VTVVNX///9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1kxtn")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_56xcn"]
+data = PackedVector3Array(100, -12800, -100, 100, -100, -1600, 100, -12800, -1600, 100, -12800, -100, 100, -100, -100, 100, -100, -1600, 12800, -100, -1600, 100, -100, -100, 12800, -100, -100, 12800, -100, -1600, 100, -100, -1600, 100, -100, -100, 12800, -100, -100, 12800, -12800, -1600, 12800, -100, -1600, 12800, -100, -100, 12800, -12800, -100, 12800, -12800, -1600, 100, -12800, -1600, 12800, -12800, -100, 100, -12800, -100, 100, -12800, -1600, 12800, -12800, -1600, 12800, -12800, -100)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0jnfr"]
+_surfaces = [{
+"aabb": AABB(0, -12900, -1600, 12900, 12900, 1600),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAABAAIABAAFAAEABgACAAMABgAEAAIABQAAAAEABQAHAAAABwADAAAABwAGAAMA"),
+"name": "defaultMat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////////AAAAAP////8AAAAAAAD//wAA//8AAP//AAAAAAAAAAAAAAAA//8AAAAA//8AAAAAAAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ievhh"]
+resource_name = "empty_Scene_002"
+_surfaces = [{
+"aabb": AABB(0, -12900, -1600, 12900, 12900, 1600),
+"attribute_data": PackedByteArray("//8AAP9/AAD/f/+A////gP9//3D/f/+A////gP///3D/f/9w/3//gP///4D///9w/3//cP9//4D///+A////cP9//3D/f/+A////gP///3A="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAACAAEAAAADAAIABAAGAAUABAAHAAYACAAKAAkACAALAAoADAAOAA0ADAAPAA4AEAASABEAEAATABIA"),
+"material": SubResource("StandardMaterial3D_lf4re"),
+"name": "defaultMat",
+"primitive": 3,
+"uv_scale": Vector4(258, 256, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("////////AIAAAP////8AgAAAAAD//wCA//8AAP//AIAAAAAAAABU1QAAAAD//1TVAAD/////VNUAAP//AABU1f//AAAAAP////8AAP////8AAAAA/////wAAAAAAAP//AAD//wAA/78AAP//////v/////////+//////wAA/7//////AABU1f///////1TV//8AAP//VNX//wAAAABU1f9/////f////3////9///9U1VTVVNVU1VTVVNVU1VTV/3//P/9//z//f/8//3//P////3////9/////f////3+qqlRVqqpUVaqqVFWqqlRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0jnfr")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_kd0u5"]
+data = PackedVector3Array(12900, 0, 0, 0, -12900, 0, 0, 0, 0, 12900, 0, 0, 12900, -12900, 0, 0, -12900, 0, 0, -12900, -1600, 0, 0, 0, 0, -12900, 0, 0, -12900, -1600, 0, 0, -1600, 0, 0, 0, 12900, -12900, -1600, 0, -12900, 0, 12900, -12900, 0, 12900, -12900, -1600, 0, -12900, -1600, 0, -12900, 0, 0, 0, -1600, 12900, 0, 0, 0, 0, 0, 0, 0, -1600, 12900, 0, -1600, 12900, 0, 0, 12900, 0, -1600, 12900, -12900, 0, 12900, 0, 0, 12900, 0, -1600, 12900, -12900, -1600, 12900, -12900, 0)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t5ngi"]
+panorama = ExtResource("8_n8y4k")
+
+[sub_resource type="Sky" id="Sky_tkxxg"]
+sky_material = SubResource("PanoramaSkyMaterial_t5ngi")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_845o3"]
+background_mode = 2
+background_energy_multiplier = 0.14
+sky = SubResource("Sky_tkxxg")
+sky_custom_fov = 47.6
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.9
+ambient_light_energy = 2.0
+reflected_light_source = 2
+tonemap_mode = 3
+tonemap_exposure = 2.0
+tonemap_white = 3.0
+ssil_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_min_cell_size = 9.76563e-05
+sdfgi_cascade0_distance = 0.00625
+sdfgi_max_distance = 0.1
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.0
+glow_strength = 1.71
+glow_bloom = 1.0
+glow_blend_mode = 4
+glow_hdr_threshold = 0.6
+glow_hdr_scale = 0.96
+glow_hdr_luminance_cap = 36.55
+glow_map_strength = 0.35
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+
+[node name="Abydos" type="Node3D"]
+
+[node name="Geometry" type="Node3D" parent="."]
+transform = Transform3D(0.01, 0, 0, 0, -1.19209e-09, -0.01, 0, 0.01, -1.19209e-09, 0, 0, 0)
+
+[node name="Ground" type="MeshInstance3D" parent="Geometry" groups=["Driveable"]]
+layers = 2
+material_override = ExtResource("1_7myq6")
+mesh = SubResource("ArrayMesh_veh5o")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Ground" groups=["Driveable"]]
+collision_layer = 2
+collision_mask = 65535
+physics_material_override = ExtResource("2_5bhps")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Ground/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_cdwvo")
+
+[node name="Toppers" type="MeshInstance3D" parent="Geometry"]
+layers = 2
+material_override = ExtResource("2_h07ux")
+mesh = SubResource("ArrayMesh_g66m4")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Toppers" groups=["Driveable"]]
+collision_layer = 2
+collision_mask = 253
+physics_material_override = ExtResource("2_5bhps")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Toppers/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_ba86f")
+
+[node name="Walls" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 0, 0)
+layers = 2
+material_override = ExtResource("4_4fvx7")
+mesh = SubResource("ArrayMesh_keqc1")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Walls"]
+collision_layer = 2
+collision_mask = 253
+physics_material_override = ExtResource("5_ql7b0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Walls/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_56xcn")
+
+[node name="Unused" type="MeshInstance3D" parent="Geometry"]
+layers = 2
+material_override = ExtResource("4_kwhck")
+mesh = SubResource("ArrayMesh_ievhh")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Unused"]
+collision_layer = 2
+collision_mask = 253
+physics_material_override = ExtResource("7_e661c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Unused/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_kd0u5")
+
+[node name="Walls2" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, -0.000178814, -1500)
+layers = 2
+material_override = ExtResource("8_n4q5p")
+mesh = SubResource("ArrayMesh_keqc1")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Walls2"]
+collision_layer = 2
+collision_mask = 253
+physics_material_override = ExtResource("5_ql7b0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Walls2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_56xcn")
+
+[node name="Walls3" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, -0.000357628, -3000)
+layers = 2
+material_override = ExtResource("8_n4q5p")
+mesh = SubResource("ArrayMesh_keqc1")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Walls3"]
+collision_layer = 2
+collision_mask = 253
+physics_material_override = ExtResource("5_ql7b0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Walls3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_56xcn")
+
+[node name="Walls4" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, -0.000536442, -4500)
+layers = 2
+material_override = ExtResource("8_n4q5p")
+mesh = SubResource("ArrayMesh_keqc1")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Walls4"]
+collision_layer = 2
+collision_mask = 253
+physics_material_override = ExtResource("5_ql7b0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Walls4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_56xcn")
+
+[node name="Walls5" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, -0.000715256, -6000)
+layers = 2
+material_override = ExtResource("8_n4q5p")
+mesh = SubResource("ArrayMesh_keqc1")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Walls5"]
+collision_layer = 2
+collision_mask = 253
+physics_material_override = ExtResource("5_ql7b0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Walls5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_56xcn")
+
+[node name="Ceiling" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74227e-08, 0, 8.74227e-08, -1, 0, -12900, -7700)
+layers = 2
+material_override = ExtResource("8_n4q5p")
+mesh = SubResource("ArrayMesh_veh5o")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/Ceiling" groups=["Driveable"]]
+collision_layer = 2
+collision_mask = 65535
+physics_material_override = ExtResource("2_5bhps")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/Ceiling/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_cdwvo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_845o3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.175006, 0.984567, 0, -0.984567, 0.175006, 61.7868, 52.8284, -66.5634)
+light_energy = 0.1
+
+[node name="PlayerSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54649, 4.11175, -4.2177)
+
+[node name="Base" parent="." instance=ExtResource("12_spbta")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.5, 1.5, -1.5)
+
+[node name="Base2" parent="." instance=ExtResource("11_veo5o")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 127.5, 1.5, -127.5)
+
+[node name="NPC_SpawnPoints" type="Node3D" parent="."]
+
+[node name="NPC_001" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 1.19575, -23)
+
+[node name="NPC_002" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.19575, -23)
+
+[node name="NPC_003" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1.19575, -23)
+
+[node name="NPC_004" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 1.19575, -20)
+
+[node name="NPC_005" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 1.19575, -20)
+
+[node name="NPC_006" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 59.6679, 1.19575, -21.8392)
+
+[node name="NPC_007" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 61.4, 1.19575, -22.8392)
+
+[node name="NPC_008" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 63.132, 1.19575, -23.8392)
+
+[node name="NPC_009" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 62.034, 1.19575, -19.7412)
+
+[node name="NPC_010" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 63.766, 1.19575, -20.7412)
+
+[node name="NPC_011" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 99.4343, 1.19575, -24.0627)
+
+[node name="NPC_012" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 100.849, 1.19575, -22.6485)
+
+[node name="NPC_013" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 102.263, 1.19575, -21.2343)
+
+[node name="NPC_014" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 98.0201, 1.19575, -21.2343)
+
+[node name="NPC_015" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 99.4343, 1.19575, -19.8201)
+
+[node name="NPC_016" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 1.19575, -52)
+
+[node name="NPC_017" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.19575, -52)
+
+[node name="NPC_018" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1.19575, -52)
+
+[node name="NPC_019" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 1.19575, -49)
+
+[node name="NPC_020" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 1.19575, -49)
+
+[node name="NPC_021" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 1.19575, -52)
+
+[node name="NPC_022" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 1.19575, -52)
+
+[node name="NPC_023" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 1.19575, -52)
+
+[node name="NPC_024" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 1.19575, -49)
+
+[node name="NPC_025" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73, 1.19575, -49)
+
+[node name="NPC_026" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 1.19575, -52)
+
+[node name="NPC_027" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 1.19575, -52)
+
+[node name="NPC_028" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114, 1.19575, -52)
+
+[node name="NPC_029" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 1.19575, -49)
+
+[node name="NPC_030" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113, 1.19575, -49)
+
+[node name="NPC_031" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 1.19575, -93)
+
+[node name="NPC_032" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.19575, -93)
+
+[node name="NPC_033" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1.19575, -93)
+
+[node name="NPC_034" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 1.19575, -90)
+
+[node name="NPC_035" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 1.19575, -90)
+
+[node name="NPC_036" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 59.6679, 1.19575, -91.8392)
+
+[node name="NPC_037" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 61.4, 1.19575, -92.8392)
+
+[node name="NPC_038" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 63.132, 1.19575, -93.8392)
+
+[node name="NPC_039" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 62.034, 1.19575, -89.7411)
+
+[node name="NPC_040" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 63.766, 1.19575, -90.7411)
+
+[node name="NPC_041" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 99.4343, 1.19575, -94.0627)
+
+[node name="NPC_042" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 100.849, 1.19575, -92.6485)
+
+[node name="NPC_043" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 102.263, 1.19575, -91.2343)
+
+[node name="NPC_044" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 98.0201, 1.19575, -91.2343)
+
+[node name="NPC_045" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 99.4343, 1.19575, -89.8201)
+
+[node name="NPC_046" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 1.19575, -122)
+
+[node name="NPC_047" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 1.19575, -122)
+
+[node name="NPC_048" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1.19575, -122)
+
+[node name="NPC_049" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 1.19575, -119)
+
+[node name="NPC_050" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 1.19575, -119)
+
+[node name="NPC_051" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 1.19575, -122)
+
+[node name="NPC_052" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 1.19575, -122)
+
+[node name="NPC_053" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 1.19575, -122)
+
+[node name="NPC_054" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 1.19575, -119)
+
+[node name="NPC_055" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73, 1.19575, -119)
+
+[node name="NPC_056" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 1.19575, -122)
+
+[node name="NPC_057" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 1.19575, -122)
+
+[node name="NPC_058" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114, 1.19575, -122)
+
+[node name="NPC_059" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 1.19575, -119)
+
+[node name="NPC_060" type="Node3D" parent="NPC_SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113, 1.19575, -119)
+
+[node name="Base3" parent="." instance=ExtResource("12_kswuk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 127.5, 1.5, -1.5)
+
+[node name="Base4" parent="." instance=ExtResource("13_jra3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.5, -127.5)

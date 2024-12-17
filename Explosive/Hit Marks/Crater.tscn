@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhkttboqth4ak"]
+
+[ext_resource type="Script" path="res://UTILS/_gc.gd" id="1_oxag1"]
+[ext_resource type="Texture2D" uid="uid://y0fpoejomoln" path="res://Textures/BulletHoles/explosion.png" id="2_u8saj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hafxc"]
+transparency = 1
+albedo_texture = ExtResource("2_u8saj")
+
+[sub_resource type="QuadMesh" id="QuadMesh_00pro"]
+material = SubResource("StandardMaterial3D_hafxc")
+
+[node name="Crater" type="Node3D"]
+script = ExtResource("1_oxag1")
+duration = 3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+layers = 4
+mesh = SubResource("QuadMesh_00pro")

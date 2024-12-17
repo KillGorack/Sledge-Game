@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0g6dtgokldmd"]
+
+[ext_resource type="Script" path="res://UTILS/_gc.gd" id="1_jpojh"]
+[ext_resource type="Texture2D" uid="uid://dywxp6kge65h0" path="res://Textures/BulletHoles/cracked.png" id="1_tt5om"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ic6iy"]
+transparency = 1
+albedo_texture = ExtResource("1_tt5om")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lfi5h"]
+material = SubResource("StandardMaterial3D_ic6iy")
+
+[node name="Cracked" type="Node3D"]
+script = ExtResource("1_jpojh")
+duration = 3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+layers = 4
+mesh = SubResource("QuadMesh_lfi5h")

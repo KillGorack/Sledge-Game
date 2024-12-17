@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cugiwynuuw7ru"]
+
+[ext_resource type="Shader" path="res://Explosive/Explosions/Explosion_A/Explosion_A.gdshader" id="1_h3d2g"]
+[ext_resource type="Texture2D" uid="uid://xlv1dw3fiskx" path="res://Textures/Explosion/exp_height.bmp" id="2_y0xpi"]
+[ext_resource type="Texture2D" uid="uid://cfwxs0qo7oybo" path="res://Textures/Explosion/exp_normal.bmp" id="3_ct3do"]
+[ext_resource type="Texture2D" uid="uid://dnwnpl26pnejk" path="res://Textures/Explosion/Explosion.png" id="4_8yxyx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h3d2g")
+shader_parameter/frame_size = Vector2(0.167, 0.167)
+shader_parameter/columns = 6
+shader_parameter/rows = 6
+shader_parameter/frame = null
+shader_parameter/specular_intensity = 1.0
+shader_parameter/glossiness = 1.0
+shader_parameter/detail_mix = 1.0
+shader_parameter/color1 = Color(1, 0.5, 0, 1)
+shader_parameter/color2 = Color(1, 0, 0, 1)
+shader_parameter/color3 = Color(1, 1, 1, 1)
+shader_parameter/texture_sheet = ExtResource("4_8yxyx")
+shader_parameter/normal_map = ExtResource("3_ct3do")
+shader_parameter/emission_map = ExtResource("2_y0xpi")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8r8xa7vpsfux"]
+
+[ext_resource type="Material" uid="uid://dsod826ud1trt" path="res://Materials/pad_neutral.material" id="1_lmc2o"]
+[ext_resource type="Material" uid="uid://dwxlgxsvxgbrm" path="res://Materials/glass.material" id="2_b4xsw"]
+[ext_resource type="Script" path="res://Creatives/Assets/repair_pad.gd" id="3_2nkf6"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_dwivg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1nw3n"]
+radius = 0.05
+height = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yi6eg"]
+
+[node name="Recon Station" type="Node3D" groups=["Recon"]]
+
+[node name="Pad" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.01)
+layers = 2
+material_override = ExtResource("1_lmc2o")
+mesh = SubResource("QuadMesh_dwivg")
+
+[node name="Marker" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 2
+material_override = ExtResource("2_b4xsw")
+mesh = SubResource("CapsuleMesh_1nw3n")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 2
+
+[node name="RepairPad" type="Area3D" parent="."]
+script = ExtResource("3_2nkf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RepairPad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501, 0)
+shape = SubResource("BoxShape3D_yi6eg")

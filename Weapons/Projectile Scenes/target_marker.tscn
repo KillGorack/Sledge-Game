@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckvics5bu7nu7"]
+
+[ext_resource type="Script" path="res://UTILS/_gc.gd" id="1_0ond4"]
+[ext_resource type="Script" path="res://Weapons/Projectile Scenes/pulse.gd" id="2_0kkjd"]
+[ext_resource type="Material" uid="uid://losxwykmqfby" path="res://Materials/base_pad_green.material" id="2_stjjt"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_maoid"]
+
+[node name="Target Marker" type="Node3D" groups=["Projectile", "Target_Beacon"]]
+script = ExtResource("1_0ond4")
+duration = 20.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+layers = 4
+light_color = Color(0, 1, 0, 1)
+script = ExtResource("2_0kkjd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+layers = 4
+material_override = ExtResource("2_stjjt")
+mesh = SubResource("SphereMesh_maoid")

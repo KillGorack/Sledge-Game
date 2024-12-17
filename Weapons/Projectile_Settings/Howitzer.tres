@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://b6q41js1vtad3"]
+
+[ext_resource type="Script" path="res://Weapons/WeaponSettings.gd" id="1_jtdo6"]
+[ext_resource type="PackedScene" uid="uid://dhkttboqth4ak" path="res://Explosive/Hit Marks/Crater.tscn" id="1_vf5j3"]
+[ext_resource type="PackedScene" uid="uid://bf7wlcygvo8f1" path="res://Explosive/Sparks_By_Color/spark_white.tscn" id="2_57565"]
+[ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_6epmv"]
+[ext_resource type="PackedScene" uid="uid://blnuhgmtq7p0d" path="res://Weapons/Projectile Scenes/howitzer.tscn" id="4_g8w12"]
+[ext_resource type="AudioStream" uid="uid://bu6it21bq0rv1" path="res://Sounds/Weapons/mortar.wav" id="4_mejqd"]
+[ext_resource type="Texture2D" uid="uid://facd8c47wiqm" path="res://Weapons/Icons/Howitzer.png" id="7_ki5ni"]
+
+[resource]
+script = ExtResource("1_jtdo6")
+weapon_name = "Howitzer"
+weapon_icon = ExtResource("7_ki5ni")
+level_req = 1
+power_consumption = 0.0
+weapon_type = 3
+projectile_pierce_count = 0
+projectile_ricochet_count = 0
+bounce_count = 0
+explosive_force = 120.0
+explosive_force_distance = 15.0
+targeting_system = false
+targeting_system_require_marker = false
+target_rotation_speed = 0.0
+target_system_scan_radius = 40.0
+target_system_group = "Creative"
+freeze_timer = 0.0
+projectile_prefab = ExtResource("4_g8w12")
+explosion_prefab = ExtResource("2_57565")
+bullet_hole_prefab = ExtResource("1_vf5j3")
+muzzle_flash_duration = 0.0
+projectile_count_capacity = 255.0
+projectile_count_actual = 255.0
+projectile_count = 1
+projectile_spacing = 0.0
+projectile_start_angle = 0.0
+projectile_recoil = 90.0
+projectile_range = 500.0
+projectile_speed = 45.0
+projectile_spin = 0.0
+projectile_force = 0.0
+bi_directional = false
+hit_points = 75.0
+cool_down = 1.0
+launch_offset = Vector3(0, 0, 0)
+projectile_fire_delay = 0.0
+projectile_destruction_delay = 0.0
+mass = 1.0
+use_gravity = true
+light_color = Color(1, 1, 1, 1)
+launch_sound = ExtResource("4_mejqd")
+hit_sound = ExtResource("3_6epmv")
+layer = 3
+layer_mask = Array[int]([2, 4])

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqfb5qxhfsu81"
+path="res://.godot/imported/Hover Pads.obj-3a586711e734d9b95c0163bc9394b69a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Hover Pads.obj-3a586711e734d9b95c0163bc9394b69a.mesh"]
+
+source_file="res://Crafts/Paladin/Geometry/Hover Pads.obj"
+dest_files=["res://.godot/imported/Hover Pads.obj-3a586711e734d9b95c0163bc9394b69a.mesh", "res://.godot/imported/Hover Pads.obj-3a586711e734d9b95c0163bc9394b69a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

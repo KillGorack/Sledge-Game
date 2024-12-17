@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rdgp20h81cgg"
+path="res://.godot/imported/Bezels.obj-f31d7ad42cc6567bcec52b43cc279684.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bezels.obj-f31d7ad42cc6567bcec52b43cc279684.mesh"]
+
+source_file="res://Crafts/Paladin/Geometry/Bezels.obj"
+dest_files=["res://.godot/imported/Bezels.obj-f31d7ad42cc6567bcec52b43cc279684.mesh", "res://.godot/imported/Bezels.obj-f31d7ad42cc6567bcec52b43cc279684.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

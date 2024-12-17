@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dm6pa62ys4f7h"
+path="res://.godot/imported/Underbody.obj-78a2915e55344f6cc8890d2c1389ffb8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Underbody.obj-78a2915e55344f6cc8890d2c1389ffb8.mesh"]
+
+source_file="res://Crafts/Paladin/Geometry/Underbody.obj"
+dest_files=["res://.godot/imported/Underbody.obj-78a2915e55344f6cc8890d2c1389ffb8.mesh", "res://.godot/imported/Underbody.obj-78a2915e55344f6cc8890d2c1389ffb8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

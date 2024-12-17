@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://gvgi7oq23p26"]
+
+[ext_resource type="Script" path="res://Weapons/MineHandler.gd" id="1_0pmi0"]
+[ext_resource type="Material" uid="uid://cj7h5gmt3lmnm" path="res://Materials/base_pad_blue.material" id="1_3qgth"]
+[ext_resource type="ArrayMesh" uid="uid://dlydibeuwmh7c" path="res://Models/Proximity Mine Hex.obj" id="2_uxq7k"]
+[ext_resource type="Material" uid="uid://cgfcprehhicsy" path="res://Materials/base_pad_red.material" id="3_23d6p"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xo20u"]
+radius = 0.15
+
+[sub_resource type="TorusMesh" id="TorusMesh_3tsq6"]
+inner_radius = 0.05
+outer_radius = 0.08
+
+[node name="Forcewave Mine" type="Area3D" groups=["Mine"]]
+script = ExtResource("1_0pmi0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_xo20u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 4
+material_override = ExtResource("1_3qgth")
+mesh = ExtResource("2_uxq7k")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0163778, 0)
+layers = 4
+material_override = ExtResource("3_23d6p")
+mesh = SubResource("TorusMesh_3tsq6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+layers = 4
+light_color = Color(0, 0.729412, 1, 1)

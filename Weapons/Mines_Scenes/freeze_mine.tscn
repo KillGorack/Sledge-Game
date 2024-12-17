@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ia6c7vaqgn6"]
+
+[ext_resource type="Script" path="res://Weapons/MineHandler.gd" id="1_q5d5v"]
+[ext_resource type="Material" uid="uid://nww7en7lvg17" path="res://Materials/water.material" id="2_nep8n"]
+[ext_resource type="ArrayMesh" uid="uid://dlydibeuwmh7c" path="res://Models/Proximity Mine Hex.obj" id="3_eldju"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mqi2y"]
+radius = 0.15
+
+[node name="Freeze Mine" type="Area3D" groups=["Mine"]]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_q5d5v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 4
+material_override = ExtResource("2_nep8n")
+mesh = ExtResource("3_eldju")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999916, 0.01295, 0, -0.01295, 0.999916, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("SphereShape3D_mqi2y")

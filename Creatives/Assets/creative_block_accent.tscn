@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://cq303ex5u0ftv"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dh2rif6n2skrg" path="res://Physics/Physics_Floor.tres" id="1_orfbq"]
+[ext_resource type="Script" path="res://Creatives/Assets/physics.gd" id="2_hlg0e"]
+[ext_resource type="Script" path="res://Creatives/health.gd" id="3_orjnv"]
+[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="4_chg5f"]
+[ext_resource type="AudioStream" uid="uid://dksny4b258a2b" path="res://Sounds/Weapons/Explosion.wav" id="5_74e86"]
+[ext_resource type="Material" uid="uid://mqag85jtsael" path="res://Materials/ceiling_ligted.material" id="6_sjxvr"]
+[ext_resource type="Material" uid="uid://co0fl1dxv48pm" path="res://Materials/sandwich_block.material" id="7_ypsbt"]
+[ext_resource type="Material" uid="uid://35nge62qm0bt" path="res://Materials/hex_paver.material" id="8_68tpk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssj33"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ghqtn"]
+
+[node name="Creative_Block" type="RigidBody3D" groups=["Creative"]]
+collision_layer = 8
+collision_mask = 16711695
+mass = 2.0
+physics_material_override = ExtResource("1_orfbq")
+can_sleep = false
+freeze = true
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("2_hlg0e")
+
+[node name="Health" type="Node3D" parent="."]
+script = ExtResource("3_orjnv")
+explosion = ExtResource("4_chg5f")
+explosionSound = ExtResource("5_74e86")
+Interactive = true
+
+[node name="Collider" type="CollisionShape3D" parent="." groups=["Driveable"]]
+shape = SubResource("BoxShape3D_ssj33")
+
+[node name="Mesh" type="Node3D" parent="."]
+
+[node name="Ceiling" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(4.37114e-08, -1, 3.9081e-15, 1.33118e-07, 1.91069e-15, -1, 1, 4.37114e-08, 1.33118e-07, 0, -0.5, 2.18557e-08)
+layers = 8
+material_override = ExtResource("6_sjxvr")
+mesh = SubResource("QuadMesh_ghqtn")
+skeleton = NodePath("../..")
+
+[node name="Wall 1" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+layers = 8
+material_override = ExtResource("7_ypsbt")
+mesh = SubResource("QuadMesh_ghqtn")
+skeleton = NodePath("../..")
+
+[node name="Wall 2" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 0, 0, -0.5)
+layers = 8
+material_override = ExtResource("7_ypsbt")
+mesh = SubResource("QuadMesh_ghqtn")
+skeleton = NodePath("../..")
+
+[node name="Wall 3" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, -2.18557e-08)
+layers = 8
+material_override = ExtResource("7_ypsbt")
+mesh = SubResource("QuadMesh_ghqtn")
+skeleton = NodePath("../..")
+
+[node name="Wall 4" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, -0.5, 0, 2.18557e-08)
+layers = 8
+material_override = ExtResource("7_ypsbt")
+mesh = SubResource("QuadMesh_ghqtn")
+skeleton = NodePath("../..")
+
+[node name="Floor" type="MeshInstance3D" parent="Mesh" groups=["Driveable"]]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, 1, -1, 4.37114e-08, -4.37114e-08, 0, 0.5, -2.18557e-08)
+layers = 8
+material_override = ExtResource("8_68tpk")
+mesh = SubResource("QuadMesh_ghqtn")
+skeleton = NodePath("../..")

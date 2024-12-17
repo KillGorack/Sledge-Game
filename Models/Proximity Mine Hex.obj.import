@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dlydibeuwmh7c"
+path="res://.godot/imported/Proximity Mine Hex.obj-21413c93105431d4a0c4245b49c2ec9c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Proximity Mine Hex.obj-21413c93105431d4a0c4245b49c2ec9c.mesh"]
+
+source_file="res://Models/Proximity Mine Hex.obj"
+dest_files=["res://.godot/imported/Proximity Mine Hex.obj-21413c93105431d4a0c4245b49c2ec9c.mesh", "res://.godot/imported/Proximity Mine Hex.obj-21413c93105431d4a0c4245b49c2ec9c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

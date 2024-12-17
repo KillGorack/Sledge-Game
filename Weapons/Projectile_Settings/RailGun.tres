@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="WeaponSettings" load_steps=5 format=3 uid="uid://c8lpdri1yqor8"]
+
+[ext_resource type="AudioStream" uid="uid://kkwg5i1ghnth" path="res://Sounds/Weapons/Charge.wav" id="1_2rbss"]
+[ext_resource type="Script" path="res://Weapons/WeaponSettings.gd" id="1_aehnk"]
+[ext_resource type="PackedScene" uid="uid://wxfv346idsqo" path="res://Weapons/Projectile Scenes/rail_gun.tscn" id="1_igpul"]
+[ext_resource type="Texture2D" uid="uid://75d54pth2rfc" path="res://Weapons/Icons/RailGun.png" id="4_v6nl2"]
+
+[resource]
+script = ExtResource("1_aehnk")
+weapon_name = "Rail Gun"
+weapon_icon = ExtResource("4_v6nl2")
+level_req = 1
+power_consumption = 75.0
+weapon_type = 2
+projectile_pierce_count = 55
+projectile_ricochet_count = 0
+bounce_count = 0
+explosive_force = 0.0
+explosive_force_distance = 0.0
+targeting_system = false
+targeting_system_require_marker = true
+target_rotation_speed = 0.0
+target_system_scan_radius = 40.0
+target_system_group = "Creative"
+freeze_timer = 0.0
+projectile_prefab = ExtResource("1_igpul")
+muzzle_flash_duration = 0.0
+projectile_count_capacity = 0.0
+projectile_count_actual = 0.0
+projectile_count = 1
+projectile_spacing = 0.0
+projectile_start_angle = 0.0
+projectile_recoil = 125.0
+projectile_range = 1000.0
+projectile_speed = 45.0
+projectile_spin = 50.0
+projectile_force = 0.0
+bi_directional = false
+hit_points = 1000.0
+cool_down = 5.0
+launch_offset = Vector3(0, 0, 0)
+projectile_fire_delay = 2.46
+projectile_destruction_delay = 0.0
+mass = 1.0
+use_gravity = false
+light_color = Color(1, 1, 1, 1)
+launch_sound = ExtResource("1_2rbss")
+layer = 3
+layer_mask = Array[int]([2, 4])

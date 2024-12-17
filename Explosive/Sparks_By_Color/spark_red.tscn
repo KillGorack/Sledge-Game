@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://c8rq8euhyuhrk"]
+
+[ext_resource type="Script" path="res://UTILS/_gc.gd" id="1_5mmve"]
+[ext_resource type="Material" uid="uid://dodcp6ko6qosf" path="res://Materials/particle_red.material" id="2_h56if"]
+
+[sub_resource type="Curve" id="Curve_tndmb"]
+max_value = 0.5
+_data = [Vector2(0, 0.497708), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_f55ix"]
+max_value = 0.5
+_data = [Vector2(0, 0.500353), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4s7n6"]
+max_value = 5.0
+_data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(1, 5), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_yyirp"]
+curve_x = SubResource("Curve_tndmb")
+curve_y = SubResource("Curve_f55ix")
+curve_z = SubResource("Curve_4s7n6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4fryk"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = 1.07288e-05
+angle_max = 180.0
+direction = Vector3(0, 0, 0)
+spread = 0.0
+radial_velocity_min = 0.999978
+radial_velocity_max = 4.99998
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.04
+scale_curve = SubResource("CurveXYZTexture_yyirp")
+color = Color(4, 2, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_03kuq"]
+radius = 0.25
+height = 0.5
+
+[node name="spark_red" type="Node3D"]
+script = ExtResource("1_5mmve")
+
+[node name="FunkySpark" type="GPUParticles3D" parent="."]
+layers = 4
+material_override = ExtResource("2_h56if")
+amount = 15
+lifetime = 0.26
+explosiveness = 1.0
+fixed_fps = 60
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_4fryk")
+draw_pass_1 = SubResource("SphereMesh_03kuq")

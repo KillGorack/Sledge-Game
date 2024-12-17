@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://dy6q7niy2f3mx"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://bwm66u3tk5o2" path="res://Physics/Physics_Projectile.tres" id="1_dpq4u"]
+[ext_resource type="Script" path="res://Weapons/CollisionHandler.gd" id="2_uj6ji"]
+[ext_resource type="Material" uid="uid://cj7h5gmt3lmnm" path="res://Materials/base_pad_blue.material" id="3_lla02"]
+[ext_resource type="Script" path="res://Weapons/Projectile Scenes/TrailEffect.gd" id="4_32omo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_c6lxp"]
+radius = 0.03
+
+[sub_resource type="SphereMesh" id="SphereMesh_yf2ic"]
+radius = 0.063
+height = 0.125
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3qek"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[node name="fracture" type="RigidBody3D"]
+collision_layer = 0
+collision_mask = 0
+mass = 0.001
+physics_material_override = ExtResource("1_dpq4u")
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("2_uj6ji")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_c6lxp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+layers = 4
+material_override = ExtResource("3_lla02")
+mesh = SubResource("SphereMesh_yf2ic")
+skeleton = NodePath("../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+layers = 1023
+light_color = Color(1, 0, 1, 1)
+light_energy = 5.0
+
+[node name="Trail3D3" type="MeshInstance3D" parent="."]
+layers = 1023
+material_override = SubResource("StandardMaterial3D_e3qek")
+script = ExtResource("4_32omo")
+_lifeSpan = 0.5
+_startColor = Color(1, 0, 1, 1)
+_endColor = Color(1, 0, 1, 0)
+
+[node name="Trail3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+layers = 1023
+material_override = SubResource("StandardMaterial3D_e3qek")
+script = ExtResource("4_32omo")
+_lifeSpan = 0.5
+_startColor = Color(1, 0, 1, 1)
+_endColor = Color(1, 0, 1, 0)
