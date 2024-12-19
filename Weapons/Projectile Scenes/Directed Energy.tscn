@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://clas4r5ifsenh"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://bwm66u3tk5o2" path="res://Physics/Physics_Projectile.tres" id="1_3kgrc"]
+[ext_resource type="Script" path="res://Weapons/_scripts/CollisionHandler.gd" id="2_hucqg"]
+[ext_resource type="Script" path="res://Weapons/Projectile Scenes/TrailEffect.gd" id="4_ykjbv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tqau5"]
+radius = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o783i"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjih3"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[node name="Directed Energy" type="RigidBody3D" groups=["Projectile"]]
+collision_layer = 0
+collision_mask = 0
+physics_material_override = ExtResource("1_3kgrc")
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("2_hucqg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+layers = 2
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.5
+light_indirect_energy = 0.5
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -0.65)
+collision_mask = 254
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_tqau5")
+
+[node name="Trail3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_o783i")
+script = ExtResource("4_ykjbv")
+_lifeSpan = 0.1
+_startColor = Color(1, 0, 0, 1)
+_endColor = Color(1, 0, 0, 0)
+_fromWidth = 0.1
+
+[node name="Trail3D2" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_pjih3")
+script = ExtResource("4_ykjbv")
+_lifeSpan = 0.1
+_startColor = Color(1, 0, 0, 1)
+_endColor = Color(1, 0, 0, 0)
+_fromWidth = 0.1

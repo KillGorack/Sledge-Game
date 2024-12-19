@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://cdi5u6q5tvypl" path="res://Materials/glitz_red.material" id="1_hari5"]
 [ext_resource type="PhysicsMaterial" uid="uid://gmcvyorusctw" path="res://Physics/Physics_Plaything.tres" id="1_nj1bd"]
-[ext_resource type="Script" path="res://Creatives/health.gd" id="1_ubngd"]
+[ext_resource type="Script" path="res://Creatives/_scripts/health.gd" id="1_ubngd"]
 [ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="3_r3ntg"]
 [ext_resource type="Material" uid="uid://dwxlgxsvxgbrm" path="res://Materials/glass.material" id="5_uj2er"]
 

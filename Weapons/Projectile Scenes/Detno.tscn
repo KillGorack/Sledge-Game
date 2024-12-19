@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://nvrjoc0qxoef"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://bwm66u3tk5o2" path="res://Physics/Physics_Projectile.tres" id="1_8g41m"]
-[ext_resource type="Script" path="res://Weapons/CollisionHandler.gd" id="2_jn40y"]
+[ext_resource type="Script" path="res://Weapons/_scripts/CollisionHandler.gd" id="2_jn40y"]
 [ext_resource type="Material" uid="uid://b3h8p1fpfpqyy" path="res://Materials/Rocket.material" id="3_x4sve"]
 [ext_resource type="ArrayMesh" uid="uid://fk78i4pvua3h" path="res://Models/rocket.obj" id="4_4dpd7"]
 [ext_resource type="Script" path="res://Weapons/Projectile Scenes/TrailEffect.gd" id="5_8rd21"]

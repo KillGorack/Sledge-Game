@@ -1,19 +1,18 @@
-[gd_scene load_steps=28 format=3 uid="uid://broaos8akuc5f"]
+[gd_scene load_steps=27 format=3 uid="uid://broaos8akuc5f"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://deru0wsiqkst8" path="res://Physics/Physics_Player.tres" id="1_b2t31"]
-[ext_resource type="Script" path="res://Creatives/health.gd" id="2_6a5ro"]
-[ext_resource type="Script" path="res://Creatives/Assets/NPC_Roamer.gd" id="2_ocby1"]
+[ext_resource type="Script" path="res://Creatives/_scripts/health.gd" id="2_6a5ro"]
+[ext_resource type="Script" path="res://Creatives/_scripts/NPC_Roamer.gd" id="2_ocby1"]
 [ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="4_7h6s0"]
 [ext_resource type="ArrayMesh" uid="uid://cjqvq2awiksjj" path="res://Crafts/Paladin/Geometry/Turret.obj" id="4_dcwka"]
 [ext_resource type="AudioStream" uid="uid://dksny4b258a2b" path="res://Sounds/Weapons/Explosion.wav" id="5_0ns04"]
 [ext_resource type="Material" uid="uid://clj5jh6v7iyl0" path="res://Materials/glitz_gray.material" id="6_hapyq"]
 [ext_resource type="Material" uid="uid://bb5au6shernuv" path="res://Materials/gun_metal.material" id="6_yn72c"]
 [ext_resource type="ArrayMesh" uid="uid://oighycb1gyxn" path="res://Crafts/Paladin/Geometry/Barrel.obj" id="7_t6iaa"]
-[ext_resource type="Script" path="res://Creatives/Assets/NPC_Shoot.gd" id="8_ybhwq"]
+[ext_resource type="Script" path="res://Creatives/_scripts/NPC_Shoot.gd" id="8_ybhwq"]
 [ext_resource type="Resource" uid="uid://dssl60dw2733b" path="res://Weapons/Projectile_Settings_NPC/Albatross.tres" id="9_ymg7y"]
 [ext_resource type="Resource" uid="uid://covsmla6kt3jp" path="res://Weapons/Projectile_Settings_NPC/Detno.tres" id="10_hu667"]
 [ext_resource type="Resource" uid="uid://dq37lxr0dcjon" path="res://Weapons/Projectile_Settings_NPC/Disruptor.tres" id="11_6q72c"]
-[ext_resource type="Resource" uid="uid://fcinftrj08lb" path="res://Weapons/Projectile_Settings_NPC/Force.tres" id="12_bkdck"]
 [ext_resource type="ArrayMesh" uid="uid://rdgp20h81cgg" path="res://Crafts/Paladin/Geometry/Bezels.obj" id="12_qlh1i"]
 [ext_resource type="ArrayMesh" uid="uid://bqfb5qxhfsu81" path="res://Crafts/Paladin/Geometry/Hover Pads.obj" id="14_f1aoy"]
 [ext_resource type="ArrayMesh" uid="uid://dlj55k56gf1dg" path="res://Crafts/Paladin/Geometry/Hull.obj" id="15_lqf4c"]
@@ -56,6 +55,7 @@ explosionSound = ExtResource("5_0ns04")
 life = 30.0
 armor = 30.0
 shield = 30.0
+VCredit = 1
 
 [node name="left_raycast" type="RayCast3D" parent="."]
 transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984807, 0.35, -0.178772, -1.25388)
@@ -79,7 +79,7 @@ mesh = ExtResource("4_dcwka")
 script = ExtResource("8_ybhwq")
 turret = NodePath(".")
 barrel = NodePath("Barrel")
-weapon_settings = Array[Resource]([ExtResource("9_ymg7y"), ExtResource("10_hu667"), ExtResource("11_6q72c"), ExtResource("12_bkdck")])
+weapon_settings = Array[Resource]([ExtResource("9_ymg7y"), ExtResource("10_hu667"), ExtResource("11_6q72c")])
 
 [node name="Barrel" type="MeshInstance3D" parent="Turret"]
 layers = 8

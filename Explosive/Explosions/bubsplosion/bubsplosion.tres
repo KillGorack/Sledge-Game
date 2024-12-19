@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d7qjucujkdx4"]
+
+[ext_resource type="Shader" path="res://Explosive/Explosions/Explosion_A/Explosion_A.gdshader" id="1_3titl"]
+[ext_resource type="Texture2D" uid="uid://c5yb4n0fs5ofh" path="res://Textures/Explosion/FlipBook.png" id="2_0gdbn"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_3titl")
+shader_parameter/frame_size = Vector2(0.167, 0.167)
+shader_parameter/columns = 6
+shader_parameter/rows = 6
+shader_parameter/frame = null
+shader_parameter/specular_intensity = 1.0
+shader_parameter/glossiness = 1.0
+shader_parameter/detail_mix = 1.0
+shader_parameter/color1 = Color(1, 0.5, 0, 1)
+shader_parameter/color2 = Color(1, 0, 0, 1)
+shader_parameter/color3 = Color(1, 1, 1, 1)
+shader_parameter/texture_sheet = ExtResource("2_0gdbn")
+shader_parameter/emission_map = ExtResource("2_0gdbn")

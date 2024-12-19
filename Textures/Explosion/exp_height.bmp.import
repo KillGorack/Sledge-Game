@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://xlv1dw3fiskx"
 path.s3tc="res://.godot/imported/exp_height.bmp-f4022737c70b69f5f95e2f7ae8cb98a4.s3tc.ctex"
+path.etc2="res://.godot/imported/exp_height.bmp-f4022737c70b69f5f95e2f7ae8cb98a4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/Explosion/exp_height.bmp"
-dest_files=["res://.godot/imported/exp_height.bmp-f4022737c70b69f5f95e2f7ae8cb98a4.s3tc.ctex"]
+dest_files=["res://.godot/imported/exp_height.bmp-f4022737c70b69f5f95e2f7ae8cb98a4.s3tc.ctex", "res://.godot/imported/exp_height.bmp-f4022737c70b69f5f95e2f7ae8cb98a4.etc2.ctex"]
 
 [params]
 

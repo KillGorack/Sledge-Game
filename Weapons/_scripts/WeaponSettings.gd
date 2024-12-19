@@ -27,9 +27,7 @@ enum WeaponType { Default, Force, Pierce, Explosive, Bounce }
 @export var projectile_prefab: PackedScene
 @export var explosion_prefab: PackedScene
 @export var bullet_hole_prefab: PackedScene
-@export var muzzle_flash_prefab: PackedScene
 
-@export var muzzle_flash_duration: float = 0.0
 @export var projectile_count_capacity: float = 1.0
 @export var projectile_count_actual: float = 1.0
 @export var projectile_count: int = 1
@@ -43,12 +41,11 @@ enum WeaponType { Default, Force, Pierce, Explosive, Bounce }
 @export var bi_directional: bool = false
 @export var hit_points: float = 0.0
 @export var cool_down: float = 0.5
-@export var launch_offset: Vector3 = Vector3.ZERO
+@export var launch_offset: float = -0.5
 @export var projectile_fire_delay: float = 0.0
 @export var projectile_destruction_delay: float = 0.0
 @export var mass: float = 1.0
 @export var use_gravity: bool = false
-@export var light_color: Color = Color(1, 1, 1)
 @export var launch_sound: AudioStream
 @export var hit_sound: AudioStream
 

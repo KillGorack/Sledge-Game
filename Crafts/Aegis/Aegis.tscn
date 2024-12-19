@@ -1,3 +1,390 @@
-[gd_scene format=3 uid="uid://cpwgpqqx5r6od"]
+[gd_scene load_steps=33 format=3 uid="uid://cpwgpqqx5r6od"]
 
-[node name="rudrud" type="Node3D"]
+[ext_resource type="Script" path="res://Crafts/_scripts/movement.gd" id="1_ee526"]
+[ext_resource type="Material" uid="uid://clj5jh6v7iyl0" path="res://Materials/glitz_gray.material" id="1_jyugw"]
+[ext_resource type="PhysicsMaterial" uid="uid://deru0wsiqkst8" path="res://Physics/Physics_Player.tres" id="2_6sxpw"]
+[ext_resource type="ArrayMesh" uid="uid://b80bbv1bi6wnx" path="res://Crafts/Aegis/Turret.obj" id="2_dsu8m"]
+[ext_resource type="Material" uid="uid://bb5au6shernuv" path="res://Materials/gun_metal.material" id="3_dgnsm"]
+[ext_resource type="Script" path="res://Crafts/_scripts/health.gd" id="3_eoveb"]
+[ext_resource type="Script" path="res://Crafts/_scripts/power_feed.gd" id="4_jy1o1"]
+[ext_resource type="ArrayMesh" uid="uid://dnwuorh835bx3" path="res://Crafts/Aegis/Barrel.obj" id="4_n8ilq"]
+[ext_resource type="Script" path="res://Weapons/_scripts/mine_layer.gd" id="5_5xgqu"]
+[ext_resource type="ArrayMesh" uid="uid://826t5exh0v72" path="res://Crafts/Aegis/Body.obj" id="5_yykkk"]
+[ext_resource type="ArrayMesh" uid="uid://bnkeywdh4v6y0" path="res://Crafts/Aegis/Tracks.obj" id="6_jp3o6"]
+[ext_resource type="Resource" uid="uid://b1v0bkr5tqqtn" path="res://Weapons/Mine_Settings/DetnoMine.tres" id="6_wi5jb"]
+[ext_resource type="Resource" uid="uid://ycpld2m1l5an" path="res://Weapons/Mine_Settings/ForceWave.tres" id="7_f0b7i"]
+[ext_resource type="Resource" uid="uid://bmlj7n1wkbi8x" path="res://Weapons/Mine_Settings/freeze_mine.tres" id="8_ltp8t"]
+[ext_resource type="AudioStream" uid="uid://d0d4pvsfakwo7" path="res://Sounds/Engine Sounds/vehicle.wav" id="9_qwbfr"]
+[ext_resource type="Script" path="res://Crafts/_scripts/Turret.gd" id="12_8qt2c"]
+[ext_resource type="Resource" uid="uid://bsfkphymm8m2j" path="res://Weapons/Projectile_Settings/Directed Energy.tres" id="15_ldp3q"]
+[ext_resource type="Script" path="res://Weapons/_scripts/shoot.gd" id="15_sqmq3"]
+[ext_resource type="Script" path="res://Crafts/_scripts/Stats.gd" id="16_xj1u6"]
+[ext_resource type="Script" path="res://Crafts/_scripts/hud.gd" id="17_b07pb"]
+[ext_resource type="Script" path="res://Crafts/_scripts/spedometer.gd" id="18_fvmo3"]
+[ext_resource type="Resource" uid="uid://3uwoulc5cpq3" path="res://Weapons/Projectile_Settings/Detno.tres" id="18_fyhao"]
+[ext_resource type="Script" path="res://Crafts/_scripts/powermeter.gd" id="19_ca0p7"]
+[ext_resource type="Script" path="res://UI/_scripts/crosshairs.gd" id="20_p5iwy"]
+[ext_resource type="Texture2D" uid="uid://cnf121uecbsvr" path="res://UI/Graphics/Circle_(transparent).png" id="21_pxuip"]
+[ext_resource type="Script" path="res://Crafts/_scripts/radar.gd" id="22_ef4q0"]
+[ext_resource type="Resource" uid="uid://b6q41js1vtad3" path="res://Weapons/Projectile_Settings/Howitzer.tres" id="22_fbjy6"]
+[ext_resource type="Resource" uid="uid://dtnbonq5t6ay7" path="res://Weapons/Projectile_Settings/Nuclear.tres" id="23_ceg7e"]
+[ext_resource type="Texture2D" uid="uid://268cdcw8dy0" path="res://Weapons/Icons/Detno.png" id="23_xioah"]
+[ext_resource type="PackedScene" uid="uid://ckvics5bu7nu7" path="res://Weapons/Projectile Scenes/target_marker.tscn" id="25_03jae"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_peni3"]
+points = PackedVector3Array(0.454531, -0.108419, 0.818855, 0.204431, 0.0432991, 0.410391, -0.445508, -0.108419, 0.823945, 0.454531, -0.186103, 0.818855, 0.445634, -0.229594, -0.789869, 0.445545, -0.108419, -0.801003, 0.202207, 0.0432991, -0.00125366, 0.112701, 0.076088, 0.089251, 0.113947, 0.076088, 0.321, -0.11044, 0.076088, 0.322273, -0.199946, 0.0432991, 0.412618, -0.445686, -0.247872, 0.799291, -0.445597, -0.229594, 0.812652, -0.445508, -0.186103, 0.823945, -0.202259, 0.0432991, 0.000973165, -0.454405, -0.108419, -0.796072, -0.454405, -0.239134, -0.778894, 0.454442, -0.197406, 0.818219, 0.454442, -0.20855, 0.815992, 0.454442, -0.219332, 0.812493, 0.454442, -0.229594, 0.807721, 0.454264, -0.262222, 0.776864, 0.453552, -0.324994, 0.64389, 0.445723, -0.255609, -0.768237, 0.445634, -0.239134, -0.783825, -0.454405, -0.229594, -0.784938, 0.445545, -0.219332, -0.7948, 0.445545, -0.20855, -0.798299, 0.445545, -0.197406, -0.800367, 0.445545, -0.186103, -0.801003, 0.446524, -0.324994, -0.626197, -0.00732166, 0.0309933, -0.720042, -0.000737727, 0.0309933, -0.720042, 0.00566825, 0.0295904, -0.720201, -0.111775, 0.076088, 0.0905234, -0.445597, -0.239134, 0.806608, -0.446664, -0.332891, 0.620667, -0.445775, -0.262222, 0.781794, -0.445686, -0.255609, 0.79102, 0.454353, -0.247872, 0.79436, -0.445508, -0.219332, 0.817424, -0.445508, -0.20855, 0.821082, -0.445508, -0.197406, 0.82315, -0.0137276, 0.0295904, -0.720042, -0.454405, -0.186103, -0.796072, 0.445634, -0.247872, -0.776508, -0.454316, -0.247872, -0.771577, -0.454227, -0.262222, -0.754081, -0.453515, -0.324994, -0.621266, 0.454353, -0.239134, 0.801677, -0.445775, -0.267674, 0.771933, 0.454175, -0.267674, 0.766843, 0.454264, -0.255609, 0.786089, -0.446487, -0.324994, 0.64898, -0.446487, -0.328642, 0.639914, 0.453463, -0.328642, 0.634824, 0.453374, -0.332891, 0.615737, 0.446613, -0.331288, -0.607587, -0.454227, -0.255609, -0.763306, 0.445812, -0.267674, -0.74915, 0.445723, -0.262222, -0.759011, -0.454405, -0.219332, -0.78971, -0.454405, -0.20855, -0.793209, -0.454405, -0.197406, -0.795436, 0.446524, -0.328642, -0.617131, -0.446664, -0.333412, 0.610965, -0.446575, -0.331288, 0.63037, -0.453337, -0.332891, -0.592954, -0.453248, -0.333412, -0.583092, -0.454138, -0.267674, -0.744219, -0.453426, -0.328642, -0.612041, 0.453374, -0.331288, 0.625439, 0.453285, -0.333412, 0.605875, 0.446702, -0.333412, -0.588182, -0.453337, -0.331288, -0.602656, 0.446613, -0.332891, -0.597884)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qh65f"]
+size = Vector3(0.906041, 0.2, 1.62317)
+
+[node name="Aegis" type="RigidBody3D" node_paths=PackedStringArray("speedometer_graphic") groups=["Player"]]
+collision_mask = 16777210
+mass = 75.0
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_ee526")
+MAX_SPEED = 3.5
+ACCELERATION = 750.0
+TURN_SPEED = 2.5
+TURN_ACCELERATION = 10.0
+UNTURTLE_FORCE = 200.0
+THRUSTER_FORCE = 1100.0
+ROTATION_SPEED = 2.0
+physics_material = ExtResource("2_6sxpw")
+engine_audio_path = NodePath("Engine Sound")
+speedometer_graphic = NodePath("HUD/Spedometer")
+
+[node name="Health" type="Node3D" parent="." node_paths=PackedStringArray("hud_shields", "hud_armor", "hud_health", "hud_draw_target")]
+script = ExtResource("3_eoveb")
+life = 400.0
+armor = 400.0
+shield = 400.0
+hud_shields = NodePath("../HUD/Defence/lbl_Shields")
+hud_armor = NodePath("../HUD/Defence/lbl_Armor")
+hud_health = NodePath("../HUD/Defence/lbl_Health")
+hud_draw_target = NodePath("../HUD/Defence")
+
+[node name="PowerFeed" type="Node3D" parent="." node_paths=PackedStringArray("powermeter_graphic")]
+script = ExtResource("4_jy1o1")
+powermeter_graphic = NodePath("../HUD/Powermeter")
+powerCapacity = 300.0
+powerGainRate = 25.0
+maxEffectDistance = 25.0
+
+[node name="Mines" type="Node3D" parent="." node_paths=PackedStringArray("lbl_mines")]
+script = ExtResource("5_5xgqu")
+mine_settings_array = Array[Resource]([ExtResource("6_wi5jb"), ExtResource("7_f0b7i"), ExtResource("8_ltp8t")])
+lbl_mines = NodePath("../HUD/lbl_mines")
+
+[node name="MineCast" type="RayCast3D" parent="Mines"]
+target_position = Vector3(0, -0.5, 0)
+collision_mask = 10
+
+[node name="Turret" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_jyugw")
+mesh = ExtResource("2_dsu8m")
+script = ExtResource("12_8qt2c")
+
+[node name="Barrel" type="MeshInstance3D" parent="Turret" node_paths=PackedStringArray("power_node")]
+material_override = ExtResource("3_dgnsm")
+mesh = ExtResource("4_n8ilq")
+skeleton = NodePath("../..")
+script = ExtResource("15_sqmq3")
+weapon_settings_array = Array[Resource]([ExtResource("15_ldp3q"), ExtResource("23_ceg7e"), ExtResource("18_fyhao"), ExtResource("22_fbjy6")])
+target_scene = ExtResource("25_03jae")
+power_node = NodePath("../../PowerFeed")
+
+[node name="Camera3D" type="Camera3D" parent="Turret/Barrel"]
+cull_mask = 1048574
+
+[node name="TargetCast" type="RayCast3D" parent="Turret/Barrel"]
+target_position = Vector3(0, 0, -10000)
+collision_mask = 65534
+
+[node name="Body" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_jyugw")
+mesh = ExtResource("5_yykkk")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Body"]
+material_override = ExtResource("3_dgnsm")
+mesh = ExtResource("6_jp3o6")
+skeleton = NodePath("../..")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_peni3")
+
+[node name="Engine Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qwbfr")
+pitch_scale = 0.01
+autoplay = true
+
+[node name="GroundCheck" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00482178, -0.289917, -0.432846)
+collision_mask = 254
+
+[node name="GroundCheck" type="CollisionShape3D" parent="GroundCheck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0048655, 0, 0.442841)
+shape = SubResource("BoxShape3D_qh65f")
+
+[node name="HUD" type="Control" parent="." node_paths=PackedStringArray("score_label", "falls_label", "vanquishes_label", "level_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("16_xj1u6")
+score_label = NodePath("score_label")
+falls_label = NodePath("falls_label")
+vanquishes_label = NodePath("vanquishes_label")
+level_label = NodePath("level_label")
+
+[node name="Defence" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.5
+offset_top = -185.0
+offset_right = 87.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("17_b07pb")
+
+[node name="lbl_Shields" type="Label" parent="HUD/Defence"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.5
+offset_top = -117.0
+offset_right = 27.5
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "S: 100"
+horizontal_alignment = 1
+
+[node name="lbl_Armor" type="Label" parent="HUD/Defence"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.5
+offset_top = -100.0
+offset_right = 27.5
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "A: 100"
+horizontal_alignment = 1
+
+[node name="lbl_Health" type="Label" parent="HUD/Defence"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.5
+offset_top = -84.0
+offset_right = 27.5
+offset_bottom = -61.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "H: 100"
+horizontal_alignment = 1
+
+[node name="Spedometer" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -185.0
+offset_right = 150.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("18_fvmo3")
+
+[node name="Powermeter" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -185.0
+offset_right = 150.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("19_ca0p7")
+
+[node name="CrossHairs" type="CenterContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("20_p5iwy")
+
+[node name="Radar" type="TextureRect" parent="HUD"]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 250.0
+grow_horizontal = 0
+texture = ExtResource("21_pxuip")
+expand_mode = 1
+script = ExtResource("22_ef4q0")
+recon_dot_color = Color(1, 1, 1, 1)
+mine_dot_color = Color(0, 0, 1, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HUD/Radar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="HUD/Radar/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(240, 240)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="HUD/Radar/SubViewportContainer/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WeaponIcon" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.5
+offset_top = -252.0
+offset_right = -26.5
+offset_bottom = -207.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("23_xioah")
+expand_mode = 2
+
+[node name="lbl_rounds" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.5
+offset_top = -205.0
+offset_right = -1.5
+offset_bottom = -182.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0 / 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbl_mines" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.5
+offset_top = -205.0
+offset_right = 93.5
+offset_bottom = -182.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0 / 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MineIcon" type="TextureRect" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 23.5
+offset_top = -252.0
+offset_right = 68.5
+offset_bottom = -207.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("23_xioah")
+expand_mode = 2
+
+[node name="score_label" type="Label" parent="HUD"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 225.0
+offset_bottom = 30.0
+text = "Score"
+
+[node name="falls_label" type="Label" parent="HUD"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 27.0
+offset_right = 225.0
+offset_bottom = 50.0
+text = "Falls"
+
+[node name="vanquishes_label" type="Label" parent="HUD"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 47.0
+offset_right = 225.0
+offset_bottom = 70.0
+text = "Vanquishes"
+
+[node name="level_label" type="Label" parent="HUD"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 67.0
+offset_right = 225.0
+offset_bottom = 90.0
+text = "Level"

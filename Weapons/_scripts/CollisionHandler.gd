@@ -27,7 +27,15 @@ func _ready():
 		self.linear_velocity = linear_velocity
 		self.angular_velocity = angular_velocity
 	if weapon_settings.targeting_system == true:
-		selectTarget(weapon_settings.target_system_scan_radius, 20)
+		guidedTarget = Utilities.select_target(
+			global_transform.origin,
+			-global_transform.basis.z,
+			weapon_settings.target_system_scan_radius, 
+			15, 
+			weapon_settings.target_system_group, 
+			weapon_settings.targeting_system_require_marker) 
+
+
 
 
 
@@ -102,7 +110,12 @@ func handleCollision():
 			setHitScene()
 			destroy = handlePierce()
 		weapon_settings.WeaponType.Explosive:
-			var result = collectBodies(450)
+			var result = Utilities.collect_bodies(
+				get_world_3d().direct_space_state, 
+				global_transform.origin, 
+				450, 
+				weapon_settings.explosive_force_distance, 
+				weapon_settings.target_system_group)
 			applyAOEDamage(result)
 			applyExplosiveForces(result)
 		weapon_settings.WeaponType.Bounce:
@@ -228,7 +241,13 @@ func handlePierce() -> bool:
 
 
 func handleBounce():
-	var bodies = collectBodies(100, weapon_settings.target_system_scan_radius, 360, exclusions)
+	var bodies = Utilities.collect_bodies(
+		get_world_3d().direct_space_state, 
+		global_transform.origin, 
+		100, 
+		weapon_settings.target_system_scan_radius, 
+		weapon_settings.target_system_group)
+
 	if bodies.size() > 0 and RicochetCount <= weapon_settings.bounce_count:
 		RicochetCount += 1 
 		for item in bodies:
@@ -252,25 +271,7 @@ func play_hit_sound() -> void:
 
 
 
-func collectBodies(n, dist = weapon_settings.explosive_force_distance, fov_angle: float = 360.0, _Bodyexclusions = []):
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsShapeQueryParameters3D.new()
-	query.transform = Transform3D(Basis(), global_transform.origin)
-	query.shape = SphereShape3D.new()
-	query.shape.radius = dist
-	var result = space_state.intersect_shape(query, n)
-	var filtered_result = []
-	for item in result:
-		if item.collider.is_in_group(weapon_settings.target_system_group):
-			if fov_angle < 360.0:
-				var forward_dir = -global_transform.basis.z.normalized()
-				var to_object = (item.collider.global_transform.origin - global_transform.origin).normalized()
-				var angle_to_object = rad_to_deg(forward_dir.angle_to(to_object))
-				if angle_to_object <= fov_angle / 2:
-					filtered_result.append(item)
-			else:
-				filtered_result.append(item)
-	return filtered_result
+
 
 
 
@@ -305,8 +306,8 @@ func handleGuided(delta):
 	if guidedTarget and is_instance_valid(guidedTarget): 
 		guide_to_target(delta)
 		return
-	if not weapon_settings.targeting_system_require_marker:
-		selectTarget(weapon_settings.target_system_scan_radius, 45)
+
+
 
 
 
@@ -316,8 +317,12 @@ func guide_to_target(delta: float):
 	if guidedTarget and is_instance_valid(guidedTarget):
 		var direction_to_target = (guidedTarget.global_transform.origin - global_transform.origin).normalized()
 		var missile_forward = -global_transform.basis.z
-		var rotation_axis = missile_forward.cross(direction_to_target).normalized()
-		var rotation_delta = Quaternion(rotation_axis.normalized(), missile_forward.angle_to(direction_to_target) * weapon_settings.target_rotation_speed * delta).normalized()
+		var rotation_axis = missile_forward.cross(direction_to_target)
+		if rotation_axis.length() == 0:
+			rotation_axis = Vector3.UP
+		else:
+			rotation_axis = rotation_axis.normalized()
+		var rotation_delta = Quaternion(rotation_axis, missile_forward.angle_to(direction_to_target) * weapon_settings.target_rotation_speed * delta).normalized()
 		global_transform.basis = (Basis(rotation_delta) * global_transform.basis).orthonormalized()
 		linear_velocity = -global_transform.basis.z * weapon_settings.projectile_speed
 

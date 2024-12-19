@@ -18,8 +18,10 @@ config/icon="res://sledge.svg"
 
 [autoload]
 
-UserData="*res://UI/UserData.gd"
+UserData="*res://UI/_scripts/UserData.gd"
 Utilities="*res://UTILS/Utilities.gd"
+UserDataApi="*res://UI/_scripts/UserDataAPI.gd"
+Creds="*res://UTILS/Creds.gd"
 
 [display]
 
@@ -105,7 +107,7 @@ paintTarget={
 }
 display_tree={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":84,"key_label":0,"unicode":116,"location":0,"echo":false,"script":null)
 ]
 }
 RadarZoom={
@@ -140,11 +142,11 @@ pointing/emulate_touch_from_mouse=true
 
 [physics]
 
-common/physics_ticks_per_second=120
-common/max_physics_steps_per_frame=16
+common/max_physics_steps_per_frame=4
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 anti_aliasing/quality/msaa_3d=1
 anti_aliasing/quality/screen_space_aa=1
 anti_aliasing/quality/use_taa=true

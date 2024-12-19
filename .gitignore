@@ -3,3 +3,4 @@
 /android/
 build/
 UI/APIKeys/
+UTILS/Creds.gd

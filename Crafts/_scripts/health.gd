@@ -19,6 +19,7 @@ var parent_node = get_parent()
 var regeneration_timer: Timer
 var is_regenerating: bool = false
 var on_repair_pad: bool = false
+var distructo: bool = false
 
 func _ready() -> void:
 	shield_original = shield
@@ -27,19 +28,19 @@ func _ready() -> void:
 	parent_node = get_parent()
 	_update_hud()
 	_draw_hud_circle()
-	
-	# Initialize and start the regeneration timer
 	regeneration_timer = Timer.new()
 	regeneration_timer.set_wait_time(regeneration_delay)
 	regeneration_timer.set_one_shot(true)
 	regeneration_timer.connect("timeout", Callable(self, "_on_regeneration_timeout"))
 	add_child(regeneration_timer)
 
+
+
+
+
 func _process(_delta: float) -> void:
 	if global_transform.origin.y < -25:
 		destroy_self()
-	
-	# Regenerate health, armor, and then shield if on repair pad
 	if on_repair_pad:
 		if life < life_original:
 			life = min(life_original, life + regeneration_rate * _delta)
@@ -49,22 +50,27 @@ func _process(_delta: float) -> void:
 			shield = min(shield_original, shield + regeneration_rate * _delta)
 		_update_hud()
 		_draw_hud_circle()
-
-	# Regenerate shield if the timer has triggered regeneration
 	elif is_regenerating and shield < shield_original:
 		shield = min(shield_original, shield + regeneration_rate * _delta)
 		_update_hud()
 		_draw_hud_circle()
+
+
+
+
 
 func apply_direct_damage(damage: float) -> void:
 	apply_damage(damage)
 	if life <= 0:
 		destroy_self()
 
+
+
+
+
 func apply_damage(damage: float) -> void:
 	regeneration_timer.start() # Restart the timer on taking damage
 	is_regenerating = false    # Stop regeneration when taking damage
-	
 	if shield > 0:
 		shield -= damage
 		if shield <= 0:
@@ -93,12 +99,21 @@ func apply_damage(damage: float) -> void:
 		if parent_node and parent_node.has_method("setFreezeState"):
 			parent_node.call("setFreezeState", false)
 
+
+
+
+
 func destroy_self() -> void:
 	var main_menu = get_tree().get_root().get_node("MainMenu")
 	if main_menu:
 		var load_group = main_menu.get_node_or_null("LoadGroup")
-		if load_group and load_group.has_method("playerDestroyed"):
+		if load_group and load_group.has_method("playerDestroyed") and distructo == false:
 			load_group.call("playerDestroyed")
+			distructo = true
+
+
+
+
 
 func _update_hud() -> void:
 	if hud_shields:
@@ -108,20 +123,29 @@ func _update_hud() -> void:
 	if hud_health:
 		hud_health.text = "H: %d" % int(life)
 
+
+
+
+
 func _draw_hud_circle() -> void:
 	if hud_draw_target and hud_draw_target is Control:
 		var shield_progress = shield / shield_original
 		var armor_progress = armor / armor_original
 		var life_progress = life / life_original
-
 		hud_draw_target.set_circle_properties(shield_progress, "shield")
 		hud_draw_target.set_circle_properties(armor_progress, "armor")
 		hud_draw_target.set_circle_properties(life_progress, "life")
 
-# Timer timeout callback to start regeneration
+
+
+
+
 func _on_regeneration_timeout() -> void:
 	is_regenerating = true
 
-# Function to set if the player is on the repair pad
+
+
+
+
 func set_on_repair_pad(value: bool) -> void:
 	on_repair_pad = value

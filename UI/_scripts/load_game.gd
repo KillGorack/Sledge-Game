@@ -76,9 +76,14 @@ func populate_item_lists() -> void:
 	crafts_dropdown.clear()
 	for level in levels:
 		levels_dropdown.add_item(level.get_file().get_basename())
+	if levels_dropdown.get_item_count() > 0:
+		levels_dropdown.select(0)
 	for craft in crafts:
 		crafts_dropdown.add_item(craft.get_file().get_basename())
+	if crafts_dropdown.get_item_count() > 0:
+		crafts_dropdown.select(0)
 	populate_user_info()
+
 
 
 
@@ -166,14 +171,20 @@ func junkRemover() -> void:
 		node.queue_free()
 	for node in get_tree().get_nodes_in_group("Mine"):
 		node.queue_free()
+		
 
 func playerDestroyed():
+		UserData.game_falls += 1
+		UserData.calculate_level()
+		UserDataApi.send_data_to_server()
 		unload_current_world_and_craft()
 		get_parent().show()
 		music_player.play()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("MainMenu"):
+		
+		UserDataApi.send_data_to_server()
 		unload_current_world_and_craft()
 		get_parent().show()
 		music_player.play()

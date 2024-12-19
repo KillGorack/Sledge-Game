@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bbpqsd57otadw"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://bwm66u3tk5o2" path="res://Physics/Physics_Projectile.tres" id="1_1s6rq"]
-[ext_resource type="Script" path="res://Weapons/CollisionHandler.gd" id="2_58lft"]
-[ext_resource type="Material" uid="uid://dp1invqoqsg7u" path="res://Materials/Rocket_PINK.material" id="3_kn26g"]
+[ext_resource type="Script" path="res://Weapons/_scripts/CollisionHandler.gd" id="2_58lft"]
+[ext_resource type="Material" uid="uid://b3h8p1fpfpqyy" path="res://Materials/Rocket.material" id="3_qd6p2"]
 [ext_resource type="ArrayMesh" uid="uid://fk78i4pvua3h" path="res://Models/rocket.obj" id="4_qp5at"]
 [ext_resource type="Script" path="res://Weapons/Projectile Scenes/TrailEffect.gd" id="5_5t3yx"]
 
@@ -28,7 +28,7 @@ script = ExtResource("2_58lft")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 layers = 4
-material_override = ExtResource("3_kn26g")
+material_override = ExtResource("3_qd6p2")
 mesh = ExtResource("4_qp5at")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -44,37 +44,41 @@ target_position = Vector3(0, 0, -0.65)
 collision_mask = 254
 
 [node name="Trail3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0354524, 0, 0.16933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, 0.15)
 layers = 1023
 material_override = SubResource("StandardMaterial3D_l8lrc")
 script = ExtResource("5_5t3yx")
 _lifeSpan = 0.2
 _startColor = Color(1, 0, 0, 1)
 _endColor = Color(1, 0, 0, 0)
+_fromWidth = 0.075
 
 [node name="Trail3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0354524, 0, 0.16933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.15)
+layers = 1023
+material_override = SubResource("StandardMaterial3D_l8lrc")
+script = ExtResource("5_5t3yx")
+_lifeSpan = 0.2
+_startColor = Color(0, 0, 1, 1)
+_endColor = Color(0, 0, 1, 0)
+_fromWidth = 0.075
+
+[node name="Trail3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0, 0.15)
 layers = 1023
 material_override = SubResource("StandardMaterial3D_l8lrc")
 script = ExtResource("5_5t3yx")
 _lifeSpan = 0.2
 _startColor = Color(1, 0, 0, 1)
 _endColor = Color(1, 0, 0, 0)
-
-[node name="Trail3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0319503, 0, 0.16933)
-layers = 1023
-material_override = SubResource("StandardMaterial3D_l8lrc")
-script = ExtResource("5_5t3yx")
-_lifeSpan = 0.2
-_startColor = Color(0, 0, 1, 1)
-_endColor = Color(1, 0, 0, 0)
+_fromWidth = 0.075
 
 [node name="Trail3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.0319503, 0, 0.16933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0.15)
 layers = 1023
 material_override = SubResource("StandardMaterial3D_l8lrc")
 script = ExtResource("5_5t3yx")
 _lifeSpan = 0.2
 _startColor = Color(0, 0, 1, 1)
-_endColor = Color(1, 0, 0, 0)
+_endColor = Color(0, 0, 1, 0)
+_fromWidth = 0.075

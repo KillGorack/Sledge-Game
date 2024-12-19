@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://6ia6c7vaqgn6"]
 
-[ext_resource type="Script" path="res://Weapons/MineHandler.gd" id="1_q5d5v"]
+[ext_resource type="Script" path="res://Weapons/_scripts/MineHandler.gd" id="1_q5d5v"]
 [ext_resource type="Material" uid="uid://nww7en7lvg17" path="res://Materials/water.material" id="2_nep8n"]
 [ext_resource type="ArrayMesh" uid="uid://dlydibeuwmh7c" path="res://Models/Proximity Mine Hex.obj" id="3_eldju"]
 

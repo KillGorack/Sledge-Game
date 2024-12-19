@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=4 uid="uid://qeqsd4mhqty3"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://dh2rif6n2skrg" path="res://Physics/Physics_Floor.tres" id="1_b6eyv"]
-[ext_resource type="Script" path="res://Creatives/health.gd" id="2_r83hx"]
-[ext_resource type="Script" path="res://Creatives/Assets/physics.gd" id="2_wrefp"]
+[ext_resource type="Script" path="res://Creatives/_scripts/health.gd" id="2_r83hx"]
+[ext_resource type="Script" path="res://Creatives/_scripts/physics.gd" id="2_wrefp"]
 [ext_resource type="Material" uid="uid://di2od31wueoji" path="res://Materials/stone_light.material" id="3_qwwqp"]
 [ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="3_sl6nw"]
 [ext_resource type="Material" uid="uid://mqag85jtsael" path="res://Materials/ceiling_ligted.material" id="4_q1s3o"]
@@ -197,6 +197,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 1.5)
 script = ExtResource("2_r83hx")
 explosion = ExtResource("3_sl6nw")
 explosionSound = ExtResource("5_lmaly")
+life = 33.0
+armor = 33.0
+shield = 33.0
 Interactive = true
 
 [node name="Collider" type="CollisionShape3D" parent="." groups=["Driveable"]]

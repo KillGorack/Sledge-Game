@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="MineSettings" load_steps=6 format=3 uid="uid://bmlj7n1wkbi8x"]
 
-[ext_resource type="Script" path="res://Weapons/MineSettings.gd" id="1_5dd0l"]
+[ext_resource type="Script" path="res://Weapons/_scripts/MineSettings.gd" id="1_5dd0l"]
 [ext_resource type="PackedScene" uid="uid://c0g6dtgokldmd" path="res://Explosive/Hit Marks/cracked.tscn" id="1_6til3"]
 [ext_resource type="PackedScene" uid="uid://bvjinfvqppheq" path="res://Explosive/Sparks_By_Color/spark_blue.tscn" id="2_cx7pa"]
-[ext_resource type="Texture2D" uid="uid://cq4ec10xsricx" path="res://Weapons/Icons/Dekentifier.png" id="3_dltyw"]
+[ext_resource type="Texture2D" uid="uid://x2nsm3ns4p15" path="res://Weapons/Icons/Freeze Mine.png" id="3_k5s2g"]
 [ext_resource type="PackedScene" uid="uid://6ia6c7vaqgn6" path="res://Weapons/Mines_Scenes/freeze_mine.tscn" id="4_45urk"]
 
 [resource]
 script = ExtResource("1_5dd0l")
 mine_name = "Freeze Mine"
-mine_icon = ExtResource("3_dltyw")
+mine_icon = ExtResource("3_k5s2g")
 level_req = 1
 max_count = 1
 target_group = "Creative"

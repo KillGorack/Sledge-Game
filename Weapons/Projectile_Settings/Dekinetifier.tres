@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bvjinfvqppheq" path="res://Explosive/Sparks_By_Color/spark_blue.tscn" id="1_xpgje"]
 [ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="2_7jxup"]
 [ext_resource type="PackedScene" uid="uid://xr520jktmt5g" path="res://Weapons/Projectile Scenes/Force.tscn" id="2_jfpj3"]
-[ext_resource type="Script" path="res://Weapons/WeaponSettings.gd" id="3_bmjgt"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="3_bmjgt"]
 [ext_resource type="AudioStream" uid="uid://dlcv0qtnhvyrt" path="res://Sounds/Weapons/Launch.mp3" id="3_dxjo1"]
 [ext_resource type="Texture2D" uid="uid://cq4ec10xsricx" path="res://Weapons/Icons/Dekentifier.png" id="6_gs8en"]
 
@@ -41,7 +41,7 @@ projectile_force = 0.0
 bi_directional = false
 hit_points = 0.0
 cool_down = 2.0
-launch_offset = Vector3(0, 0, 0)
+launch_offset = Vector3(0, 0, -0.5)
 projectile_fire_delay = 0.0
 projectile_destruction_delay = 0.0
 mass = 0.0

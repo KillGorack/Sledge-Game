@@ -33,11 +33,11 @@ func lay_mine():
 			get_parent().get_parent().add_child(mine_instance)
 			mine_instance.global_transform.origin = collision_point
 			var up_vector = collision_normal.normalized()
-			var transform = mine_instance.global_transform
-			transform.basis.y = up_vector
-			transform.basis.x = Vector3(1, 0, 0).cross(up_vector).normalized()
-			transform.basis.z = up_vector.cross(transform.basis.x).normalized()
-			mine_instance.global_transform = transform
+			var mine_transform = mine_instance.global_transform
+			mine_transform.basis.y = up_vector
+			mine_transform.basis.x = Vector3(1, 0, 0).cross(up_vector).normalized()
+			mine_transform.basis.z = up_vector.cross(mine_transform.basis.x).normalized()
+			mine_instance.global_transform = mine_transform
 			if current_mine_settings.lay_sound:
 				var audio_player = AudioStreamPlayer.new()
 				audio_player.stream = current_mine_settings.lay_sound

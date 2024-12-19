@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponSettings" load_steps=5 format=3 uid="uid://c8lpdri1yqor8"]
 
 [ext_resource type="AudioStream" uid="uid://kkwg5i1ghnth" path="res://Sounds/Weapons/Charge.wav" id="1_2rbss"]
-[ext_resource type="Script" path="res://Weapons/WeaponSettings.gd" id="1_aehnk"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="1_aehnk"]
 [ext_resource type="PackedScene" uid="uid://wxfv346idsqo" path="res://Weapons/Projectile Scenes/rail_gun.tscn" id="1_igpul"]
 [ext_resource type="Texture2D" uid="uid://75d54pth2rfc" path="res://Weapons/Icons/RailGun.png" id="4_v6nl2"]
 
@@ -38,7 +38,7 @@ projectile_force = 0.0
 bi_directional = false
 hit_points = 1000.0
 cool_down = 5.0
-launch_offset = Vector3(0, 0, 0)
+launch_offset = 0.0
 projectile_fire_delay = 2.46
 projectile_destruction_delay = 0.0
 mass = 1.0

@@ -26,9 +26,9 @@
 [ext_resource type="Material" uid="uid://clj5jh6v7iyl0" path="res://Materials/glitz_gray.material" id="24_x1r54"]
 [ext_resource type="Material" uid="uid://dqf3tu32bgtvn" path="res://Materials/structure.material" id="25_8h18a"]
 [ext_resource type="Material" uid="uid://bdqno5amsvn33" path="res://Materials/brick_muted.material" id="26_u8c7b"]
-[ext_resource type="Texture2D" uid="uid://5pvabpe3g8ql" path="res://skybox/AllSkyFree_Sky_AnotherPlanet_Equirect.png" id="27_f0cnf"]
-[ext_resource type="PackedScene" uid="uid://b8r8xa7vpsfux" path="res://Creatives/Assets/recon_pad.tscn" id="28_ddxpt"]
-[ext_resource type="PackedScene" uid="uid://c5l60lq4s4jcd" path="res://Creatives/Assets/recon_pad_static.tscn" id="28_swx1v"]
+[ext_resource type="Texture2D" uid="uid://5pvabpe3g8ql" path="res://Skybox/AllSkyFree_Sky_AnotherPlanet_Equirect.png" id="27_f0cnf"]
+[ext_resource type="PackedScene" uid="uid://b8r8xa7vpsfux" path="res://Creatives/ReconStations/recon_pad.tscn" id="28_ddxpt"]
+[ext_resource type="PackedScene" uid="uid://c5l60lq4s4jcd" path="res://Creatives/ReconStations/recon_pad_static.tscn" id="28_swx1v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bf382"]
 resource_name = "Ceiling.001"

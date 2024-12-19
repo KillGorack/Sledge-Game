@@ -52,35 +52,42 @@ func _physics_process(delta):
 func shoot_projectile():
 	if is_shooting:
 		return
+
 	if current_weapon_settings:
+
 		if power_node.getPower() < current_weapon_settings.power_consumption:
 			return
 		if current_weapon_settings.projectile_count_actual < current_weapon_settings.projectile_count and current_weapon_settings.projectile_count_capacity != 0:
 			return
+
 		is_shooting = true
 		current_weapon_settings.projectile_count_actual -= current_weapon_settings.projectile_count
+		play_launch_sound()
+
 		if current_weapon_settings.power_consumption > 0:
 			rounds.text = "Power"
 		else:
 			rounds.text = str(current_weapon_settings.projectile_count_actual) + " / " + str(current_weapon_settings.projectile_count_capacity)
+
 		power_node.spendPower(current_weapon_settings.power_consumption)
-		play_launch_sound()
+		
 		await get_tree().create_timer(current_weapon_settings.projectile_fire_delay).timeout
 		var angle_step = 360.0 / current_weapon_settings.projectile_count
+		var direction = camera.global_transform.basis.z.normalized()
+		var right = camera.global_transform.basis.x.normalized()
+		var up = camera.global_transform.basis.y.normalized()
+		var projectile_scene = current_weapon_settings.projectile_prefab
+		
 		for i in range(current_weapon_settings.projectile_count):
 			var angle = deg_to_rad(current_weapon_settings.projectile_start_angle + i * angle_step)
-			var direction = camera.global_transform.basis.z.normalized()
-			var right = camera.global_transform.basis.x.normalized()
-			var up = camera.global_transform.basis.y.normalized()
 			var offset = (right * cos(angle) + up * sin(angle)) * current_weapon_settings.projectile_spacing
-			var projectile_scene = current_weapon_settings.projectile_prefab
 			var projectile_instance = projectile_scene.instantiate()
 			if projectile_instance:
 				if projectile_instance.has_method("set_weapon_settings"):
 					projectile_instance.set_weapon_settings(current_weapon_settings)
 					shoot_timer = current_weapon_settings.cool_down
 				var spawn_transform = camera.global_transform
-				spawn_transform.origin += direction * -0.5 + offset
+				spawn_transform.origin += offset + (direction * current_weapon_settings.launch_offset)
 				projectile_instance.global_transform = spawn_transform
 				var initial_velocity = direction * current_weapon_settings.projectile_speed
 				projectile_instance.linear_velocity = initial_velocity
@@ -94,6 +101,8 @@ func shoot_projectile():
 
 
 func change_weapon():
+	if is_shooting:
+		return
 	current_weapon_index += 1
 	if current_weapon_index >= weapon_settings_array.size():
 		current_weapon_index = 0
@@ -129,6 +138,8 @@ func play_launch_sound() -> void:
 		
 		
 func place_target():
+	if is_shooting:
+		return
 	var existing_targets = get_tree().get_nodes_in_group("Target_Beacon")
 	if existing_targets.size() > 0:
 		return

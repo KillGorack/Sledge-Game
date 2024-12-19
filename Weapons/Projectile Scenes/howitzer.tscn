@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bb5au6shernuv" path="res://Materials/gun_metal.material" id="1_ur7kj"]
 [ext_resource type="PhysicsMaterial" uid="uid://bwm66u3tk5o2" path="res://Physics/Physics_Projectile.tres" id="1_x27fo"]
-[ext_resource type="Script" path="res://Weapons/CollisionHandler.gd" id="2_5suuv"]
+[ext_resource type="Script" path="res://Weapons/_scripts/CollisionHandler.gd" id="2_5suuv"]
 [ext_resource type="Script" path="res://Weapons/Projectile Scenes/TrailEffect.gd" id="4_cpqas"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c6lxp"]

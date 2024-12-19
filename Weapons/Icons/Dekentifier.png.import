@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cq4ec10xsricx"
 path.s3tc="res://.godot/imported/Dekentifier.png-e9a866919dda7ec762f6df2f24f9e092.s3tc.ctex"
+path.etc2="res://.godot/imported/Dekentifier.png-e9a866919dda7ec762f6df2f24f9e092.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Weapons/Icons/Dekentifier.png"
-dest_files=["res://.godot/imported/Dekentifier.png-e9a866919dda7ec762f6df2f24f9e092.s3tc.ctex"]
+dest_files=["res://.godot/imported/Dekentifier.png-e9a866919dda7ec762f6df2f24f9e092.s3tc.ctex", "res://.godot/imported/Dekentifier.png-e9a866919dda7ec762f6df2f24f9e092.etc2.ctex"]
 
 [params]
 

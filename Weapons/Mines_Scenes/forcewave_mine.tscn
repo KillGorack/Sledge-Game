@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://gvgi7oq23p26"]
 
-[ext_resource type="Script" path="res://Weapons/MineHandler.gd" id="1_0pmi0"]
+[ext_resource type="Script" path="res://Weapons/_scripts/MineHandler.gd" id="1_0pmi0"]
 [ext_resource type="Material" uid="uid://cj7h5gmt3lmnm" path="res://Materials/base_pad_blue.material" id="1_3qgth"]
 [ext_resource type="ArrayMesh" uid="uid://dlydibeuwmh7c" path="res://Models/Proximity Mine Hex.obj" id="2_uxq7k"]
 [ext_resource type="Material" uid="uid://cgfcprehhicsy" path="res://Materials/base_pad_red.material" id="3_23d6p"]

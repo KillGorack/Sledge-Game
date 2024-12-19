@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7itklo4mesky"]
 
 [ext_resource type="Material" uid="uid://bb5au6shernuv" path="res://Materials/gun_metal.material" id="1_i268p"]
-[ext_resource type="Script" path="res://Weapons/MineHandler.gd" id="1_j25c0"]
+[ext_resource type="Script" path="res://Weapons/_scripts/MineHandler.gd" id="1_j25c0"]
 [ext_resource type="ArrayMesh" uid="uid://dlydibeuwmh7c" path="res://Models/Proximity Mine Hex.obj" id="2_yyaqy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mqi2y"]

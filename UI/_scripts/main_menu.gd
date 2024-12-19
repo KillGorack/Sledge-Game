@@ -17,9 +17,6 @@ extends Control
 @onready var play_icon = preload("res://UI/icons/audio_muted.svg")
 @onready var stop_icon = preload("res://UI/icons/audio.svg")
 
-@export var API_ID: String = ""
-@export var API_KEY: String = ""
-
 var is_http_busy: bool = false
 var api_keyFile = "res://UI/APIKeys/api_key.txt"
 var api_url = "https://www.killgorack.com/PX4/api.php"
@@ -57,8 +54,6 @@ func _on_volume_slider_value_changed(value):
 func _ready():
 	username_field.grab_focus()
 	add_child(login_timer)
-	
-	# Event stuff here
 	quit_button.connect("pressed", Callable(self, "_on_close"))
 	login_button.connect("pressed", Callable(self, "_on_login"))
 	register_button.connect("pressed", Callable(self, "_on_register"))
@@ -66,8 +61,6 @@ func _ready():
 	play_button.connect("pressed", Callable(self, "_on_play_button_pressed"))
 	volume_slider.connect("value_changed", Callable(self, "_on_volume_slider_value_changed"))
 	login_timer.connect("timeout", Callable(self, "_on_cooldown_finished"))
-	
-	
 	login_timer.one_shot = true
 	load_backdrop_paths("res://UI/backdrops/")
 	set_random_backdrop()
@@ -162,9 +155,9 @@ func _on_login():
 	var api_params = {
 		"ap": "game",
 		"cn": "hme",
-		"apikeyid": API_ID,
+		"apikeyid": Creds.apiID,
 		"api": "json",
-		"vc": API_KEY
+		"vc": Creds.apiKEY
 	}
 	var post_data_encoded = encode_dict_string(post_data)
 	var full_url = api_url + "?" + encode_dict_string(api_params)
@@ -201,6 +194,7 @@ func _on_request_completed(_result, response_code, _headers, body):
 				login_attempts = 0
 				is_cooldown = false
 				UserData.populate_user_data(user_data.data)
+				print("updating from site")
 				welcome_label.text = ""
 				login_group.hide()
 				load_group.show()

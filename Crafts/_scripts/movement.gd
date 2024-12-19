@@ -1,17 +1,17 @@
 extends RigidBody3D
 
-const MAX_SPEED = 6.0
-const ACCELERATION = 400.0
-const DECELERATION = 100.0
-const TURN_SPEED = 3.0
-const TURN_ACCELERATION = 12.0
-const TURN_DECELERATION = 25.0
-const SPEED_THRESHOLD = 0.01
-const RIGHT_SIDE_UP_THRESHOLD = 0.6
-const UNTURTLE_THRESHOLD = 0.3
-const UNTURTLE_FORCE = 100.0
-const THRUSTER_FORCE = 800.0
-const ROTATION_SPEED =  5.0
+@export var MAX_SPEED: float = 6.0
+@export var  ACCELERATION: float = 400.0
+@export var  DECELERATION: float = 100.0
+@export var  TURN_SPEED: float = 3.0
+@export var  TURN_ACCELERATION: float = 12.0
+@export var  TURN_DECELERATION: float = 25.0
+@export var  SPEED_THRESHOLD: float = 0.01
+@export var  RIGHT_SIDE_UP_THRESHOLD: float = 0.6
+@export var  UNTURTLE_THRESHOLD: float = 0.3
+@export var  UNTURTLE_FORCE: float = 100.0
+@export var  THRUSTER_FORCE: float = 800.0
+@export var  ROTATION_SPEED: float =  5.0
 
 var isGrounded = false
 var rotational_velocity_set_to_zero = false
@@ -30,6 +30,8 @@ var stop_forces = false
 @onready var ground_check_area = $GroundCheck
 @export var speedometer: Label
 @export var speedometer_graphic: Control
+
+
 
 
 

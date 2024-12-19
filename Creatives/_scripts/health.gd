@@ -7,15 +7,14 @@ extends Node3D
 @export var armor: float = 100.0
 @export var shield: float = 100.0
 @export var Interactive: bool = false
+@export var VCredit: int = 0
 var life_original: float
 var parent_node = get_parent()
-var user_data: Node
-
+var death_bit: bool = false
 
 
 func _ready() -> void:
 	life_original = life
-	user_data = get_node("/root/UserData")
 	parent_node = get_parent()
 
 
@@ -34,7 +33,9 @@ func _process(_delta: float) -> void:
 func apply_direct_damage(damage: float) -> void:
 	apply_damage(damage)
 	if life <= 0:
-		user_data.updateUserData("Vanquishes", 1)
+		if death_bit == false:
+			UserData.game_vanquishes += VCredit
+			death_bit = true
 		destroy_self()
 
 

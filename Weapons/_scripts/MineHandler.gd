@@ -3,6 +3,7 @@ extends Area3D
 var mine_settings: MineSettings
 var activation_timer: Timer
 var life_span: float = 1
+var implosion_factor = 5
 
 func _ready() -> void:
 	activation_timer = Timer.new()
@@ -47,22 +48,26 @@ func _check_for_targets():
 func _activate_mine():
 	var destroy = true
 	
+	var result = Utilities.collect_bodies(
+		get_world_3d().direct_space_state, 
+		global_transform.origin, 
+		450,
+		mine_settings.explosive_force_distance, 
+		mine_settings.target_group)
+	
 	if mine_settings.explosive_force > 0:
-		var result = collectBodies(45)
 		applyAOEDamage(result)
 		applyExplosiveForces(result)
 		
 	if mine_settings.unfreeze:
-		var result = collectBodies(450)
 		unfreezeObjects(result)
-		mine_settings.explosive_force = mine_settings.explosive_force * -1
+		mine_settings.explosive_force = implosion_factor * (mine_settings.explosive_force * -1)
 		applyExplosiveForces(result)
 		await get_tree().create_timer(0.3).timeout
-		mine_settings.explosive_force = mine_settings.explosive_force * -1
+		mine_settings.explosive_force = (mine_settings.explosive_force * -1) / implosion_factor
 		applyExplosiveForces(result)
 		
 	if mine_settings.freeze_timer > 0:
-		var result = collectBodies(450)
 		applyFreeze(result)
 		
 	if destroy == true:
@@ -119,13 +124,14 @@ func applyForce(force: float, target: Object = null, direction: Vector3 = Vector
 func applyExplosiveForces(result):
 	for item in result:
 		var body = item.collider
-		if body:
+		if body and is_instance_valid(body):
 			if body != self and body is RigidBody3D:
 				var distance = global_transform.origin.distance_to(body.global_transform.origin)
 				if distance < mine_settings.explosive_force_distance:
 					var force_strength = mine_settings.explosive_force * (1.0 - (distance / mine_settings.explosive_force_distance))
 					var direction = (body.global_transform.origin - global_transform.origin).normalized()
 					applyForce(force_strength, body, direction)
+
 
 
 func applyFreeze(result):
@@ -137,20 +143,7 @@ func applyFreeze(result):
 					body.setTempFreese(mine_settings.freeze_timer)
 
 
-func collectBodies(n, dist = mine_settings.explosive_force_distance):
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsShapeQueryParameters3D.new()
-	query.transform = Transform3D(Basis(), global_transform.origin)
-	query.shape = SphereShape3D.new()
-	query.shape.radius = dist
-	var result = space_state.intersect_shape(query, n)
-	var filtered_result = []
-	for item in result:
-		if item.collider.is_in_group(mine_settings.target_group):
-			filtered_result.append(item)
-	return filtered_result
-	
-	
+
 	
 func setHitScene():
 	if mine_settings.explosion_prefab:
@@ -166,18 +159,14 @@ func create_crater():
 		var crater_instance = mine_settings.crater_prefab.instantiate()
 		if get_parent():
 			get_parent().add_child(crater_instance)
-
 			var mine_origin = global_transform.origin
 			var mine_normal = global_transform.basis.y
-
 			var offset_position = mine_origin + mine_normal * 0.01
 			crater_instance.global_transform.origin = offset_position
-
 			var up_vector = Vector3.UP
 			if mine_normal.dot(up_vector) > 0.999:
 				up_vector = Vector3.RIGHT
 			var direction = mine_normal
-
 			if not direction.is_zero_approx() and not up_vector.cross(direction).is_zero_approx():
 				crater_instance.look_at_from_position(offset_position, offset_position + direction, up_vector)
 

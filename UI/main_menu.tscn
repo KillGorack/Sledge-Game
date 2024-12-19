@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://5eeruw0y76t5"]
+[gd_scene load_steps=11 format=3 uid="uid://5eeruw0y76t5"]
 
-[ext_resource type="Script" path="res://UI/main_menu.gd" id="1_3sdc8"]
+[ext_resource type="Script" path="res://UI/_scripts/main_menu.gd" id="1_3sdc8"]
 [ext_resource type="AudioStream" uid="uid://cyyvtim5tqac0" path="res://Sounds/music/cinematic.mp3" id="2_rl3ga"]
 [ext_resource type="Texture2D" uid="uid://c0ye6wiguocqi" path="res://UI/Graphics/CP_Back.png" id="3_1sv6t"]
 [ext_resource type="Texture2D" uid="uid://bpodpjdvrj4p" path="res://UI/Graphics/SledgeTitle.png" id="3_6wny1"]
 [ext_resource type="Texture2D" uid="uid://bbynjvqiceo11" path="res://UI/backdrops/Space2.png" id="3_36yhb"]
-[ext_resource type="Script" path="res://UI/load_game.gd" id="5_bmbm4"]
+[ext_resource type="Script" path="res://UI/_scripts/load_game.gd" id="5_bmbm4"]
 [ext_resource type="Theme" uid="uid://ehwvvgpd7w2t" path="res://UI/Graphics/Theme_chip.tres" id="7_l55rl"]
+[ext_resource type="Script" path="res://UI/weapon_group.gd" id="7_sgr43"]
 [ext_resource type="Texture2D" uid="uid://ssbma0t65dqa" path="res://UI/icons/audio.svg" id="8_fh4hf"]
-[ext_resource type="PackedScene" uid="uid://broaos8akuc5f" path="res://Creatives/Assets/Palladin.tscn" id="8_labk7"]
+[ext_resource type="PackedScene" uid="uid://broaos8akuc5f" path="res://Creatives/NPC/Palladin.tscn" id="8_labk7"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -59,6 +60,7 @@ grow_horizontal = 0
 horizontal_alignment = 2
 
 [node name="LoginGroup" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -162,8 +164,61 @@ points = PackedVector2Array(0, 0, 33.5, 0)
 width = 0.2
 default_color = Color(0.408329, 0.408329, 0.408329, 1)
 
-[node name="LoadGroup" type="TextureRect" parent="."]
+[node name="WeaponGroup" type="TextureRect" parent="."]
 visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -98.5
+offset_right = 408.0
+offset_bottom = 98.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_l55rl")
+texture = ExtResource("3_1sv6t")
+script = ExtResource("7_sgr43")
+
+[node name="Directed Energy" type="Label" parent="WeaponGroup"]
+layout_mode = 1
+offset_left = 94.0
+offset_top = 124.5
+offset_right = 229.0
+offset_bottom = 147.5
+text = "Directed Energy"
+
+[node name="Missiles" type="Label" parent="WeaponGroup"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 143.5
+offset_right = 391.0
+offset_bottom = 166.5
+text = "Missiles"
+
+[node name="Artillary" type="Label" parent="WeaponGroup"]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 118.5
+offset_right = 642.0
+offset_bottom = 141.5
+text = "Artillary"
+
+[node name="Mines" type="Label" parent="WeaponGroup"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -307.0
+offset_top = 106.5
+offset_right = -172.0
+offset_bottom = 129.5
+grow_horizontal = 0
+text = "Mines"
+
+[node name="LoadGroup" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

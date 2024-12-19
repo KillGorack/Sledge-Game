@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_q641a"]
 [ext_resource type="AudioStream" uid="uid://dlcv0qtnhvyrt" path="res://Sounds/Weapons/Launch.mp3" id="4_q3g0h"]
 [ext_resource type="PackedScene" uid="uid://nvrjoc0qxoef" path="res://Weapons/Projectile Scenes/Detno.tscn" id="5_6n4ur"]
-[ext_resource type="Script" path="res://Weapons/WeaponSettings.gd" id="6_d82ca"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="6_d82ca"]
 
 [resource]
 script = ExtResource("6_d82ca")

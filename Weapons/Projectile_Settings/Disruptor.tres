@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://cxqc825idl71x"]
+[gd_resource type="Resource" script_class="WeaponSettings" load_steps=7 format=3 uid="uid://b8i2ypt2o2q46"]
 
-[ext_resource type="PackedScene" uid="uid://b23jpp7luowya" path="res://Explosive/Hit Marks/bullet_hole.tscn" id="1_yf54w"]
 [ext_resource type="PackedScene" uid="uid://b17cwsk4lp7l6" path="res://Explosive/Sparks_By_Color/spark_green.tscn" id="2_0r0l2"]
 [ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_ha16e"]
 [ext_resource type="AudioStream" uid="uid://dhb60orvie64n" path="res://Sounds/Weapons/laser3.mp3" id="4_k03ac"]
 [ext_resource type="PackedScene" uid="uid://pkn8li7jqlr0" path="res://Weapons/Projectile Scenes/Disruptor.tscn" id="5_tuvqa"]
-[ext_resource type="Script" path="res://Weapons/WeaponSettings.gd" id="6_t6tqf"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="6_t6tqf"]
 [ext_resource type="Texture2D" uid="uid://caw66rdwegykr" path="res://Weapons/Icons/Disruptor.png" id="7_223gq"]
 
 [resource]
@@ -23,32 +22,29 @@ explosive_force_distance = 0.0
 targeting_system = false
 targeting_system_require_marker = true
 target_rotation_speed = 0.0
-target_system_scan_radius = 0.0
+target_system_scan_radius = 40.0
 target_system_group = "Creative"
 freeze_timer = 0.0
 projectile_prefab = ExtResource("5_tuvqa")
 explosion_prefab = ExtResource("2_0r0l2")
-bullet_hole_prefab = ExtResource("1_yf54w")
-muzzle_flash_duration = 0.0
 projectile_count_capacity = 0.0
 projectile_count_actual = 0.0
-projectile_count = 3
+projectile_count = 2
 projectile_spacing = 0.125
-projectile_start_angle = 90.0
+projectile_start_angle = 0.0
 projectile_recoil = 0.0
-projectile_range = 65.0
-projectile_speed = 80.0
+projectile_range = 100.0
+projectile_speed = 60.0
 projectile_spin = 0.0
 projectile_force = 0.0
-bi_directional = false
-hit_points = 15.0
-cool_down = 0.15
-launch_offset = Vector3(0, 0, 0)
+bi_directional = true
+hit_points = 45.0
+cool_down = 0.25
+launch_offset = 0.0
 projectile_fire_delay = 0.0
 projectile_destruction_delay = 0.0
 mass = 0.0
 use_gravity = false
-light_color = Color(1, 1, 1, 1)
 launch_sound = ExtResource("4_k03ac")
 hit_sound = ExtResource("3_ha16e")
 layer = 3

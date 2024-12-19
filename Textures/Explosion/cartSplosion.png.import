@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7otv472mnshv"
 path.s3tc="res://.godot/imported/cartSplosion.png-33846986b92317f0d626ba7d8c5d9a0b.s3tc.ctex"
+path.etc2="res://.godot/imported/cartSplosion.png-33846986b92317f0d626ba7d8c5d9a0b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/Explosion/cartSplosion.png"
-dest_files=["res://.godot/imported/cartSplosion.png-33846986b92317f0d626ba7d8c5d9a0b.s3tc.ctex"]
+dest_files=["res://.godot/imported/cartSplosion.png-33846986b92317f0d626ba7d8c5d9a0b.s3tc.ctex", "res://.godot/imported/cartSplosion.png-33846986b92317f0d626ba7d8c5d9a0b.etc2.ctex"]
 
 [params]
 

@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_wvcak"]
 [ext_resource type="AudioStream" uid="uid://dlcv0qtnhvyrt" path="res://Sounds/Weapons/Launch.mp3" id="4_el1ho"]
 [ext_resource type="PackedScene" uid="uid://bbpqsd57otadw" path="res://Weapons/Projectile Scenes/RWB_MISSILE.tscn" id="5_mulg2"]
-[ext_resource type="Script" path="res://Weapons/WeaponSettings.gd" id="6_twlym"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="6_twlym"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1d4vt"]
 load_path = "res://.godot/imported/Albatross.png-4729a24ecd787fee34545a37383e0917.ctex"
@@ -31,7 +31,6 @@ freeze_timer = 0.0
 projectile_prefab = ExtResource("5_mulg2")
 explosion_prefab = ExtResource("2_l0axq")
 bullet_hole_prefab = ExtResource("1_ueh8o")
-muzzle_flash_duration = 0.0
 projectile_count_capacity = 1200.0
 projectile_count_actual = 1200.0
 projectile_count = 6
@@ -43,14 +42,13 @@ projectile_speed = 45.0
 projectile_spin = 0.0
 projectile_force = 0.0
 bi_directional = false
-hit_points = 15.0
+hit_points = 5.0
 cool_down = 0.5
-launch_offset = Vector3(0, 0, 0)
+launch_offset = -0.5
 projectile_fire_delay = 0.0
 projectile_destruction_delay = 0.0
 mass = 1.0
 use_gravity = false
-light_color = Color(1, 0, 0, 1)
 launch_sound = ExtResource("4_el1ho")
 hit_sound = ExtResource("3_wvcak")
 layer = 3

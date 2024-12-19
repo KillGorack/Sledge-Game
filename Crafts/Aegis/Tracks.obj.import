@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bnkeywdh4v6y0"
+path="res://.godot/imported/Tracks.obj-9774d235421d1f23d48cf19eec66354b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tracks.obj-9774d235421d1f23d48cf19eec66354b.mesh"]
+
+source_file="res://Crafts/Aegis/Tracks.obj"
+dest_files=["res://.godot/imported/Tracks.obj-9774d235421d1f23d48cf19eec66354b.mesh", "res://.godot/imported/Tracks.obj-9774d235421d1f23d48cf19eec66354b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

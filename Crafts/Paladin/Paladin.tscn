@@ -1,30 +1,26 @@
-[gd_scene load_steps=46 format=3 uid="uid://blkt81xou2yn3"]
+[gd_scene load_steps=42 format=3 uid="uid://blkt81xou2yn3"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://deru0wsiqkst8" path="res://Physics/Physics_Player.tres" id="1_tlt2i"]
-[ext_resource type="Script" path="res://Crafts/movement.gd" id="2_u0jpy"]
-[ext_resource type="Script" path="res://Crafts/health.gd" id="3_t5pgo"]
+[ext_resource type="Script" path="res://Crafts/_scripts/movement.gd" id="2_u0jpy"]
+[ext_resource type="Script" path="res://Crafts/_scripts/health.gd" id="3_t5pgo"]
 [ext_resource type="Material" uid="uid://clj5jh6v7iyl0" path="res://Materials/glitz_gray.material" id="4_86idt"]
-[ext_resource type="Script" path="res://Crafts/Paladin/power_feed.gd" id="4_wa0wj"]
-[ext_resource type="Script" path="res://Weapons/mine_layer.gd" id="5_k78mb"]
+[ext_resource type="Script" path="res://Crafts/_scripts/power_feed.gd" id="4_wa0wj"]
+[ext_resource type="Script" path="res://Weapons/_scripts/mine_layer.gd" id="5_k78mb"]
 [ext_resource type="ArrayMesh" uid="uid://cjqvq2awiksjj" path="res://Crafts/Paladin/Geometry/Turret.obj" id="5_xfqy8"]
 [ext_resource type="Resource" uid="uid://b1v0bkr5tqqtn" path="res://Weapons/Mine_Settings/DetnoMine.tres" id="6_5j56a"]
-[ext_resource type="Script" path="res://Crafts/Turret.gd" id="6_kbyhi"]
+[ext_resource type="Script" path="res://Crafts/_scripts/Turret.gd" id="6_kbyhi"]
 [ext_resource type="Resource" uid="uid://ycpld2m1l5an" path="res://Weapons/Mine_Settings/ForceWave.tres" id="6_on4mc"]
 [ext_resource type="Material" uid="uid://bb5au6shernuv" path="res://Materials/gun_metal.material" id="7_vn57e"]
 [ext_resource type="Resource" uid="uid://bmlj7n1wkbi8x" path="res://Weapons/Mine_Settings/freeze_mine.tres" id="8_2uvce"]
 [ext_resource type="ArrayMesh" uid="uid://oighycb1gyxn" path="res://Crafts/Paladin/Geometry/Barrel.obj" id="8_vb1lh"]
-[ext_resource type="Script" path="res://Weapons/shoot.gd" id="9_jmdpj"]
+[ext_resource type="Script" path="res://Weapons/_scripts/shoot.gd" id="9_jmdpj"]
 [ext_resource type="Resource" uid="uid://btg44tgnf1ty3" path="res://Weapons/Projectile_Settings/Albatross.tres" id="10_qifet"]
 [ext_resource type="Resource" uid="uid://dl2r187pyc150" path="res://Weapons/Projectile_Settings/Dekinetifier.tres" id="11_6q74u"]
-[ext_resource type="Resource" uid="uid://cxqc825idl71x" path="res://Weapons/Projectile_Settings/Disruptor.tres" id="12_qp154"]
 [ext_resource type="Resource" uid="uid://di45ppgtvat4r" path="res://Weapons/Projectile_Settings/Force.tres" id="13_qjads"]
-[ext_resource type="Resource" uid="uid://cdgxmt8vjytu2" path="res://Weapons/Projectile_Settings/Fracture.tres" id="14_jr0f2"]
-[ext_resource type="Resource" uid="uid://b6q41js1vtad3" path="res://Weapons/Projectile_Settings/Howitzer.tres" id="15_312ff"]
 [ext_resource type="Resource" uid="uid://3uwoulc5cpq3" path="res://Weapons/Projectile_Settings/Detno.tres" id="16_slkj1"]
-[ext_resource type="Resource" uid="uid://dtnbonq5t6ay7" path="res://Weapons/Projectile_Settings/Nuclear.tres" id="17_4qsj4"]
 [ext_resource type="PackedScene" uid="uid://ckvics5bu7nu7" path="res://Weapons/Projectile Scenes/target_marker.tscn" id="18_8rntr"]
-[ext_resource type="Resource" uid="uid://c8lpdri1yqor8" path="res://Weapons/Projectile_Settings/RailGun.tres" id="18_mk4qx"]
 [ext_resource type="ArrayMesh" uid="uid://rdgp20h81cgg" path="res://Crafts/Paladin/Geometry/Bezels.obj" id="19_o7sd0"]
+[ext_resource type="Resource" uid="uid://b8i2ypt2o2q46" path="res://Weapons/Projectile_Settings/Disruptor.tres" id="19_t3jyq"]
 [ext_resource type="Material" uid="uid://dnyvoh8p38dpe" path="res://Materials/projectile_gelb.material" id="20_pgaas"]
 [ext_resource type="ArrayMesh" uid="uid://bqfb5qxhfsu81" path="res://Crafts/Paladin/Geometry/Hover Pads.obj" id="21_nbvmf"]
 [ext_resource type="ArrayMesh" uid="uid://dlj55k56gf1dg" path="res://Crafts/Paladin/Geometry/Hull.obj" id="22_6nli0"]
@@ -35,13 +31,13 @@
 [ext_resource type="ArrayMesh" uid="uid://blmd82yoxs6oa" path="res://Crafts/Paladin/Geometry/Stripe.obj" id="27_84lcm"]
 [ext_resource type="ArrayMesh" uid="uid://dm6pa62ys4f7h" path="res://Crafts/Paladin/Geometry/Underbody.obj" id="28_s5ybr"]
 [ext_resource type="AudioStream" uid="uid://d0d4pvsfakwo7" path="res://Sounds/Engine Sounds/vehicle.wav" id="29_h0kji"]
-[ext_resource type="Script" path="res://Crafts/Paladin/hud.gd" id="30_d1mtt"]
-[ext_resource type="Script" path="res://Crafts/Paladin/spedometer.gd" id="31_2inhi"]
-[ext_resource type="Script" path="res://UI/crosshairs.gd" id="32_d1lju"]
-[ext_resource type="Script" path="res://Crafts/Paladin/Stats.gd" id="32_y2cc4"]
-[ext_resource type="Script" path="res://Crafts/Paladin/powermeter.gd" id="33_d1iw3"]
-[ext_resource type="Texture2D" uid="uid://cnf121uecbsvr" path="res://UI/Circle_(transparent).png" id="33_kuoxg"]
-[ext_resource type="Script" path="res://Crafts/radar.gd" id="34_ami02"]
+[ext_resource type="Script" path="res://Crafts/_scripts/hud.gd" id="30_d1mtt"]
+[ext_resource type="Script" path="res://Crafts/_scripts/spedometer.gd" id="31_2inhi"]
+[ext_resource type="Script" path="res://UI/_scripts/crosshairs.gd" id="32_d1lju"]
+[ext_resource type="Script" path="res://Crafts/_scripts/Stats.gd" id="32_y2cc4"]
+[ext_resource type="Script" path="res://Crafts/_scripts/powermeter.gd" id="33_d1iw3"]
+[ext_resource type="Texture2D" uid="uid://cnf121uecbsvr" path="res://UI/Graphics/Circle_(transparent).png" id="33_kuoxg"]
+[ext_resource type="Script" path="res://Crafts/_scripts/radar.gd" id="34_ami02"]
 [ext_resource type="Texture2D" uid="uid://268cdcw8dy0" path="res://Weapons/Icons/Detno.png" id="35_soh2l"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1yqvq"]
@@ -73,6 +69,7 @@ hud_draw_target = NodePath("../HUD/Defence")
 [node name="PowerFeed" type="Node3D" parent="." node_paths=PackedStringArray("powermeter_graphic")]
 script = ExtResource("4_wa0wj")
 powermeter_graphic = NodePath("../HUD/Powermeter")
+powerGainRate = 25.0
 maxEffectDistance = 25.0
 
 [node name="Mines" type="Node3D" parent="." node_paths=PackedStringArray("lbl_mines")]
@@ -94,7 +91,7 @@ material_override = ExtResource("7_vn57e")
 mesh = ExtResource("8_vb1lh")
 skeleton = NodePath("../..")
 script = ExtResource("9_jmdpj")
-weapon_settings_array = Array[Resource]([ExtResource("10_qifet"), ExtResource("11_6q74u"), ExtResource("12_qp154"), ExtResource("13_qjads"), ExtResource("14_jr0f2"), ExtResource("15_312ff"), ExtResource("16_slkj1"), ExtResource("17_4qsj4"), ExtResource("18_mk4qx")])
+weapon_settings_array = Array[Resource]([ExtResource("10_qifet"), ExtResource("11_6q74u"), ExtResource("13_qjads"), ExtResource("16_slkj1"), ExtResource("19_t3jyq")])
 target_scene = ExtResource("18_8rntr")
 power_node = NodePath("../../PowerFeed")
 

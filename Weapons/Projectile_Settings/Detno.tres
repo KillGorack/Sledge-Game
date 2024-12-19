@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c8rq8euhyuhrk" path="res://Explosive/Sparks_By_Color/spark_red.tscn" id="2_kjkp8"]
 [ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_by2um"]
 [ext_resource type="PackedScene" uid="uid://nvrjoc0qxoef" path="res://Weapons/Projectile Scenes/Detno.tscn" id="3_mshq7"]
-[ext_resource type="Script" path="res://Weapons/WeaponSettings.gd" id="4_evgsa"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="4_evgsa"]
 [ext_resource type="Texture2D" uid="uid://268cdcw8dy0" path="res://Weapons/Icons/Detno.png" id="7_28nnd"]
 
 [resource]
@@ -43,7 +43,7 @@ projectile_force = 0.0
 bi_directional = true
 hit_points = 75.0
 cool_down = 1.0
-launch_offset = Vector3(0, 0, 0)
+launch_offset = Vector3(0, 0, -0.5)
 projectile_fire_delay = 0.0
 projectile_destruction_delay = 0.0
 mass = 1.0

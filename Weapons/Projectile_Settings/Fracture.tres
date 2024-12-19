@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://jclwroi5eofo" path="res://Sounds/Weapons/bullet hit.wav" id="3_f8a25"]
 [ext_resource type="PackedScene" uid="uid://dy6q7niy2f3mx" path="res://Weapons/Projectile Scenes/fracture.tscn" id="3_u2mm0"]
 [ext_resource type="AudioStream" uid="uid://cvbajphyobl52" path="res://Sounds/Weapons/laser1.wav" id="4_6f0oy"]
-[ext_resource type="Script" path="res://Weapons/WeaponSettings.gd" id="5_we4gb"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="5_we4gb"]
 [ext_resource type="Texture2D" uid="uid://wjtp7gxam8ej" path="res://Weapons/Icons/Fracture.png" id="7_1spii"]
 
 [resource]
@@ -43,7 +43,7 @@ projectile_force = 0.0
 bi_directional = false
 hit_points = 25.0
 cool_down = 0.125
-launch_offset = Vector3(0, 0, 0)
+launch_offset = 0.0
 projectile_fire_delay = 0.0
 projectile_destruction_delay = 0.0
 mass = 0.0

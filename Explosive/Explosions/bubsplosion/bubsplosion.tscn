@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://y4t1eft31wfl"]
+
+[ext_resource type="Script" path="res://Explosive/lookie.gd" id="1_wry0r"]
+[ext_resource type="Material" uid="uid://cugiwynuuw7ru" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tres" id="2_jfr7c"]
+[ext_resource type="Script" path="res://Explosive/Explosions/bubsplosion/bubsplosion.gd" id="3_5ij2p"]
+[ext_resource type="Script" path="res://Explosive/flash.gd" id="4_7hh6g"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8857l"]
+material = ExtResource("2_jfr7c")
+
+[node name="bubsplosion" type="Node3D"]
+script = ExtResource("1_wry0r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.25)
+layers = 4
+mesh = SubResource("QuadMesh_8857l")
+script = ExtResource("3_5ij2p")
+fps = 128
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+layers = 4
+light_energy = 10.0
+light_indirect_energy = 10.0
+script = ExtResource("4_7hh6g")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://dsod826ud1trt" path="res://Materials/pad_neutral.material" id="1_n3kum"]
 [ext_resource type="Material" uid="uid://dwxlgxsvxgbrm" path="res://Materials/glass.material" id="2_0gjxe"]
-[ext_resource type="Script" path="res://Creatives/Assets/repair_pad.gd" id="3_nlhrs"]
+[ext_resource type="Script" path="res://Creatives/_scripts/repair_pad.gd" id="3_nlhrs"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_xk5h8"]
 

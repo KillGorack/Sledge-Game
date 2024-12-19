@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dywxp6kge65h0"
 path.s3tc="res://.godot/imported/cracked.png-e94b51fa05f39a8e8333bca921708d14.s3tc.ctex"
+path.etc2="res://.godot/imported/cracked.png-e94b51fa05f39a8e8333bca921708d14.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/BulletHoles/cracked.png"
-dest_files=["res://.godot/imported/cracked.png-e94b51fa05f39a8e8333bca921708d14.s3tc.ctex"]
+dest_files=["res://.godot/imported/cracked.png-e94b51fa05f39a8e8333bca921708d14.s3tc.ctex", "res://.godot/imported/cracked.png-e94b51fa05f39a8e8333bca921708d14.etc2.ctex"]
 
 [params]
 

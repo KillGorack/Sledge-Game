@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://b6q41js1vtad3"]
 
-[ext_resource type="Script" path="res://Weapons/WeaponSettings.gd" id="1_jtdo6"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="1_jtdo6"]
 [ext_resource type="PackedScene" uid="uid://dhkttboqth4ak" path="res://Explosive/Hit Marks/Crater.tscn" id="1_vf5j3"]
 [ext_resource type="PackedScene" uid="uid://bf7wlcygvo8f1" path="res://Explosive/Sparks_By_Color/spark_white.tscn" id="2_57565"]
 [ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_6epmv"]
@@ -43,7 +43,7 @@ projectile_force = 0.0
 bi_directional = false
 hit_points = 75.0
 cool_down = 1.0
-launch_offset = Vector3(0, 0, 0)
+launch_offset = 0.0
 projectile_fire_delay = 0.0
 projectile_destruction_delay = 0.0
 mass = 1.0
