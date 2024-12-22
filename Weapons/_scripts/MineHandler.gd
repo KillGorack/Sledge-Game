@@ -51,7 +51,7 @@ func _activate_mine():
 	var result = Utilities.collect_bodies(
 		get_world_3d().direct_space_state, 
 		global_transform.origin, 
-		450,
+		250,
 		mine_settings.explosive_force_distance, 
 		mine_settings.target_group)
 	
@@ -60,12 +60,14 @@ func _activate_mine():
 		applyExplosiveForces(result)
 		
 	if mine_settings.unfreeze:
-		unfreezeObjects(result)
+		freezeObjectsState(result, false)
 		mine_settings.explosive_force = implosion_factor * (mine_settings.explosive_force * -1)
 		applyExplosiveForces(result)
 		await get_tree().create_timer(0.3).timeout
 		mine_settings.explosive_force = (mine_settings.explosive_force * -1) / implosion_factor
 		applyExplosiveForces(result)
+		await get_tree().create_timer(1.0).timeout
+		freezeObjectsState(result, true)
 		
 	if mine_settings.freeze_timer > 0:
 		applyFreeze(result)
@@ -77,12 +79,13 @@ func _activate_mine():
 
 
 
-func unfreezeObjects(result):
+func freezeObjectsState(result, freezebit):
 	for item in result:
 		var body = item.collider
-		if body != self:
-			if body.has_method("setFreezeState"):
-				body.call("setFreezeState", false)
+		if body and is_instance_valid(body):
+			if body != self:
+				if body.has_method("setFreezeState"):
+					body.call("setFreezeState", freezebit)
 
 
 

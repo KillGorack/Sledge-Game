@@ -194,7 +194,6 @@ func _on_request_completed(_result, response_code, _headers, body):
 				login_attempts = 0
 				is_cooldown = false
 				UserData.populate_user_data(user_data.data)
-				print("updating from site")
 				welcome_label.text = ""
 				login_group.hide()
 				load_group.show()

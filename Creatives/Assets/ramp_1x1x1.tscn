@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh65vemlv5ixt"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://dh2rif6n2skrg" path="res://Physics/Physics_Floor.tres" id="1_76xqe"]
+[ext_resource type="Script" path="res://Creatives/_scripts/CreativeHandler.gd" id="2_5ym7b"]
+[ext_resource type="ArrayMesh" uid="uid://8g4twjkgd4ef" path="res://Models/ramp1x1x1.obj" id="2_lf2r6"]
+[ext_resource type="Material" uid="uid://di2od31wueoji" path="res://Materials/stone_light.material" id="3_f0mmo"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4svym"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Ramp _1X1X1" type="RigidBody3D" groups=["Creative"]]
+collision_layer = 8
+collision_mask = 255
+mass = 2.0
+physics_material_override = ExtResource("1_76xqe")
+freeze = true
+script = ExtResource("2_5ym7b")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_4svym")
+
+[node name="Geometry" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.5, 0)
+layers = 8
+material_override = ExtResource("3_f0mmo")
+mesh = ExtResource("2_lf2r6")

@@ -47,10 +47,12 @@ shape = SubResource("SphereShape3D_tqau5")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_o783i")
 script = ExtResource("4_ykjbv")
+_motionDelta = 0.1
 _lifeSpan = 0.1
 _startColor = Color(1, 0, 0, 1)
 _endColor = Color(1, 0, 0, 0)
 _fromWidth = 0.1
+_toWidth = 0.01
 
 [node name="Trail3D2" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_pjih3")
@@ -59,3 +61,4 @@ _lifeSpan = 0.1
 _startColor = Color(1, 0, 0, 1)
 _endColor = Color(1, 0, 0, 0)
 _fromWidth = 0.1
+_toWidth = 0.01

@@ -113,7 +113,7 @@ func handleCollision():
 			var result = Utilities.collect_bodies(
 				get_world_3d().direct_space_state, 
 				global_transform.origin, 
-				450, 
+				125, 
 				weapon_settings.explosive_force_distance, 
 				weapon_settings.target_system_group)
 			applyAOEDamage(result)
@@ -156,10 +156,8 @@ func freeze_target():
 
 func applyDirectDamage(damage, target = null) -> void:
 	var parental_object = target if target != null else collided_object
-	if parental_object.has_node("Health"):
-		var healthObject = parental_object.get_node("Health")
-		if healthObject.has_method("apply_direct_damage"):
-			healthObject.apply_direct_damage(damage)
+	if parental_object.has_method("apply_damage"):
+		parental_object.apply_damage(damage)
 
 
 
@@ -172,7 +170,8 @@ func applyAOEDamage(result):
 			var distance = global_transform.origin.distance_to(body.global_transform.origin)
 			if distance < weapon_settings.explosive_force_distance:
 				var damage = weapon_settings.hit_points * (1.0 - (distance / weapon_settings.explosive_force_distance))
-				applyDirectDamage(damage, body)
+				if body.has_method("apply_damage"):
+					body.apply_damage(damage)
 
 
 
@@ -183,8 +182,9 @@ func applyForce(force: float, target: Object = null, direction: Vector3 = Vector
 	var force_direction = direction if not direction.is_zero_approx() else current_direction.normalized()
 	if Input.is_action_pressed("Reverso") and weapon_settings.bi_directional:
 		force_direction = -force_direction
-	if force_target != null and force_target.has_method("apply_directional_force"):
-		force_target.apply_directional_force(force * force_direction)
+	if force_target != null and force_target:
+		if force_target.has_method("apply_directional_force"):
+			force_target.apply_directional_force(force * force_direction)
 
 
 
@@ -244,7 +244,7 @@ func handleBounce():
 	var bodies = Utilities.collect_bodies(
 		get_world_3d().direct_space_state, 
 		global_transform.origin, 
-		100, 
+		25, 
 		weapon_settings.target_system_scan_radius, 
 		weapon_settings.target_system_group)
 
@@ -265,7 +265,7 @@ func handleBounce():
 
 func play_hit_sound() -> void:
 	if weapon_settings.hit_sound:
-		Utilities.play_sound(weapon_settings.hit_sound, transform.origin)
+		Utilities.play_sound(weapon_settings.hit_sound, global_transform.origin)
 
 
 
@@ -361,4 +361,5 @@ func setHitScene():
 
 func destroy_self():
 	setHitScene()
+	await get_tree().create_timer(weapon_settings.projectile_destruction_delay).timeout
 	queue_free()

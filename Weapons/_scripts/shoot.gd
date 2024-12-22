@@ -12,8 +12,9 @@ var shoot_timer = 0.0
 var current_weapon_settings: Resource
 var hud: CenterContainer
 var rounds: Label
+var item_name: Label
 var icon_weapon: TextureRect
-
+var this_node_enabled: bool = true
 
 var is_shooting: bool = false
 
@@ -23,8 +24,9 @@ func _ready() -> void:
 	if weapon_settings_array.size() > 0:
 		current_weapon_settings = weapon_settings_array[current_weapon_index]
 	hud = get_node("../../HUD/CrossHairs")
-	icon_weapon = get_node("../../HUD/WeaponIcon")
-	rounds = get_node("../../HUD/lbl_rounds")
+	icon_weapon = get_node("../../HUD/item_icon")
+	rounds = get_node("../../HUD/lbl_item_count")
+	item_name = get_node("../../HUD/lbl_item_name")
 	update_weapon_label()
 
 
@@ -32,6 +34,14 @@ func _ready() -> void:
 
 
 func _physics_process(delta):
+		
+	if Utilities.game_mode_index != 0:
+		this_node_enabled = false
+		return
+	elif this_node_enabled == false:
+		this_node_enabled = true
+		update_weapon_label()
+		
 	if shoot_timer > 0:
 		shoot_timer -= delta
 	if Input.is_action_pressed("FireWeapon") and shoot_timer <= 0:
@@ -43,7 +53,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("paintTarget"):
 		place_target()
 	if Input.is_action_just_pressed("display_tree"):
-		Utilities.print_first_level_nodes()
+		pass
+		#Utilities.print_first_level_nodes()
 
 
 
@@ -115,6 +126,7 @@ func change_weapon():
 
 func update_weapon_label():
 	icon_weapon.texture = current_weapon_settings.weapon_icon
+	item_name.text = current_weapon_settings.weapon_name
 	if current_weapon_settings.power_consumption > 0:
 		rounds.text = "Power"
 	else:

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b80bbv1bi6wnx"
+path="res://.godot/imported/Turret.obj-16cb6b870546bfc1828980519d0883fb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Turret.obj-16cb6b870546bfc1828980519d0883fb.mesh"]
+
+source_file="res://Crafts/Aegis/Geimetry/Turret.obj"
+dest_files=["res://.godot/imported/Turret.obj-16cb6b870546bfc1828980519d0883fb.mesh", "res://.godot/imported/Turret.obj-16cb6b870546bfc1828980519d0883fb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

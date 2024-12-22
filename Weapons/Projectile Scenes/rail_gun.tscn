@@ -59,8 +59,20 @@ _endColor = Color(0, 0.698039, 1, 1)
 _fromWidth = 0.01
 _toWidth = 0.01
 
+[node name="Trail3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+layers = 4
+material_override = SubResource("StandardMaterial3D_be4tt")
+script = ExtResource("3_fsh88")
+_lifeSpan = 2.0
+_startColor = Color(0, 0.698039, 1, 1)
+_endColor = Color(0, 0.698039, 1, 1)
+_fromWidth = 0.01
+_toWidth = 0.01
+
 [node name="Trail3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
+visible = false
 layers = 4
 material_override = SubResource("StandardMaterial3D_be4tt")
 script = ExtResource("3_fsh88")

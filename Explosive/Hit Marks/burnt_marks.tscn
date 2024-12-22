@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://l2c4j45shmen"]
+
+[ext_resource type="Script" path="res://UTILS/_gc.gd" id="1_ptn3r"]
+[ext_resource type="Texture2D" uid="uid://bs77tgesef2cd" path="res://Textures/BulletHoles/scorch.png" id="2_83fgf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66g0k"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_83fgf")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pfjhd"]
+material = SubResource("StandardMaterial3D_66g0k")
+size = Vector2(0.1, 0.1)
+
+[node name="Burnt Mark" type="Node3D"]
+script = ExtResource("1_ptn3r")
+duration = 3.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+layers = 4
+mesh = SubResource("QuadMesh_pfjhd")

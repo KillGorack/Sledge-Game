@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CreativeSettings" load_steps=8 format=3 uid="uid://lpiqbbmi7ybb"]
+
+[ext_resource type="PackedScene" uid="uid://2jurjxo04px6" path="res://Creatives/Assets/creative_block_red.tscn" id="1_7m3ie"]
+[ext_resource type="PackedScene" uid="uid://cipafhhmk6yfa" path="res://Creatives/Cursor/Cursor_Block_OK.tscn" id="1_acqg0"]
+[ext_resource type="Script" path="res://Creatives/_scripts/CreativeSettings.gd" id="1_osij8"]
+[ext_resource type="PackedScene" uid="uid://cynh0hggfjttn" path="res://Creatives/Cursor/Cursor_Block_NOK.tscn" id="2_34yuq"]
+[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="3_iw45f"]
+[ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="4_2dwy2"]
+[ext_resource type="Texture2D" uid="uid://uhaxugne6i4l" path="res://Textures/Glitz/Glitz Red.bmp" id="4_ypyip"]
+
+[resource]
+script = ExtResource("1_osij8")
+Name = "Glitz Red"
+Icon = ExtResource("4_ypyip")
+Scene = ExtResource("1_7m3ie")
+Cursor_Scene = ExtResource("1_acqg0")
+Cursor_Scene_NOK = ExtResource("2_34yuq")
+Explosion_Scene = ExtResource("3_iw45f")
+Life = 100.0
+kenetic_threshold = 50.0
+Rotatable = false
+Frozen = true
+VCredit = 0.0
+Layer = 4
+PlacementSound = ExtResource("4_2dwy2")

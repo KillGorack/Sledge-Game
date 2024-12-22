@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CreativeSettings" load_steps=8 format=3 uid="uid://bxxoxcq5o2yd2"]
+
+[ext_resource type="Script" path="res://Creatives/_scripts/CreativeSettings.gd" id="1_1cupk"]
+[ext_resource type="PackedScene" uid="uid://cipafhhmk6yfa" path="res://Creatives/Cursor/Cursor_Block_OK.tscn" id="1_6aehf"]
+[ext_resource type="PackedScene" uid="uid://cynh0hggfjttn" path="res://Creatives/Cursor/Cursor_Block_NOK.tscn" id="2_6t8oa"]
+[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="2_uwcja"]
+[ext_resource type="Texture2D" uid="uid://cugngx0rglhvy" path="res://Textures/Bricks/Bricks069_1K-PNG_Color_muted.png" id="3_yr2ld"]
+[ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="4_5pkdo"]
+[ext_resource type="PackedScene" uid="uid://d18pfeukrf3qm" path="res://Creatives/Assets/creative_block_muted.tscn" id="5_e52lv"]
+
+[resource]
+script = ExtResource("1_1cupk")
+Name = "Muted Block"
+Icon = ExtResource("3_yr2ld")
+Scene = ExtResource("5_e52lv")
+Cursor_Scene = ExtResource("1_6aehf")
+Cursor_Scene_NOK = ExtResource("2_6t8oa")
+Explosion_Scene = ExtResource("2_uwcja")
+Life = 100.0
+kenetic_threshold = 70.0
+Rotatable = true
+Frozen = true
+VCredit = 0.0
+Layer = 4
+PlacementSound = ExtResource("4_5pkdo")

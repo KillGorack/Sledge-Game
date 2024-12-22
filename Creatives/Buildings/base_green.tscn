@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6a3gx01yx2ne"]
+[gd_scene load_steps=8 format=3 uid="uid://b6a3gx01yx2ne"]
 
 [ext_resource type="PackedScene" uid="uid://b0gwyot6tfvo7" path="res://Creatives/Assets/creative_block.tscn" id="1_r7pde"]
 [ext_resource type="PackedScene" uid="uid://qeqsd4mhqty3" path="res://Creatives/Assets/creative_ramp_1X1.tscn" id="2_agj6a"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwnpbj2pl8wxr" path="res://Creatives/Assets/creative_block_grate.tscn" id="5_nk6xr"]
 [ext_resource type="PackedScene" uid="uid://cq303ex5u0ftv" path="res://Creatives/Assets/creative_block_accent.tscn" id="6_0de03"]
 [ext_resource type="PackedScene" uid="uid://bs2ywtsmikapk" path="res://Creatives/Assets/creative_block_green.tscn" id="6_gq1wc"]
+[ext_resource type="PackedScene" uid="uid://d18pfeukrf3qm" path="res://Creatives/Assets/creative_block_muted.tscn" id="7_3j75y"]
 
 [node name="Base" type="Node3D"]
 
@@ -609,65 +610,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, 3)
 [node name="Creative_Block40" parent="." instance=ExtResource("6_0de03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
 
-[node name="Creative_Block48" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 7)
-
 [node name="Creative_Block56" parent="." instance=ExtResource("6_0de03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 4)
-
-[node name="Creative_Block61" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 4)
 
 [node name="Creative_Block62" parent="." instance=ExtResource("6_0de03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
 
-[node name="Creative_Block63" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 5)
-
 [node name="Creative_Block64" parent="." instance=ExtResource("6_0de03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
-
-[node name="Creative_Block65" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 6)
 
 [node name="Creative_Block66" parent="." instance=ExtResource("6_0de03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 7)
 
-[node name="Creative_Block67" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 7)
-
 [node name="Creative_Block69" parent="." instance=ExtResource("6_0de03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7)
 
-[node name="Creative_Block70" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 7)
-
 [node name="Creative_Block71" parent="." instance=ExtResource("6_0de03")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
-
-[node name="Creative_Block72" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 7)
-
-[node name="Creative_Block73" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 7)
-
-[node name="Creative_Block74" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 4)
-
-[node name="Creative_Block75" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 5)
-
-[node name="Creative_Block77" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 6)
-
-[node name="Creative_Block78" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 7)
-
-[node name="Creative_Block79" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 7)
-
-[node name="Creative_Block80" parent="." instance=ExtResource("6_0de03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 7)
 
 [node name="Creative_Block81" parent="." instance=ExtResource("6_gq1wc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 7)
@@ -740,3 +699,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 1)
 
 [node name="Creative_Block216" parent="." instance=ExtResource("6_gq1wc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 0)
+
+[node name="Creative_Block48" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 7)
+
+[node name="Creative_Block61" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 7)
+
+[node name="Creative_Block63" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 6)
+
+[node name="Creative_Block65" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 6)
+
+[node name="Creative_Block67" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 5)
+
+[node name="Creative_Block70" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 5)
+
+[node name="Creative_Block72" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 4)
+
+[node name="Creative_Block73" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 4)
+
+[node name="Creative_Block74" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 7)
+
+[node name="Creative_Block75" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 7)
+
+[node name="Creative_Block77" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 7)
+
+[node name="Creative_Block78" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 7)
+
+[node name="Creative_Block79" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 7)
+
+[node name="Creative_Block80" parent="." instance=ExtResource("7_3j75y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 7)

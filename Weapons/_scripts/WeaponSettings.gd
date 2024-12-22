@@ -5,6 +5,8 @@ class_name WeaponSettings
 @export var weapon_icon: Texture
 @export var level_req: int = 1
 @export var power_consumption: float = 0.0
+@export var projectile_count_capacity: float = 1.0
+@export var projectile_count_actual: float = 1.0
 
 enum WeaponType { Default, Force, Pierce, Explosive, Bounce }
 @export var weapon_type: WeaponType = WeaponType.Default
@@ -28,8 +30,7 @@ enum WeaponType { Default, Force, Pierce, Explosive, Bounce }
 @export var explosion_prefab: PackedScene
 @export var bullet_hole_prefab: PackedScene
 
-@export var projectile_count_capacity: float = 1.0
-@export var projectile_count_actual: float = 1.0
+
 @export var projectile_count: int = 1
 @export var projectile_spacing: float = 0.0
 @export var projectile_start_angle: float = 0.0

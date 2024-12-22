@@ -30,7 +30,6 @@ func _on_load_button_pressed() -> void:
 	var selected_level_index = levels_dropdown.get_selected_items()[0]
 	var selected_craft_index = crafts_dropdown.get_selected_items()[0]
 	if selected_level_index == -1 or selected_craft_index == -1:
-		print("Please select both a level and a craft.")
 		return
 	var selected_level = levels[selected_level_index]
 	var selected_craft = crafts[selected_craft_index]

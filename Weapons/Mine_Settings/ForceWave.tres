@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource("1_o6liu")
-mine_name = "Force Wave"
+mine_name = "Manhattan Mine"
 mine_icon = ExtResource("5_y2ael")
 level_req = 1
 max_count = 4

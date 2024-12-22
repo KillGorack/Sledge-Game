@@ -1,18 +1,21 @@
-[gd_resource type="Resource" script_class="WeaponSettings" load_steps=7 format=3 uid="uid://bsfkphymm8m2j"]
+[gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://bsfkphymm8m2j"]
 
 [ext_resource type="PackedScene" uid="uid://c8rq8euhyuhrk" path="res://Explosive/Sparks_By_Color/spark_red.tscn" id="1_0ao31"]
 [ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="1_4sl66"]
+[ext_resource type="PackedScene" uid="uid://l2c4j45shmen" path="res://Explosive/Hit Marks/burnt_marks.tscn" id="1_d751u"]
 [ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="2_u14sk"]
 [ext_resource type="AudioStream" uid="uid://b5huqmt6xgapr" path="res://Sounds/Weapons/laser5.mp3" id="3_e243s"]
 [ext_resource type="PackedScene" uid="uid://clas4r5ifsenh" path="res://Weapons/Projectile Scenes/Directed Energy.tscn" id="4_tfofd"]
-[ext_resource type="Texture2D" uid="uid://caw66rdwegykr" path="res://Weapons/Icons/Disruptor.png" id="6_okbt4"]
+[ext_resource type="Texture2D" uid="uid://cf64i8765jokm" path="res://Weapons/Icons/Directed Energy.png" id="6_xatme"]
 
 [resource]
 script = ExtResource("1_4sl66")
 weapon_name = "Directed Energy"
-weapon_icon = ExtResource("6_okbt4")
+weapon_icon = ExtResource("6_xatme")
 level_req = 1
-power_consumption = 10.0
+power_consumption = 1.0
+projectile_count_capacity = 0.0
+projectile_count_actual = 0.0
 weapon_type = 0
 projectile_pierce_count = 0
 projectile_ricochet_count = 0
@@ -27,15 +30,14 @@ target_system_group = "Creative"
 freeze_timer = 0.0
 projectile_prefab = ExtResource("4_tfofd")
 explosion_prefab = ExtResource("1_0ao31")
-projectile_count_capacity = 0.0
-projectile_count_actual = 0.0
+bullet_hole_prefab = ExtResource("1_d751u")
 projectile_count = 4
 projectile_spacing = 0.2
 projectile_start_angle = 45.0
 projectile_recoil = 0.0
 projectile_range = 100.0
 projectile_speed = 65.0
-projectile_spin = 0.0
+projectile_spin = 150.0
 projectile_force = 0.0
 bi_directional = false
 hit_points = 50.0

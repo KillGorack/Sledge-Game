@@ -59,6 +59,11 @@ func apply_directional_force(impulse: Vector3) -> void:
 func _set_friction(value: float) -> void:
 	if physics_material:
 		physics_material.friction = value
+		
+		
+func apply_damage(damage: float) -> void:
+	get_node("Health").apply_direct_damage(damage)
+
 
 
 	

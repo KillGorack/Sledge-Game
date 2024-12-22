@@ -59,12 +59,12 @@ VCredit = 1
 
 [node name="left_raycast" type="RayCast3D" parent="."]
 transform = Transform3D(0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, 0.984807, 0.35, -0.178772, -1.25388)
-target_position = Vector3(0, 0, -10)
+target_position = Vector3(0, 0, -5)
 collision_mask = 255
 
 [node name="right_raycast" type="RayCast3D" parent="."]
 transform = Transform3D(0.984808, 0, 0.173648, 0, 1, 0, -0.173648, 0, 0.984807, -0.35, -0.178772, -1.25388)
-target_position = Vector3(0, 0, -10)
+target_position = Vector3(0, 0, -5)
 collision_mask = 255
 
 [node name="ground_raycast" type="RayCast3D" parent="."]

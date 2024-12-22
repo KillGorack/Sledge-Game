@@ -1,10 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfs4x31mxacap"]
+[gd_scene load_steps=8 format=3 uid="uid://dfs4x31mxacap"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://dh2rif6n2skrg" path="res://Physics/Physics_Floor.tres" id="1_bihw8"]
-[ext_resource type="Script" path="res://Creatives/_scripts/physics.gd" id="2_itqvb"]
-[ext_resource type="Script" path="res://Creatives/_scripts/health.gd" id="3_56k66"]
-[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="4_38hbu"]
-[ext_resource type="AudioStream" uid="uid://dksny4b258a2b" path="res://Sounds/Weapons/Explosion.wav" id="5_fsrnw"]
+[ext_resource type="Script" path="res://Creatives/_scripts/CreativeHandler.gd" id="2_y2yfu"]
 [ext_resource type="Material" uid="uid://mqag85jtsael" path="res://Materials/ceiling_ligted.material" id="6_qtju1"]
 [ext_resource type="Material" uid="uid://cl620ruli77it" path="res://Materials/glitz_blue.material" id="7_grbdo"]
 [ext_resource type="Material" uid="uid://35nge62qm0bt" path="res://Materials/hex_paver.material" id="8_n6e1o"]
@@ -23,16 +20,7 @@ freeze = true
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 5
-script = ExtResource("2_itqvb")
-
-[node name="Health" type="Node3D" parent="."]
-script = ExtResource("3_56k66")
-explosion = ExtResource("4_38hbu")
-explosionSound = ExtResource("5_fsrnw")
-life = 33.0
-armor = 33.0
-shield = 33.0
-Interactive = true
+script = ExtResource("2_y2yfu")
 
 [node name="Collider" type="CollisionShape3D" parent="." groups=["Driveable"]]
 shape = SubResource("BoxShape3D_ssj33")

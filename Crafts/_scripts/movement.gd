@@ -24,11 +24,10 @@ var volume_transition_speed = 5.0
 var current_turn_speed = 0.0
 var original_friction: float = 1.0
 var stop_forces = false
+var physics_material: PhysicsMaterial
 
-@export var physics_material: PhysicsMaterial
 @export var engine_audio_path: NodePath
 @onready var ground_check_area = $GroundCheck
-@export var speedometer: Label
 @export var speedometer_graphic: Control
 
 
@@ -59,7 +58,8 @@ func _physics_process(delta):
 	var ps = linear_velocity.length() / MAX_SPEED
 	speedometer_graphic.set_speed_ratio(ps)
 
-
+func apply_damage(damage: float) -> void:
+	get_node("Health").apply_direct_damage(damage)
 
 
 
@@ -135,8 +135,8 @@ func _set_friction(value: float) -> void:
 		
 func apply_directional_force(impulse: Vector3) -> void:
 	stop_forces = true
-	_set_friction(0)
+	#_set_friction(0)
 	apply_central_impulse(impulse)
 	await get_tree().create_timer(1.0).timeout
-	_set_friction(original_friction)
+	#_set_friction(original_friction)
 	stop_forces = false

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CreativeSettings" load_steps=8 format=3 uid="uid://bg2fnc0rofyhh"]
+
+[ext_resource type="PackedScene" uid="uid://cq303ex5u0ftv" path="res://Creatives/Assets/creative_block_accent.tscn" id="1_pd5gg"]
+[ext_resource type="Script" path="res://Creatives/_scripts/CreativeSettings.gd" id="1_s12l6"]
+[ext_resource type="PackedScene" uid="uid://cipafhhmk6yfa" path="res://Creatives/Cursor/Cursor_Block_OK.tscn" id="1_t4kth"]
+[ext_resource type="PackedScene" uid="uid://cynh0hggfjttn" path="res://Creatives/Cursor/Cursor_Block_NOK.tscn" id="2_8tdnl"]
+[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="3_aj3u2"]
+[ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="4_g1cjd"]
+[ext_resource type="Texture2D" uid="uid://uf41s5uwb4j5" path="res://Textures/Sandwich Block/Sandwich Block_diffuseOriginal.bmp" id="4_om6n1"]
+
+[resource]
+script = ExtResource("1_s12l6")
+Name = "Sandwich Block"
+Icon = ExtResource("4_om6n1")
+Scene = ExtResource("1_pd5gg")
+Cursor_Scene = ExtResource("1_t4kth")
+Cursor_Scene_NOK = ExtResource("2_8tdnl")
+Explosion_Scene = ExtResource("3_aj3u2")
+Life = 100.0
+kenetic_threshold = 50.0
+Rotatable = false
+Frozen = true
+VCredit = 0.0
+Layer = 4
+PlacementSound = ExtResource("4_g1cjd")

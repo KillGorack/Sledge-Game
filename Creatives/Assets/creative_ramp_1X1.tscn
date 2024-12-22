@@ -1,12 +1,9 @@
-[gd_scene load_steps=21 format=4 uid="uid://qeqsd4mhqty3"]
+[gd_scene load_steps=18 format=4 uid="uid://qeqsd4mhqty3"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://dh2rif6n2skrg" path="res://Physics/Physics_Floor.tres" id="1_b6eyv"]
-[ext_resource type="Script" path="res://Creatives/_scripts/health.gd" id="2_r83hx"]
-[ext_resource type="Script" path="res://Creatives/_scripts/physics.gd" id="2_wrefp"]
+[ext_resource type="Script" path="res://Creatives/_scripts/CreativeHandler.gd" id="2_kvv8v"]
 [ext_resource type="Material" uid="uid://di2od31wueoji" path="res://Materials/stone_light.material" id="3_qwwqp"]
-[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="3_sl6nw"]
 [ext_resource type="Material" uid="uid://mqag85jtsael" path="res://Materials/ceiling_ligted.material" id="4_q1s3o"]
-[ext_resource type="AudioStream" uid="uid://dksny4b258a2b" path="res://Sounds/Weapons/Explosion.wav" id="5_lmaly"]
 [ext_resource type="Material" uid="uid://dl6kpxfqpsja0" path="res://Materials/brick.material" id="6_mx88t"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gutil"]
@@ -190,17 +187,7 @@ freeze = true
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 5
-script = ExtResource("2_wrefp")
-
-[node name="Health" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 1.5)
-script = ExtResource("2_r83hx")
-explosion = ExtResource("3_sl6nw")
-explosionSound = ExtResource("5_lmaly")
-life = 33.0
-armor = 33.0
-shield = 33.0
-Interactive = true
+script = ExtResource("2_kvv8v")
 
 [node name="Collider" type="CollisionShape3D" parent="." groups=["Driveable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 1.5)

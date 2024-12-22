@@ -1,25 +1,38 @@
 extends Node3D
 
 @export var mine_settings_array: Array[Resource] = []
-@export var lbl_mines: Label
+
 @onready var raycast = $MineCast
 var current_mine_index = 0
 var icon_mine: TextureRect
+var lbl_mines: Label
+var lbl_name: Label
 var current_mine_settings: Resource
 var mine_lay_timer: float = 0.0
+var this_node_enabled: bool = false
 
 func _ready() -> void:
 	if mine_settings_array.size() > 0:
 		current_mine_settings = mine_settings_array[current_mine_index]
-	icon_mine = get_node("../HUD/MineIcon")
+	icon_mine = get_node("../HUD/item_icon")
+	lbl_mines = get_node("../HUD/lbl_item_count")
+	lbl_name = get_node("../HUD/lbl_item_name")
 	update_mine_label()
 
 func _physics_process(delta: float) -> void:
+	
+	if Utilities.game_mode_index != 1:
+		this_node_enabled = false
+		return
+	elif this_node_enabled == false:
+		this_node_enabled = true
+		update_mine_label()
+		
 	if mine_lay_timer > 0:
 		mine_lay_timer -= delta
-	if Input.is_action_just_pressed("mine_change"):
+	if Input.is_action_just_pressed("weapon_change"):
 		change_mine()
-	if Input.is_action_just_pressed("lay_mine") and current_mine_settings.count_actual > 0 and mine_lay_timer <= 0:
+	if Input.is_action_just_pressed("FireWeapon") and current_mine_settings.count_actual > 0 and mine_lay_timer <= 0:
 		lay_mine()
 
 func lay_mine():
@@ -68,4 +81,5 @@ func change_mine():
 
 func update_mine_label():
 	icon_mine.texture = current_mine_settings.mine_icon
+	lbl_name.text = current_mine_settings.mine_name
 	lbl_mines.text = str(current_mine_settings.count_actual) + " / " + str(current_mine_settings.count_capacity)

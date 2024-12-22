@@ -15,7 +15,12 @@ func _process(_delta: float) -> void:
 	if viewport:
 		var camera = viewport.get_camera_3d()
 		if camera:
-			look_at(camera.global_transform.origin, Vector3.UP)
+			var direction = (camera.global_transform.origin - global_transform.origin).normalized()
+			# Check if the direction is nearly parallel to Vector3.UP
+			if abs(direction.dot(Vector3.UP)) > 0.99:
+				# Slightly adjust the target position to avoid parallel vectors
+				direction += Vector3(0.1, 0, 0).normalized()
+			look_at(global_transform.origin + direction, Vector3.UP)
 
 func _on_Timer_timeout() -> void:
 	queue_free()

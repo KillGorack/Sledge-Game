@@ -12,6 +12,7 @@ func _ready():
 	http_request.connect("request_completed", Callable(self, "_on_request_completed"))
 
 func send_data_to_server():
+	UserData.calculate_level()
 	var post_data = {
 		"user_id": UserData.user_id,
 		"username": UserData.username,

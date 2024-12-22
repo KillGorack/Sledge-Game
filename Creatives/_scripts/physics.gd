@@ -9,7 +9,6 @@ func _ready() -> void:
 	if physics_material:
 		original_friction = physics_material.friction
 	
-
 func _process(_delta: float) -> void:
 	pass
 
@@ -22,7 +21,6 @@ func setFreezeState(bit: bool) -> void:
 		if freeze_timer:
 			freeze_timer.queue_free()
 
-
 func setTempFreese(delay: float) -> void:
 	var init: bool = freeze
 	freeze = true
@@ -30,8 +28,6 @@ func setTempFreese(delay: float) -> void:
 	await get_tree().create_timer(delay).timeout
 	freeze = init
 	sleeping = init
-
-
 
 func _set_friction(value: float) -> void:
 	if physics_material:

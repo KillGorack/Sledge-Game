@@ -11,7 +11,8 @@ extends Node3D
 var life_original: float
 var parent_node = get_parent()
 var death_bit: bool = false
-
+@export var creative_icon: Texture
+@export var creative_name: String
 
 func _ready() -> void:
 	life_original = life
@@ -35,6 +36,7 @@ func apply_direct_damage(damage: float) -> void:
 	if life <= 0:
 		if death_bit == false:
 			UserData.game_vanquishes += VCredit
+			UserData.calculate_level()
 			death_bit = true
 		destroy_self()
 

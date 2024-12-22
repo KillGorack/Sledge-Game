@@ -19,6 +19,7 @@ func _ready():
 	timer.connect("timeout", Callable(self, "update_hud"))
 	timer.start()
 	update_hud()
+	Utilities.update_game_mode_label()
 
 func update_hud():
 	if user_data:

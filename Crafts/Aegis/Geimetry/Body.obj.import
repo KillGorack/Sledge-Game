@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://826t5exh0v72"
+path="res://.godot/imported/Body.obj-b8ae2deb3c3e36dedf1e081ceba87331.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Body.obj-b8ae2deb3c3e36dedf1e081ceba87331.mesh"]
+
+source_file="res://Crafts/Aegis/Geimetry/Body.obj"
+dest_files=["res://.godot/imported/Body.obj-b8ae2deb3c3e36dedf1e081ceba87331.mesh", "res://.godot/imported/Body.obj-b8ae2deb3c3e36dedf1e081ceba87331.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
