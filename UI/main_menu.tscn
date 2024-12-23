@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbynjvqiceo11" path="res://UI/backdrops/Space2.png" id="3_36yhb"]
 [ext_resource type="Script" path="res://UI/_scripts/load_game.gd" id="5_bmbm4"]
 [ext_resource type="Theme" uid="uid://ehwvvgpd7w2t" path="res://UI/Graphics/Theme_chip.tres" id="7_l55rl"]
-[ext_resource type="Script" path="res://UI/weapon_group.gd" id="7_sgr43"]
+[ext_resource type="Script" path="res://UI/_scripts/weapon_group.gd" id="7_sgr43"]
 [ext_resource type="Texture2D" uid="uid://ssbma0t65dqa" path="res://UI/icons/audio.svg" id="8_fh4hf"]
 [ext_resource type="PackedScene" uid="uid://broaos8akuc5f" path="res://Creatives/NPC/Palladin.tscn" id="8_labk7"]
 

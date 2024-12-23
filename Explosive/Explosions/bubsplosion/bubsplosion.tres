@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d7qjucujkdx4"]
 
-[ext_resource type="Shader" path="res://Explosive/Explosions/Explosion_A/Explosion_A.gdshader" id="1_3titl"]
+[ext_resource type="Shader" path="res://Explosive/explosions/Explosion_A/Explosion_A.gdshader" id="1_3titl"]
 [ext_resource type="Texture2D" uid="uid://c5yb4n0fs5ofh" path="res://Textures/Explosion/FlipBook.png" id="2_0gdbn"]
 
 [resource]

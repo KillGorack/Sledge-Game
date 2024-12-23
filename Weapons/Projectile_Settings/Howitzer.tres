@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://b6q41js1vtad3"]
 
 [ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="1_jtdo6"]
-[ext_resource type="PackedScene" uid="uid://dhkttboqth4ak" path="res://Explosive/Hit Marks/Crater.tscn" id="1_vf5j3"]
-[ext_resource type="PackedScene" uid="uid://bf7wlcygvo8f1" path="res://Explosive/Sparks_By_Color/spark_white.tscn" id="2_57565"]
+[ext_resource type="PackedScene" uid="uid://dhkttboqth4ak" path="res://Explosive/hit_marks/Crater.tscn" id="1_vf5j3"]
+[ext_resource type="PackedScene" uid="uid://bf7wlcygvo8f1" path="res://Explosive/sparks_by_color/spark_white.tscn" id="2_57565"]
 [ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_6epmv"]
 [ext_resource type="PackedScene" uid="uid://blnuhgmtq7p0d" path="res://Weapons/Projectile Scenes/howitzer.tscn" id="4_g8w12"]
 [ext_resource type="AudioStream" uid="uid://bu6it21bq0rv1" path="res://Sounds/Weapons/mortar.wav" id="4_mejqd"]

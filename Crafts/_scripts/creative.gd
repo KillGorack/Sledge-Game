@@ -34,14 +34,13 @@ func _ready():
 
 
 func _process(_delta: float):
-	
 	if Utilities.game_mode_index != 2 and creative_mode_enabled == false:
 		return
 	elif Utilities.game_mode_index != 2 and creative_mode_enabled == true:
 		toggle_creative_mode()
 	elif creative_mode_enabled == false:
 		toggle_creative_mode()
-	if not creative_mode_enabled:
+	if not creative_mode_enabled or Utilities.user_space_access == false:
 		return
 		
 	if Input.is_action_just_pressed("weapon_change"):

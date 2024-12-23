@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MineSettings" load_steps=7 format=3 uid="uid://ycpld2m1l5an"]
 
-[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="1_bsm5t"]
-[ext_resource type="PackedScene" uid="uid://c0g6dtgokldmd" path="res://Explosive/Hit Marks/cracked.tscn" id="1_cjx50"]
+[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/explosions/Explosion_A/Explosion_A.tscn" id="1_bsm5t"]
+[ext_resource type="PackedScene" uid="uid://c0g6dtgokldmd" path="res://Explosive/hit_marks/cracked.tscn" id="1_cjx50"]
 [ext_resource type="Script" path="res://Weapons/_scripts/MineSettings.gd" id="1_o6liu"]
 [ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="2_8f6bx"]
 [ext_resource type="PackedScene" uid="uid://gvgi7oq23p26" path="res://Weapons/Mines_Scenes/forcewave_mine.tscn" id="2_hi7lo"]

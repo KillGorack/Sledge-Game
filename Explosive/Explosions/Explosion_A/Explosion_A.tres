@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cugiwynuuw7ru"]
 
-[ext_resource type="Shader" path="res://Explosive/Explosions/Explosion_A/Explosion_A.gdshader" id="1_h3d2g"]
+[ext_resource type="Shader" path="res://Explosive/explosions/Explosion_A/Explosion_A.gdshader" id="1_h3d2g"]
 [ext_resource type="Texture2D" uid="uid://xlv1dw3fiskx" path="res://Textures/Explosion/exp_height.bmp" id="2_y0xpi"]
 [ext_resource type="Texture2D" uid="uid://cfwxs0qo7oybo" path="res://Textures/Explosion/exp_normal.bmp" id="3_ct3do"]
 [ext_resource type="Texture2D" uid="uid://dnwnpl26pnejk" path="res://Textures/Explosion/Explosion.png" id="4_8yxyx"]

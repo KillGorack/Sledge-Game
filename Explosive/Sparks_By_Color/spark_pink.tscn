@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UTILS/_gc.gd" id="1_arqgt"]
 [ext_resource type="Material" uid="uid://cxegwns3ipse3" path="res://Materials/particle_pink.material" id="2_dgjvb"]
-[ext_resource type="Script" path="res://Explosive/lookie.gd" id="3_2277y"]
+[ext_resource type="Script" path="res://Explosive/_scripts/lookie.gd" id="3_2277y"]
 
 [sub_resource type="Curve" id="Curve_tndmb"]
 max_value = 0.5

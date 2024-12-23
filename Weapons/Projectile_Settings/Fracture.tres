@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://cdgxmt8vjytu2"]
 
-[ext_resource type="PackedScene" uid="uid://b23jpp7luowya" path="res://Explosive/Hit Marks/bullet_hole.tscn" id="1_h2gh1"]
-[ext_resource type="PackedScene" uid="uid://lh6e3t26y73o" path="res://Explosive/Sparks_By_Color/spark_pink.tscn" id="2_773y8"]
+[ext_resource type="PackedScene" uid="uid://b23jpp7luowya" path="res://Explosive/hit_marks/bullet_hole.tscn" id="1_h2gh1"]
+[ext_resource type="PackedScene" uid="uid://lh6e3t26y73o" path="res://Explosive/sparks_by_color/spark_pink.tscn" id="2_773y8"]
 [ext_resource type="AudioStream" uid="uid://jclwroi5eofo" path="res://Sounds/Weapons/bullet hit.wav" id="3_f8a25"]
 [ext_resource type="PackedScene" uid="uid://dy6q7niy2f3mx" path="res://Weapons/Projectile Scenes/fracture.tscn" id="3_u2mm0"]
 [ext_resource type="AudioStream" uid="uid://cvbajphyobl52" path="res://Sounds/Weapons/laser1.wav" id="4_6f0oy"]

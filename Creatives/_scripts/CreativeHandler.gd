@@ -14,7 +14,7 @@ func _ready() -> void:
 	default_values = {
 		"Life": 100.0,
 		"kenetic_threshold": 70.0,
-		"Explosion_Scene": preload("res://Explosive/Explosions/Explosion_A/Explosion_A.tscn"),
+		"Explosion_Scene": preload("res://Explosive/explosions/Explosion_A/Explosion_A.tscn"),
 		"Explosion_Sound": preload("res://Sounds/Weapons/Explosion.wav")
 	}
 	_set_life(default_values["Life"])

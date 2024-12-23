@@ -13,7 +13,7 @@
 [ext_resource type="Material" uid="uid://bb5au6shernuv" path="res://Materials/gun_metal.material" id="7_vn57e"]
 [ext_resource type="Resource" uid="uid://bmlj7n1wkbi8x" path="res://Weapons/Mine_Settings/freeze_mine.tres" id="8_2uvce"]
 [ext_resource type="ArrayMesh" uid="uid://oighycb1gyxn" path="res://Crafts/Paladin/Geometry/Barrel.obj" id="8_vb1lh"]
-[ext_resource type="Script" path="res://Crafts/Paladin/creative.gd" id="9_jlh2h"]
+[ext_resource type="Script" path="res://Crafts/_scripts/creative.gd" id="9_jlh2h"]
 [ext_resource type="Script" path="res://Weapons/_scripts/shoot.gd" id="9_jmdpj"]
 [ext_resource type="Resource" uid="uid://btg44tgnf1ty3" path="res://Weapons/Projectile_Settings/Albatross.tres" id="10_qifet"]
 [ext_resource type="Resource" uid="uid://di45ppgtvat4r" path="res://Weapons/Projectile_Settings/Force.tres" id="13_qjads"]

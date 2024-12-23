@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://di45ppgtvat4r"]
 
 [ext_resource type="AudioStream" uid="uid://bkwrnnr67s04s" path="res://Sounds/Weapons/Repulsor.mp3" id="1_4h173"]
-[ext_resource type="PackedScene" uid="uid://c0g6dtgokldmd" path="res://Explosive/Hit Marks/cracked.tscn" id="1_bp5lm"]
+[ext_resource type="PackedScene" uid="uid://c0g6dtgokldmd" path="res://Explosive/hit_marks/cracked.tscn" id="1_bp5lm"]
 [ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="1_pevp6"]
 [ext_resource type="PackedScene" uid="uid://xr520jktmt5g" path="res://Weapons/Projectile Scenes/Force.tscn" id="1_ulvpd"]
-[ext_resource type="PackedScene" uid="uid://y4t1eft31wfl" path="res://Explosive/Explosions/bubsplosion/bubsplosion.tscn" id="2_h6h2c"]
+[ext_resource type="PackedScene" uid="uid://y4t1eft31wfl" path="res://Explosive/explosions/bubsplosion/bubsplosion.tscn" id="2_h6h2c"]
 [ext_resource type="AudioStream" uid="uid://dlcv0qtnhvyrt" path="res://Sounds/Weapons/Launch.mp3" id="2_nvv0s"]
 [ext_resource type="Texture2D" uid="uid://dyfoa5sg2ovx4" path="res://Weapons/Icons/Force.png" id="7_0nbw7"]
 

@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://bsfkphymm8m2j"]
 
-[ext_resource type="PackedScene" uid="uid://c8rq8euhyuhrk" path="res://Explosive/Sparks_By_Color/spark_red.tscn" id="1_0ao31"]
+[ext_resource type="PackedScene" uid="uid://c8rq8euhyuhrk" path="res://Explosive/sparks_by_color/spark_red.tscn" id="1_0ao31"]
 [ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="1_4sl66"]
-[ext_resource type="PackedScene" uid="uid://l2c4j45shmen" path="res://Explosive/Hit Marks/burnt_marks.tscn" id="1_d751u"]
+[ext_resource type="PackedScene" uid="uid://l2c4j45shmen" path="res://Explosive/hit_marks/burnt_marks.tscn" id="1_d751u"]
 [ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="2_u14sk"]
 [ext_resource type="AudioStream" uid="uid://b5huqmt6xgapr" path="res://Sounds/Weapons/laser5.mp3" id="3_e243s"]
 [ext_resource type="PackedScene" uid="uid://clas4r5ifsenh" path="res://Weapons/Projectile Scenes/Directed Energy.tscn" id="4_tfofd"]

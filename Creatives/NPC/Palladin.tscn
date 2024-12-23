@@ -3,7 +3,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://deru0wsiqkst8" path="res://Physics/Physics_Player.tres" id="1_b2t31"]
 [ext_resource type="Script" path="res://Creatives/_scripts/health.gd" id="2_6a5ro"]
 [ext_resource type="Script" path="res://Creatives/_scripts/NPC_Roamer.gd" id="2_ocby1"]
-[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="4_7h6s0"]
+[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/explosions/Explosion_A/Explosion_A.tscn" id="4_7h6s0"]
 [ext_resource type="ArrayMesh" uid="uid://cjqvq2awiksjj" path="res://Crafts/Paladin/Geometry/Turret.obj" id="4_dcwka"]
 [ext_resource type="AudioStream" uid="uid://dksny4b258a2b" path="res://Sounds/Weapons/Explosion.wav" id="5_0ns04"]
 [ext_resource type="Material" uid="uid://clj5jh6v7iyl0" path="res://Materials/glitz_gray.material" id="6_hapyq"]

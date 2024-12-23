@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponSettings" load_steps=7 format=3 uid="uid://dl2r187pyc150"]
 
-[ext_resource type="PackedScene" uid="uid://bvjinfvqppheq" path="res://Explosive/Sparks_By_Color/spark_blue.tscn" id="1_xpgje"]
+[ext_resource type="PackedScene" uid="uid://bvjinfvqppheq" path="res://Explosive/sparks_by_color/spark_blue.tscn" id="1_xpgje"]
 [ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="2_7jxup"]
 [ext_resource type="PackedScene" uid="uid://xr520jktmt5g" path="res://Weapons/Projectile Scenes/Force.tscn" id="2_jfpj3"]
 [ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="3_bmjgt"]

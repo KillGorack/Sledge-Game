@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="MineSettings" load_steps=7 format=3 uid="uid://b1v0bkr5tqqtn"]
 
-[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="1_4l3lf"]
+[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/explosions/Explosion_A/Explosion_A.tscn" id="1_4l3lf"]
 [ext_resource type="Script" path="res://Weapons/_scripts/MineSettings.gd" id="1_cn3p8"]
-[ext_resource type="PackedScene" uid="uid://dhkttboqth4ak" path="res://Explosive/Hit Marks/Crater.tscn" id="1_itcbe"]
+[ext_resource type="PackedScene" uid="uid://dhkttboqth4ak" path="res://Explosive/hit_marks/Crater.tscn" id="1_itcbe"]
 [ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="2_17wmk"]
 [ext_resource type="PackedScene" uid="uid://b7itklo4mesky" path="res://Weapons/Mines_Scenes/detno_mine.tscn" id="4_jrdok"]
 [ext_resource type="Texture2D" uid="uid://dxmc6d6upf7k5" path="res://Weapons/Icons/Detno Mine.png" id="4_q32g2"]

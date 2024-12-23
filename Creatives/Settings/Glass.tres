@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cipafhhmk6yfa" path="res://Creatives/Cursor/Cursor_Block_OK.tscn" id="1_tdvww"]
 [ext_resource type="Script" path="res://Creatives/_scripts/CreativeSettings.gd" id="1_v4gvx"]
 [ext_resource type="PackedScene" uid="uid://cynh0hggfjttn" path="res://Creatives/Cursor/Cursor_Block_NOK.tscn" id="2_qjaw0"]
-[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="3_es4ek"]
+[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/explosions/Explosion_A/Explosion_A.tscn" id="3_es4ek"]
 [ext_resource type="AudioStream" uid="uid://dksny4b258a2b" path="res://Sounds/Weapons/Explosion.wav" id="4_jru23"]
 [ext_resource type="Texture2D" uid="uid://dj283o865gxfm" path="res://Textures/Water/others_0020_color_1k.jpg" id="5_x1e4q"]
 [ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="6_5dviq"]

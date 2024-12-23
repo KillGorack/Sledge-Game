@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://ckqk5fedx0m3q"]
 
-[ext_resource type="Script" path="res://Explosive/lookie.gd" id="1_rk5sp"]
-[ext_resource type="Material" uid="uid://cugiwynuuw7ru" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tres" id="2_su0gs"]
-[ext_resource type="Script" path="res://Explosive/Explosions/Explosion_A/Explosion_A.gd" id="3_txbvn"]
-[ext_resource type="Script" path="res://Explosive/flash.gd" id="5_pp5s3"]
+[ext_resource type="Script" path="res://Explosive/_scripts/lookie.gd" id="1_rk5sp"]
+[ext_resource type="Material" uid="uid://cugiwynuuw7ru" path="res://Explosive/explosions/Explosion_A/Explosion_A.tres" id="2_su0gs"]
+[ext_resource type="Script" path="res://Explosive/explosions/Explosion_A/Explosion_A.gd" id="3_txbvn"]
+[ext_resource type="Script" path="res://Explosive/_scripts/flash.gd" id="5_pp5s3"]
 [ext_resource type="Material" uid="uid://yo17ojst76id" path="res://Materials/particle_white.material" id="6_kpcok"]
 [ext_resource type="Script" path="res://UTILS/_gc.gd" id="7_u3uro"]
 

@@ -14,7 +14,7 @@ func _ready() -> void:
 
 	frame_size = Vector2(1.0 / columns, 1.0 / rows)
 	
-	shader_material = preload("res://Explosive/Explosions/Explosion_A/Explosion_A.tres").duplicate()
+	shader_material = preload("res://Explosive/explosions/Explosion_A/Explosion_A.tres").duplicate()
 
 	if shader_material:
 		shader_material.set_shader_parameter("frame_size", frame_size)

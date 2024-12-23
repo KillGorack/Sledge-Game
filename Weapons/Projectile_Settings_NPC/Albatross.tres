@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponSettings" load_steps=7 format=3 uid="uid://dssl60dw2733b"]
 
-[ext_resource type="PackedScene" uid="uid://dhkttboqth4ak" path="res://Explosive/Hit Marks/Crater.tscn" id="1_us13w"]
-[ext_resource type="PackedScene" uid="uid://bf7wlcygvo8f1" path="res://Explosive/Sparks_By_Color/spark_white.tscn" id="2_s6ayt"]
+[ext_resource type="PackedScene" uid="uid://dhkttboqth4ak" path="res://Explosive/hit_marks/Crater.tscn" id="1_us13w"]
+[ext_resource type="PackedScene" uid="uid://bf7wlcygvo8f1" path="res://Explosive/sparks_by_color/spark_white.tscn" id="2_s6ayt"]
 [ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_igfoo"]
 [ext_resource type="AudioStream" uid="uid://dlcv0qtnhvyrt" path="res://Sounds/Weapons/Launch.mp3" id="4_py8bg"]
 [ext_resource type="PackedScene" uid="uid://nvrjoc0qxoef" path="res://Weapons/Projectile Scenes/Detno.tscn" id="5_rl3y6"]

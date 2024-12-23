@@ -31,9 +31,18 @@ func update_game_mode_label():
 
 
 
+func reset_game_mode():
+	game_mode_index = 0
+	game_mode = game_modes[game_mode_index]
+	update_game_mode_label()
+	
+	
+	
+	
+
 func toggle_game_mode():
 	game_mode_index += 1
-	if game_mode_index > 2:
+	if game_mode_index > 2 or (game_mode_index == 2 and user_space_access == false):
 		game_mode_index = 0
 	game_mode = game_modes[game_mode_index]
 	update_game_mode_label()
