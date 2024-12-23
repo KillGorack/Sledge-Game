@@ -22,7 +22,7 @@ UserData="*res://UI/_scripts/UserData.gd"
 Utilities="*res://UTILS/Utilities.gd"
 UserDataApi="*res://UI/_scripts/UserDataAPI.gd"
 Creds="*res://UTILS/Creds.gd"
-ScreenCapture="*res://screen_capture.gd"
+ScreenCapture="*res://UTILS/screen_capture.gd"
 
 [display]
 
