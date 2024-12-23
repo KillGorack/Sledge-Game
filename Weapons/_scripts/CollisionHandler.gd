@@ -16,6 +16,7 @@ var target_beacon: Node3D
 var ignored_objects: Array = []
 var guidedTarget: Node
 var exclusions = []
+var sf :float = 1
 
 func _ready():
 	current_direction = -global_transform.basis.z.normalized()
@@ -33,7 +34,7 @@ func _ready():
 			weapon_settings.target_system_scan_radius, 
 			15, 
 			weapon_settings.target_system_group, 
-			weapon_settings.targeting_system_require_marker) 
+			weapon_settings.targeting_system_require_marker)
 
 
 
@@ -91,7 +92,8 @@ func set_weapon_settings(settings: WeaponSettings):
 	self.set_collision_layer_value(weapon_settings.layer, true)
 	for mask in weapon_settings.layer_mask:
 		self.set_collision_mask_value(mask, true)
-
+	sf = weapon_settings.sizing_scale
+	self.scale = Vector3(sf, sf, sf)
 
 
 

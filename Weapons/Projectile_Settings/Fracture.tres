@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://cdgxmt8vjytu2"]
 
-[ext_resource type="PackedScene" uid="uid://b23jpp7luowya" path="res://Explosive/hit_marks/bullet_hole.tscn" id="1_h2gh1"]
-[ext_resource type="PackedScene" uid="uid://lh6e3t26y73o" path="res://Explosive/sparks_by_color/spark_pink.tscn" id="2_773y8"]
+[ext_resource type="PackedScene" uid="uid://b23jpp7luowya" path="res://Explosive/hit_marks/bullet_hole.tscn" id="1_rewtq"]
+[ext_resource type="PackedScene" uid="uid://lh6e3t26y73o" path="res://Explosive/sparks_by_color/spark_pink.tscn" id="2_aed8x"]
 [ext_resource type="AudioStream" uid="uid://jclwroi5eofo" path="res://Sounds/Weapons/bullet hit.wav" id="3_f8a25"]
 [ext_resource type="PackedScene" uid="uid://dy6q7niy2f3mx" path="res://Weapons/Projectile Scenes/fracture.tscn" id="3_u2mm0"]
 [ext_resource type="AudioStream" uid="uid://cvbajphyobl52" path="res://Sounds/Weapons/laser1.wav" id="4_6f0oy"]
@@ -30,8 +30,8 @@ target_system_scan_radius = 25.0
 target_system_group = "Creative"
 freeze_timer = 0.0
 projectile_prefab = ExtResource("3_u2mm0")
-explosion_prefab = ExtResource("2_773y8")
-bullet_hole_prefab = ExtResource("1_h2gh1")
+explosion_prefab = ExtResource("2_aed8x")
+bullet_hole_prefab = ExtResource("1_rewtq")
 projectile_count = 1
 projectile_spacing = 0.0
 projectile_start_angle = 0.0
@@ -41,7 +41,7 @@ projectile_speed = 250.0
 projectile_spin = 0.0
 projectile_force = 0.0
 bi_directional = false
-hit_points = 25.0
+hit_points = 1000.0
 cool_down = 0.125
 launch_offset = 0.0
 projectile_fire_delay = 0.0

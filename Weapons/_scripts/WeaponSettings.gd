@@ -4,6 +4,7 @@ class_name WeaponSettings
 @export var weapon_name: String = "Default Weapon"
 @export var weapon_icon: Texture
 @export var level_req: int = 1
+@export var sizing_scale: int = 1
 @export var power_consumption: float = 0.0
 @export var projectile_count_capacity: float = 1.0
 @export var projectile_count_actual: float = 1.0
