@@ -18,6 +18,8 @@ enum WeaponType { Default, Force, Pierce, Explosive, Bounce }
 @export var explosive_force: float = 0.0
 @export var explosive_force_distance: float = 0.0
 
+@export var body_collection_max: int = 0
+
 @export var targeting_system: bool = false
 @export var targeting_system_require_marker: bool = true
 @export var target_rotation_speed: float = 0.0

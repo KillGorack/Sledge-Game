@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CreativeSettings" load_steps=9 format=3 uid="uid://dphmlaxr44tc0"]
+
+[ext_resource type="PackedScene" uid="uid://cipafhhmk6yfa" path="res://Creatives/Cursor/Cursor_Block_OK.tscn" id="1_h2k1q"]
+[ext_resource type="Script" path="res://Creatives/_scripts/CreativeSettings.gd" id="1_hv4af"]
+[ext_resource type="PackedScene" uid="uid://cynh0hggfjttn" path="res://Creatives/Cursor/Cursor_Block_NOK.tscn" id="2_1uomy"]
+[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="3_cyy4c"]
+[ext_resource type="AudioStream" uid="uid://dksny4b258a2b" path="res://Sounds/Weapons/Explosion.wav" id="4_nhut6"]
+[ext_resource type="Texture2D" uid="uid://pstutblj5e3x" path="res://Textures/Creative/Place_OK.png" id="5_fgxyo"]
+[ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="6_xl37q"]
+[ext_resource type="PackedScene" uid="uid://c5l60lq4s4jcd" path="res://Creatives/ReconStations/recon_pad_static.tscn" id="7_7agb2"]
+
+[resource]
+script = ExtResource("1_hv4af")
+Name = "Recon Station"
+Icon = ExtResource("5_fgxyo")
+Scene = ExtResource("7_7agb2")
+Cursor_Scene = ExtResource("1_h2k1q")
+Cursor_Scene_NOK = ExtResource("2_1uomy")
+Explosion_Scene = ExtResource("3_cyy4c")
+Life = 500.0
+kenetic_threshold = 0.0
+Rotatable = false
+Frozen = true
+VCredit = 0
+Layer = 4
+PlacementSound = ExtResource("6_xl37q")
+Explosion_Sound = ExtResource("4_nhut6")

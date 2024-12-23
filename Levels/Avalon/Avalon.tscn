@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbsxohr2v24p4"]
+[gd_scene load_steps=17 format=3 uid="uid://dbsxohr2v24p4"]
 
+[ext_resource type="Script" path="res://Levels/_scripts/LevelHandler.gd" id="1_q5kjv"]
 [ext_resource type="PackedScene" uid="uid://bp1hug4b03xsw" path="res://Levels/Avalon/Avalon.glb" id="1_tlc7y"]
 [ext_resource type="Material" uid="uid://co0fl1dxv48pm" path="res://Materials/sandwich_block.material" id="2_s0g5x"]
 [ext_resource type="Material" uid="uid://cjx3tugs85ut2" path="res://Materials/turf.material" id="3_dkysj"]
@@ -62,6 +63,7 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
 
 [node name="CorycusMountain" type="Node3D"]
+script = ExtResource("1_q5kjv")
 
 [node name="Geometry" parent="." instance=ExtResource("1_tlc7y")]
 

@@ -5,7 +5,7 @@ var audio_pool: Array = []
 var game_modes: Array = ["Battle Mode", "Mine Mode", "Creative Mode"]
 var game_mode_index: int = 0
 var game_mode: String = game_modes[game_mode_index]
-
+var user_space_access: bool = false
 
 func _ready():
 	randomize()
@@ -117,3 +117,6 @@ func select_target(origin: Vector3, forward_direction: Vector3, radius: float, m
 		if potential_targets.size() > 0:
 			return potential_targets[randi() % potential_targets.size()]
 	return null
+	
+func set_user_space_access(switch_bit: bool) -> void:
+	user_space_access = switch_bit

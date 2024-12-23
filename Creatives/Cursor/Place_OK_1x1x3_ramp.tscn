@@ -1,12 +1,8 @@
-[gd_scene load_steps=18 format=4 uid="uid://qeqsd4mhqty3"]
+[gd_scene load_steps=14 format=4 uid="uid://buxrwnpv251um"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://dh2rif6n2skrg" path="res://Physics/Physics_Floor.tres" id="1_b6eyv"]
-[ext_resource type="Script" path="res://Creatives/_scripts/CreativeHandler.gd" id="2_kvv8v"]
-[ext_resource type="Material" uid="uid://di2od31wueoji" path="res://Materials/stone_light.material" id="3_qwwqp"]
-[ext_resource type="Material" uid="uid://mqag85jtsael" path="res://Materials/ceiling_ligted.material" id="4_q1s3o"]
-[ext_resource type="Material" uid="uid://dl6kpxfqpsja0" path="res://Materials/brick.material" id="6_mx88t"]
+[ext_resource type="Material" uid="uid://cymxlvm46aknw" path="res://Materials/Place_OK.tres" id="1_f07sq"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gutil"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ocnye"]
 points = PackedVector3Array(0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, -3, 1, 0, -3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8gt2"]
@@ -16,7 +12,7 @@ albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
 roughness = 0.254644
 emission_enabled = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4hrl0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wbmr8"]
 _surfaces = [{
 "aabb": AABB(1, -3, -1, 1.00136e-05, 3.00001, 1.00001),
 "format": 34896613377,
@@ -30,7 +26,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pcdvp"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_bi12p"]
 resource_name = "Ramp-1-1-3_Ramp_H1-W1-L3_002"
 _surfaces = [{
 "aabb": AABB(1, -3, -1, 1.00136e-05, 3.00001, 1.00001),
@@ -46,9 +42,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD+//7/VNUAAJkZ/v9U1QAA/v8AAFTVAACZGWTmVNUAAAAA/v9U1aqqVFWpqlRVqqpUVamqVFWpqlRV")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_4hrl0")
+shadow_mesh = SubResource("ArrayMesh_wbmr8")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_rchkk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0awgd"]
 _surfaces = [{
 "aabb": AABB(0, -3, -1, 1.00001, 3, 1),
 "format": 34896613377,
@@ -62,7 +58,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cbpuu"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_as1bm"]
 resource_name = "Ramp-1-1-3_Ramp_H1-W1-L3_003"
 _surfaces = [{
 "aabb": AABB(0, -3, -1, 1.00001, 3, 1),
@@ -78,9 +74,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/v+ZGWXm//8AAJkZZeb///7///8AAP//AAD//wAA///+/wAA/////wAAAAD/////3pH//96R///ekf//3pH//96R///ekf//")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_rchkk")
+shadow_mesh = SubResource("ArrayMesh_0awgd")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bq7qe"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4ky23"]
 _surfaces = [{
 "aabb": AABB(0, -3, -1, 1e-05, 3, 1.00001),
 "format": 34896613377,
@@ -94,7 +90,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_kck1l"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0qk78"]
 resource_name = "Ramp-1-1-3_Ramp_H1-W1-L3_004"
 _surfaces = [{
 "aabb": AABB(0, -3, -1, 1e-05, 3, 1.00001),
@@ -110,9 +106,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AACZGf7/qioAAP///v+qKgAAmRlk5qoqAAD//wAAqioAAAAA/v+qKlRVqapUVamqVFWpqlRVqapUVamq")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_bq7qe")
+shadow_mesh = SubResource("ArrayMesh_4ky23")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_p1b3p"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_22ek4"]
 _surfaces = [{
 "aabb": AABB(0, -3, 0, 1.00001, 3.00001, 1e-05),
 "format": 34896613377,
@@ -126,7 +122,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0pyem"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_l7ipt"]
 resource_name = "Ramp-1-1-3_Ramp_H1-W1-L3_005"
 _surfaces = [{
 "aabb": AABB(0, -3, 0, 1.00001, 3.00001, 1e-05),
@@ -142,9 +138,9 @@ _surfaces = [{
 "vertex_data": PackedByteArray("/v/+/wAA//8AAP7/AAD///7/mRkAAP//AACZGQAA///+/wAAAAD//wAAAAAAAP///3//f/9//3//f/9//3//f/9//3//f/9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_p1b3p")
+shadow_mesh = SubResource("ArrayMesh_22ek4")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ffbgx"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_l7g8v"]
 _surfaces = [{
 "aabb": AABB(0, 0, -1, 1, 1e-05, 1),
 "format": 34896613377,
@@ -158,7 +154,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0rsvk"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ksi7f"]
 resource_name = "Ramp-1-1-3_Ramp_H1-W1-L3_006"
 _surfaces = [{
 "aabb": AABB(0, 0, -1, 1, 1e-05, 1),
@@ -174,24 +170,15 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAAAA/78AAAAA////v///AAAAAP+///8AAP///7////9/////f////3////9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ffbgx")
+shadow_mesh = SubResource("ArrayMesh_l7g8v")
 
-[node name="Creative_Ramp" type="RigidBody3D" groups=["Creative"]]
+[node name="ramp_1x1x1_ok" type="Area3D"]
 collision_layer = 8
-collision_mask = 16711695
-mass = 2.0
-physics_material_override = ExtResource("1_b6eyv")
-center_of_mass_mode = 1
-can_sleep = false
-freeze = true
-continuous_cd = true
-contact_monitor = true
-max_contacts_reported = 5
-script = ExtResource("2_kvv8v")
+collision_mask = 255
 
 [node name="Collider" type="CollisionShape3D" parent="." groups=["Driveable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 1.5)
-shape = SubResource("ConvexPolygonShape3D_gutil")
+shape = SubResource("ConvexPolygonShape3D_ocnye")
 
 [node name="Mesh" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 1.5)
@@ -199,34 +186,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, 1.5)
 [node name="Side Left" type="MeshInstance3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0.000416279, -0.00208652, 0.00792527)
 layers = 16
-material_override = ExtResource("6_mx88t")
-mesh = SubResource("ArrayMesh_pcdvp")
+material_override = ExtResource("1_f07sq")
+mesh = SubResource("ArrayMesh_bi12p")
 skeleton = NodePath("")
 
 [node name="Ramp" type="MeshInstance3D" parent="Mesh" groups=["Driveable"]]
 transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0)
 layers = 16
-material_override = ExtResource("3_qwwqp")
-mesh = SubResource("ArrayMesh_cbpuu")
+material_override = ExtResource("1_f07sq")
+mesh = SubResource("ArrayMesh_as1bm")
 skeleton = NodePath("")
 
 [node name="Side Right" type="MeshInstance3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0)
 layers = 16
-material_override = ExtResource("6_mx88t")
-mesh = SubResource("ArrayMesh_kck1l")
+material_override = ExtResource("1_f07sq")
+mesh = SubResource("ArrayMesh_0qk78")
 skeleton = NodePath("")
 
 [node name="Celiing" type="MeshInstance3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0)
 layers = 16
-material_override = ExtResource("4_q1s3o")
-mesh = SubResource("ArrayMesh_0pyem")
+material_override = ExtResource("1_f07sq")
+mesh = SubResource("ArrayMesh_l7ipt")
 skeleton = NodePath("")
 
 [node name="Back" type="MeshInstance3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0)
 layers = 16
-material_override = ExtResource("6_mx88t")
-mesh = SubResource("ArrayMesh_0rsvk")
+material_override = ExtResource("1_f07sq")
+mesh = SubResource("ArrayMesh_ksi7f")
 skeleton = NodePath("")

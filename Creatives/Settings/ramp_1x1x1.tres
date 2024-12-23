@@ -1,40 +1,23 @@
-[gd_resource type="Resource" script_class="CreativeSettings" load_steps=11 format=3 uid="uid://0ewde5pyqklg"]
+[gd_resource type="Resource" script_class="CreativeSettings" load_steps=8 format=3 uid="uid://0ewde5pyqklg"]
 
 [ext_resource type="Script" path="res://Creatives/_scripts/CreativeSettings.gd" id="1_0d5cq"]
-[ext_resource type="Material" uid="uid://cymxlvm46aknw" path="res://Materials/Place_OK.tres" id="1_w8qel"]
+[ext_resource type="PackedScene" uid="uid://be2cs5tfvpnfn" path="res://Creatives/Cursor/Place_OK_1x1x1_ramp.tscn" id="1_7gmmu"]
 [ext_resource type="PackedScene" uid="uid://cynh0hggfjttn" path="res://Creatives/Cursor/Cursor_Block_NOK.tscn" id="2_2egww"]
-[ext_resource type="ArrayMesh" uid="uid://8g4twjkgd4ef" path="res://Models/ramp1x1x1.obj" id="2_23kpr"]
 [ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="3_tsqvs"]
 [ext_resource type="Texture2D" uid="uid://cc3eoipoords5" path="res://Textures/Block Deco/Block Deco_diffuseOriginal.bmp" id="4_tw2gv"]
 [ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="4_uxqd7"]
 [ext_resource type="PackedScene" uid="uid://bh65vemlv5ixt" path="res://Creatives/Assets/ramp_1x1x1.tscn" id="5_lysxe"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hu1v6"]
-points = PackedVector3Array(0.5, 1, 0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 1, 0.5, -0.5, 0, 0.5, -0.5, 0, -0.5)
-
-[sub_resource type="PackedScene" id="PackedScene_sgwch"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("ramp_1x1x1_ok", "Area3D", "collision_layer", "collision_mask", "MeshInstance3D", "MeshInstance3D", "transform", "layers", "material_override", "mesh", "CollisionShape3D", "CollisionShape3D", "transform", "shape"),
-"node_count": 3,
-"node_paths": [NodePath("."), NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 2, 2, 0, 3, 1, 0, 1073741824, 0, 5, 4, -1, 4, 6, 2, 7, 3, 8, 4, 9, 5, 0, 1073741825, 0, 11, 10, -1, 2, 12, 6, 13, 7, 0),
-"variants": [8, 255, Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0), 16, ExtResource("1_w8qel"), ExtResource("2_23kpr"), Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 0, 0), SubResource("ConvexPolygonShape3D_hu1v6")],
-"version": 3
-}
 
 [resource]
 script = ExtResource("1_0d5cq")
 Name = "Ramp 1x1x1"
 Icon = ExtResource("4_tw2gv")
 Scene = ExtResource("5_lysxe")
-Cursor_Scene = SubResource("PackedScene_sgwch")
+Cursor_Scene = ExtResource("1_7gmmu")
 Cursor_Scene_NOK = ExtResource("2_2egww")
 Explosion_Scene = ExtResource("3_tsqvs")
-Life = 100.0
-kenetic_threshold = 50.0
+Life = 250.0
+kenetic_threshold = 30.0
 Rotatable = true
 Frozen = true
 VCredit = 0

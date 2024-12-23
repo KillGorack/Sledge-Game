@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="CreativeSettings" load_steps=9 format=3 uid="uid://cxcflbsxa8b74"]
+
+[ext_resource type="PackedScene" uid="uid://buxrwnpv251um" path="res://Creatives/Cursor/Place_OK_1x1x3_ramp.tscn" id="1_2gygc"]
+[ext_resource type="Script" path="res://Creatives/_scripts/CreativeSettings.gd" id="1_nnxkv"]
+[ext_resource type="PackedScene" uid="uid://cynh0hggfjttn" path="res://Creatives/Cursor/Cursor_Block_NOK.tscn" id="2_6ypha"]
+[ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/Explosions/Explosion_A/Explosion_A.tscn" id="3_xcvyu"]
+[ext_resource type="AudioStream" uid="uid://dksny4b258a2b" path="res://Sounds/Weapons/Explosion.wav" id="4_04oct"]
+[ext_resource type="Texture2D" uid="uid://cc3eoipoords5" path="res://Textures/Block Deco/Block Deco_diffuseOriginal.bmp" id="5_qvwxt"]
+[ext_resource type="AudioStream" uid="uid://blqm7eii6yma" path="res://Sounds/up.wav" id="6_6cs4x"]
+[ext_resource type="PackedScene" uid="uid://qeqsd4mhqty3" path="res://Creatives/Assets/creative_ramp_1X1.tscn" id="7_bt3l4"]
+
+[resource]
+script = ExtResource("1_nnxkv")
+Name = "Ramp 1X1X3"
+Icon = ExtResource("5_qvwxt")
+Scene = ExtResource("7_bt3l4")
+Cursor_Scene = ExtResource("1_2gygc")
+Cursor_Scene_NOK = ExtResource("2_6ypha")
+Explosion_Scene = ExtResource("3_xcvyu")
+Life = 250.0
+kenetic_threshold = 30.0
+Rotatable = false
+Frozen = true
+VCredit = 0
+Layer = 4
+PlacementSound = ExtResource("6_6cs4x")
+Explosion_Sound = ExtResource("4_04oct")

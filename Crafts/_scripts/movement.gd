@@ -38,8 +38,8 @@ func _ready():
 	engine_audio = get_node(engine_audio_path) as AudioStreamPlayer
 	if engine_audio:
 		engine_audio.play()
-	if physics_material:
-		original_friction = physics_material.friction
+	if physics_material_override:
+		original_friction = physics_material_override.friction
 
 func _physics_process(delta):
 	var forward_input = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -135,8 +135,8 @@ func _set_friction(value: float) -> void:
 		
 func apply_directional_force(impulse: Vector3) -> void:
 	stop_forces = true
-	#_set_friction(0)
+	_set_friction(0)
 	apply_central_impulse(impulse)
 	await get_tree().create_timer(1.0).timeout
-	#_set_friction(original_friction)
+	_set_friction(original_friction)
 	stop_forces = false

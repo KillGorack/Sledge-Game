@@ -19,11 +19,15 @@ var can_place: bool = false
 var creative_mode_enabled: bool = false
 var current_creative_index: int = 0
 var creative_settings: Resource
+var axis: Vector3 = Vector3(0, 1, 0)
+var angle_degrees: float = 90
 
 func _ready():
 	raycast.enabled = true
 	if creatives.size() > 0:
 		creative_settings = creatives[current_creative_index]
+	if Utilities.user_space_access == true:
+		UserDataApi.get_user_space(creatives)
 
 
 
@@ -37,7 +41,6 @@ func _process(_delta: float):
 		toggle_creative_mode()
 	elif creative_mode_enabled == false:
 		toggle_creative_mode()
-			
 	if not creative_mode_enabled:
 		return
 		
@@ -46,7 +49,18 @@ func _process(_delta: float):
 			
 	if Input.is_action_just_pressed("FireWeapon"):
 			place_creative_item()
-	
+
+			
+	if Input.is_action_just_pressed("rotate_i"):
+		axis = Vector3(1, 0, 0)
+		angle_degrees += 90
+	if Input.is_action_just_pressed("rotate_j"):
+		axis = Vector3(0, 1, 0)
+		angle_degrees += 90
+	if Input.is_action_just_pressed("rotate_k"):
+		axis = Vector3(0, 0, 1)
+		angle_degrees += 90
+		
 	if raycast.is_colliding():
 		var collision_point = raycast.get_collision_point()
 		var collision_normal = raycast.get_collision_normal()
@@ -74,8 +88,9 @@ func _process(_delta: float):
 
 		var cursor_transform = cursor_instance.global_transform
 		cursor_transform.origin = snapped_point
-		cursor_transform.basis = Basis()
+		cursor_transform.basis = Basis().rotated(axis, deg_to_rad(angle_degrees))
 		cursor_instance.global_transform = cursor_transform
+		
 		if abs(collision_normal.x) > 0.999 or abs(collision_normal.y) > 0.999 or abs(collision_normal.z) > 0.999:
 			can_place = true
 			cursor_instance.show()
@@ -84,6 +99,7 @@ func _process(_delta: float):
 			can_place = false
 			cursor_instance.hide()
 			cursor_instance_nok.show()
+
 
 
 
@@ -104,7 +120,6 @@ func toggle_creative_mode():
 		creative_mode_enabled = true
 		if creative_settings.Cursor_Scene and cursor_instance == null and creative_settings.Cursor_Scene_NOK and cursor_instance_nok == null:
 			cursor_instance = creative_settings.Cursor_Scene.instantiate()
-
 			add_child(cursor_instance)
 			cursor_instance_nok = creative_settings.Cursor_Scene_NOK.instantiate()
 			add_child(cursor_instance_nok)
@@ -149,9 +164,9 @@ func place_creative_item():
 	if can_place and cursor_instance and not cursor_instance.get("player_colliding"):
 		var creative_instance = creative_settings.Scene.instantiate()
 		if creative_instance:
-			creative_instance.set_settings(creative_settings)
+			if creative_instance.has_method("set_settings"):
+				creative_instance.set_settings(creative_settings)
 			get_parent().get_parent().get_parent().get_parent().add_child(creative_instance)
-			creative_instance.global_transform.origin = snapped_point + offset
-			
+			creative_instance.global_transform = cursor_instance.global_transform
 			
 			

@@ -3,17 +3,19 @@
 [ext_resource type="Material" uid="uid://cymxlvm46aknw" path="res://Materials/Place_OK.tres" id="1_e8fhw"]
 [ext_resource type="ArrayMesh" uid="uid://8g4twjkgd4ef" path="res://Models/ramp1x1x1.obj" id="2_yq701"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hu1v6"]
-points = PackedVector3Array(0.5, 1, 0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 1, 0.5, -0.5, 0, 0.5, -0.5, 0, -0.5)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_717cy"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [node name="ramp_1x1x1_ok" type="Area3D"]
 collision_layer = 8
 collision_mask = 255
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-layers = 16
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_717cy")
+
+[node name="Geometry" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.5, 0)
+layers = 8
 material_override = ExtResource("1_e8fhw")
 mesh = ExtResource("2_yq701")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_hu1v6")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://blkt81xou2yn3"]
+[gd_scene load_steps=55 format=3 uid="uid://blkt81xou2yn3"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://deru0wsiqkst8" path="res://Physics/Physics_Player.tres" id="1_tlt2i"]
 [ext_resource type="Script" path="res://Crafts/_scripts/movement.gd" id="2_u0jpy"]
@@ -22,12 +22,8 @@
 [ext_resource type="ArrayMesh" uid="uid://rdgp20h81cgg" path="res://Crafts/Paladin/Geometry/Bezels.obj" id="19_o7sd0"]
 [ext_resource type="Resource" uid="uid://b8i2ypt2o2q46" path="res://Weapons/Projectile_Settings/Disruptor.tres" id="19_t3jyq"]
 [ext_resource type="Material" uid="uid://dnyvoh8p38dpe" path="res://Materials/projectile_gelb.material" id="20_pgaas"]
-[ext_resource type="Resource" uid="uid://cdgxmt8vjytu2" path="res://Weapons/Projectile_Settings/Fracture.tres" id="21_1sr61"]
-[ext_resource type="Resource" uid="uid://b6q41js1vtad3" path="res://Weapons/Projectile_Settings/Howitzer.tres" id="21_fmwof"]
 [ext_resource type="ArrayMesh" uid="uid://bqfb5qxhfsu81" path="res://Crafts/Paladin/Geometry/Hover Pads.obj" id="21_nbvmf"]
-[ext_resource type="Resource" uid="uid://c8lpdri1yqor8" path="res://Weapons/Projectile_Settings/RailGun.tres" id="21_w2ess"]
 [ext_resource type="ArrayMesh" uid="uid://dlj55k56gf1dg" path="res://Crafts/Paladin/Geometry/Hull.obj" id="22_6nli0"]
-[ext_resource type="Resource" uid="uid://bsfkphymm8m2j" path="res://Weapons/Projectile_Settings/Directed Energy.tres" id="22_x00ok"]
 [ext_resource type="Resource" uid="uid://dnugewn0118pn" path="res://Creatives/Settings/RedBrick.tres" id="23_5abeb"]
 [ext_resource type="ArrayMesh" uid="uid://cur1dt5mu1fcg" path="res://Crafts/Paladin/Geometry/Lens.obj" id="23_akwwc"]
 [ext_resource type="Resource" uid="uid://bxxoxcq5o2yd2" path="res://Creatives/Settings/MutedBrick.tres" id="24_45jrd"]
@@ -49,7 +45,10 @@
 [ext_resource type="Script" path="res://Crafts/_scripts/Stats.gd" id="32_y2cc4"]
 [ext_resource type="Script" path="res://Crafts/_scripts/powermeter.gd" id="33_d1iw3"]
 [ext_resource type="Texture2D" uid="uid://cnf121uecbsvr" path="res://UI/Graphics/Circle_(transparent).png" id="33_kuoxg"]
+[ext_resource type="Resource" uid="uid://cxcflbsxa8b74" path="res://Creatives/Settings/ramp_1x1x3.tres" id="33_np2fg"]
+[ext_resource type="Resource" uid="uid://dphmlaxr44tc0" path="res://Creatives/Settings/ReconStation.tres" id="34_26see"]
 [ext_resource type="Script" path="res://Crafts/_scripts/radar.gd" id="34_ami02"]
+[ext_resource type="Resource" uid="uid://wwovhv1vfjjq" path="res://Creatives/Settings/Glass.tres" id="35_oyjvn"]
 [ext_resource type="Texture2D" uid="uid://268cdcw8dy0" path="res://Weapons/Icons/Detno.png" id="35_soh2l"]
 [ext_resource type="Texture2D" uid="uid://dsxawibknfogl" path="res://UI/Graphics/red_corner_badge.png" id="50_b7ika"]
 
@@ -108,14 +107,14 @@ material_override = ExtResource("7_vn57e")
 mesh = ExtResource("8_vb1lh")
 skeleton = NodePath("../..")
 script = ExtResource("9_jmdpj")
-weapon_settings_array = Array[Resource]([ExtResource("19_t3jyq"), ExtResource("16_slkj1"), ExtResource("13_qjads"), ExtResource("10_qifet"), ExtResource("22_x00ok"), ExtResource("21_w2ess"), ExtResource("21_fmwof"), ExtResource("21_1sr61")])
+weapon_settings_array = Array[Resource]([ExtResource("19_t3jyq"), ExtResource("16_slkj1"), ExtResource("13_qjads"), ExtResource("10_qifet")])
 target_scene = ExtResource("18_8rntr")
 power_node = NodePath("../../PowerFeed")
 
 [node name="Camera3D" type="Camera3D" parent="Turret/Barrel" node_paths=PackedStringArray("creative_icon", "creative_label", "creative_label_name")]
 cull_mask = 1048574
 script = ExtResource("9_jlh2h")
-creatives = Array[Resource]([ExtResource("23_5abeb"), ExtResource("24_45jrd"), ExtResource("25_yiokw"), ExtResource("26_cn6cw"), ExtResource("27_wteaj"), ExtResource("28_062fb"), ExtResource("29_3vbew"), ExtResource("30_iukc6")])
+creatives = Array[Resource]([ExtResource("23_5abeb"), ExtResource("24_45jrd"), ExtResource("25_yiokw"), ExtResource("26_cn6cw"), ExtResource("27_wteaj"), ExtResource("28_062fb"), ExtResource("29_3vbew"), ExtResource("30_iukc6"), ExtResource("33_np2fg"), ExtResource("34_26see"), ExtResource("35_oyjvn")])
 creative_icon = NodePath("../../../HUD/item_icon")
 creative_label = NodePath("../../../HUD/lbl_item_count")
 creative_label_name = NodePath("../../../HUD/lbl_item_name")

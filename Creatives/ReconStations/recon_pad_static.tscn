@@ -1,13 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://c5l60lq4s4jcd"]
 
+[ext_resource type="Script" path="res://Creatives/_scripts/CreativeHandler.gd" id="1_eyc47"]
 [ext_resource type="Material" uid="uid://dsod826ud1trt" path="res://Materials/pad_neutral.material" id="1_n3kum"]
 [ext_resource type="Material" uid="uid://dwxlgxsvxgbrm" path="res://Materials/glass.material" id="2_0gjxe"]
 [ext_resource type="Script" path="res://Creatives/_scripts/repair_pad.gd" id="3_nlhrs"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_xk5h8"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sqtrm"]
-data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g72ex"]
+points = PackedVector3Array(0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0)
 
 [sub_resource type="QuadMesh" id="QuadMesh_dwivg"]
 
@@ -17,34 +16,36 @@ height = 0.2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yi6eg"]
 
-[node name="Recon Station Static" type="StaticBody3D" groups=["Recon"]]
+[node name="Recon Station Static" type="RigidBody3D" groups=["Creative", "Recon"]]
+sleeping = true
+freeze = true
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_eyc47")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-visible = false
-mesh = SubResource("QuadMesh_xk5h8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_sqtrm")
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.499, 0.01)
+shape = SubResource("ConvexPolygonShape3D_g72ex")
 
 [node name="Pad" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.01)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.499, 0.01)
 layers = 2
 material_override = ExtResource("1_n3kum")
 mesh = SubResource("QuadMesh_dwivg")
 
 [node name="Marker" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 layers = 2
 material_override = ExtResource("2_0gjxe")
 mesh = SubResource("CapsuleMesh_1nw3n")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 layers = 2
 
 [node name="RepairPad" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 script = ExtResource("3_nlhrs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RepairPad"]

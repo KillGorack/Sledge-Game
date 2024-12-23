@@ -13,7 +13,7 @@ func _ready() -> void:
 		original_friction = physics_material_override.friction
 	default_values = {
 		"Life": 100.0,
-		"kenetic_threshold": 30.0,
+		"kenetic_threshold": 70.0,
 		"Explosion_Scene": preload("res://Explosive/Explosions/Explosion_A/Explosion_A.tscn"),
 		"Explosion_Sound": preload("res://Sounds/Weapons/Explosion.wav")
 	}

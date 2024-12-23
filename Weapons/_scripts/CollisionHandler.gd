@@ -113,7 +113,7 @@ func handleCollision():
 			var result = Utilities.collect_bodies(
 				get_world_3d().direct_space_state, 
 				global_transform.origin, 
-				125, 
+				weapon_settings.body_collection_max, 
 				weapon_settings.explosive_force_distance, 
 				weapon_settings.target_system_group)
 			applyAOEDamage(result)
@@ -244,10 +244,9 @@ func handleBounce():
 	var bodies = Utilities.collect_bodies(
 		get_world_3d().direct_space_state, 
 		global_transform.origin, 
-		25, 
+		weapon_settings.body_collection_max, 
 		weapon_settings.target_system_scan_radius, 
 		weapon_settings.target_system_group)
-
 	if bodies.size() > 0 and RicochetCount <= weapon_settings.bounce_count:
 		RicochetCount += 1 
 		for item in bodies:

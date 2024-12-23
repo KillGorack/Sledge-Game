@@ -22,6 +22,7 @@ projectile_ricochet_count = 0
 bounce_count = 25
 explosive_force = 0.0
 explosive_force_distance = 0.0
+body_collection_max = 15
 targeting_system = false
 targeting_system_require_marker = true
 target_rotation_speed = 0.0

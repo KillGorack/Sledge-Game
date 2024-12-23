@@ -53,8 +53,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("paintTarget"):
 		place_target()
 	if Input.is_action_just_pressed("display_tree"):
-		pass
-		#Utilities.print_first_level_nodes()
+		Utilities.print_first_level_nodes()
 
 
 

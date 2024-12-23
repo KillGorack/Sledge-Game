@@ -1,6 +1,7 @@
-[gd_scene load_steps=176 format=4 uid="uid://dp7pqwjtyv6nn"]
+[gd_scene load_steps=177 format=4 uid="uid://dp7pqwjtyv6nn"]
 
 [ext_resource type="Material" uid="uid://mqag85jtsael" path="res://Materials/ceiling_ligted.material" id="1_0v771"]
+[ext_resource type="Script" path="res://Levels/_scripts/LevelHandler.gd" id="1_s0tgx"]
 [ext_resource type="PhysicsMaterial" uid="uid://b1l4ud574d75r" path="res://Physics/Physics_Ceiling.tres" id="2_eqmtq"]
 [ext_resource type="Material" uid="uid://d3so0uf5vdp45" path="res://Materials/tile_dark.material" id="3_x3vs8"]
 [ext_resource type="PhysicsMaterial" uid="uid://dh2rif6n2skrg" path="res://Physics/Physics_Floor.tres" id="4_r6amf"]
@@ -1696,6 +1697,7 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.01
 
 [node name="MaulGrounds" type="Node3D"]
+script = ExtResource("1_s0tgx")
 
 [node name="Geometry" type="Node3D" parent="."]
 
