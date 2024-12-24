@@ -24,7 +24,7 @@
 [ext_resource type="Script" path="res://Crafts/_scripts/spedometer.gd" id="18_fvmo3"]
 [ext_resource type="Script" path="res://Crafts/_scripts/powermeter.gd" id="19_ca0p7"]
 [ext_resource type="Resource" uid="uid://c8lpdri1yqor8" path="res://Weapons/Projectile_Settings/Rail Gun LVL 07.tres" id="19_qtgol"]
-[ext_resource type="Script" path="res://Crafts/_scripts/creative.gd" id="19_sbwf8"]
+[ext_resource type="Script" path="res://Creatives/_scripts/creative.gd" id="19_sbwf8"]
 [ext_resource type="Resource" uid="uid://dnugewn0118pn" path="res://Creatives/Settings/RedBrick.tres" id="20_58b88"]
 [ext_resource type="Script" path="res://UI/_scripts/crosshairs.gd" id="20_p5iwy"]
 [ext_resource type="Texture2D" uid="uid://cnf121uecbsvr" path="res://UI/Graphics/Circle_(transparent).png" id="21_pxuip"]
