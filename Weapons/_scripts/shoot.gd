@@ -3,6 +3,7 @@ extends MeshInstance3D
 @export var weapon_settings_array: Array[Resource] = []
 @export var target_scene: PackedScene
 @export var power_node: Node3D
+@export var reload_sound: AudioStream
 @onready var camera: Camera3D = $Camera3D
 @onready var raycast = $TargetCast
 
@@ -107,7 +108,17 @@ func shoot_projectile():
 
 
 
-
+func reload_all_weapons():
+	var ps: bool = false
+	for weapon in weapon_settings_array:
+		if weapon.projectile_count_capacity > weapon.projectile_count_actual:
+			ps = true
+		weapon.projectile_count_actual = weapon.projectile_count_capacity
+	if Utilities.game_mode_index == 0:
+		update_weapon_label()
+	if reload_sound and ps:
+		Utilities.play_sound(reload_sound, global_transform.origin)
+	
 
 
 func change_weapon():

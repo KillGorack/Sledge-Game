@@ -1,81 +1,61 @@
-[gd_scene load_steps=8 format=3 uid="uid://xr520jktmt5g"]
+[gd_scene load_steps=8 format=3 uid="uid://nvrjoc0qxoef"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://bwm66u3tk5o2" path="res://Physics/Physics_Projectile.tres" id="1_5st20"]
-[ext_resource type="Script" path="res://Weapons/_scripts/CollisionHandler.gd" id="2_1tuev"]
-[ext_resource type="Material" uid="uid://dhfys530aklu1" path="res://Materials/Rocket_blue.material" id="3_h0pfx"]
-[ext_resource type="ArrayMesh" uid="uid://fk78i4pvua3h" path="res://Models/rocket.obj" id="4_1fei0"]
-[ext_resource type="Script" path="res://Weapons/Projectile Scenes/TrailEffect.gd" id="5_b65hq"]
+[ext_resource type="PhysicsMaterial" uid="uid://bwm66u3tk5o2" path="res://Physics/Physics_Projectile.tres" id="1_8g41m"]
+[ext_resource type="Script" path="res://Weapons/_scripts/CollisionHandler.gd" id="2_jn40y"]
+[ext_resource type="Material" uid="uid://b3h8p1fpfpqyy" path="res://Materials/Rocket.material" id="3_x4sve"]
+[ext_resource type="ArrayMesh" uid="uid://fk78i4pvua3h" path="res://Models/rocket.obj" id="4_4dpd7"]
+[ext_resource type="Script" path="res://Weapons/_scripts/TrailEffect.gd" id="5_8rd21"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o7isu"]
 points = PackedVector3Array(-0.00346417, -0.065295, -0.137974, -0.065295, -0.00346415, -0.137974, -0.0132303, -0.0132303, -0.163402, -0.00484472, -0.0180622, -0.163402, 0.00345138, -0.065295, -0.137974, -0.00325964, -0.0614474, -0.0582813, -0.065295, 0.00345138, -0.137974, -0.0180622, -0.00484471, -0.163402, -0.0614474, -0.00325963, -0.0582813, 0.00483193, -0.0180622, -0.163402, 0.0132175, -0.0132303, -0.163402, 0.065295, -0.00346415, -0.137974, 0.00324685, -0.0614474, -0.0582813, -0.022843, -0.022843, 0.0654159, -0.00483194, -0.0180367, 0.153206, -0.0132047, -0.0132047, 0.153206, -0.0224212, -0.0224212, 0.0704722, -0.00346417, 0.0652822, -0.137974, -0.0132303, 0.0132175, -0.163402, -0.0180622, 0.00483194, -0.163402, -0.0614474, 0.00324686, -0.0582813, -0.0180367, -0.00483193, 0.153206, 0.0180494, -0.00484471, -0.163402, 0.065295, 0.00345138, -0.137974, 0.0614346, -0.00325963, -0.0582813, 0.0228302, -0.022843, 0.0654159, 0.0224084, -0.0224212, 0.0704722, 0.0131919, -0.0132047, 0.153206, 0.00481915, -0.0180367, 0.153206, -0.00161064, -0.00600795, 0.20747, -0.00439732, -0.00439731, 0.20747, -0.00600796, -0.00161064, 0.20747, 0.00345138, 0.0652822, -0.137974, -0.00484472, 0.0180494, -0.163402, -0.00325964, 0.0614346, -0.0582813, -0.0180367, 0.00481915, 0.153206, -0.0132047, 0.013192, 0.153206, -0.0224212, 0.0224084, 0.0704722, -0.022843, 0.0228303, 0.0654159, 0.0180494, 0.00483194, -0.163402, 0.0132175, 0.0132175, -0.163402, 0.00324685, 0.0614346, -0.0582813, 0.0614346, 0.00324686, -0.0582813, 0.0180239, -0.00483193, 0.153206, 0.00599518, -0.00161064, 0.20747, 0.00438453, -0.00439731, 0.20747, 0.00159786, -0.00600795, 0.20747, -0.000945933, -0.00351529, 0.209851, -0.00256936, -0.00256936, 0.209851, -0.0035153, -0.000945926, 0.209851, -0.00600796, 0.00159787, 0.20747, 0.00483193, 0.0180494, -0.163402, -0.00483194, 0.0180239, 0.153206, -0.00439732, 0.00438454, 0.20747, -0.00161064, 0.00599518, 0.20747, 0.00481915, 0.0180239, 0.153206, 0.0131919, 0.013192, 0.153206, 0.0224084, 0.0224084, 0.0704722, 0.0228302, 0.0228303, 0.0654159, 0.0180239, 0.00481915, 0.153206, 0.00599518, 0.00159787, 0.20747, 0.00350251, -0.000945926, 0.209851, 0.00255658, -0.00256936, 0.209851, 0.000933148, -0.00351529, 0.209851, 0, -1.27777e-05, 0.210914, -0.0035153, 0.000933155, 0.209851, -0.00256936, 0.00255658, 0.209851, -0.000945933, 0.00350252, 0.209851, 0.00159786, 0.00599518, 0.20747, 0.00438453, 0.00438454, 0.20747, 0.00350251, 0.000933155, 0.209851, 0.000933148, 0.00350252, 0.209851, 0.00255658, 0.00255658, 0.209851)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdia3"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8lrc"]
 transparency = 1
 blend_mode = 1
 cull_mode = 2
 shading_mode = 0
 vertex_color_use_as_albedo = true
 
-[node name="Force" type="RigidBody3D" groups=["Projectile"]]
+[node name="Detno" type="RigidBody3D" groups=["Projectile"]]
 collision_layer = 0
 collision_mask = 0
-physics_material_override = ExtResource("1_5st20")
+physics_material_override = ExtResource("1_8g41m")
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 1
-script = ExtResource("2_1tuev")
+script = ExtResource("2_jn40y")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 layers = 4
-material_override = ExtResource("3_h0pfx")
-mesh = ExtResource("4_1fei0")
+material_override = ExtResource("3_x4sve")
+mesh = ExtResource("4_4dpd7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_o7isu")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-layers = 2
-light_color = Color(0, 0, 1, 1)
-light_energy = 3.0
+layers = 4
+light_color = Color(1, 0, 0, 1)
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -0.65)
 collision_mask = 254
 
 [node name="Trail3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0, 0.168464)
 layers = 1023
-material_override = SubResource("StandardMaterial3D_hdia3")
-script = ExtResource("5_b65hq")
+material_override = SubResource("StandardMaterial3D_l8lrc")
+script = ExtResource("5_8rd21")
 _lifeSpan = 0.2
-_startColor = Color(0, 0, 1, 1)
-_endColor = Color(0, 0, 1, 0)
+_startColor = Color(1, 0, 0, 1)
+_endColor = Color(1, 0, 0, 0)
 
 [node name="Trail3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.05, 0, 0.168464)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 layers = 1023
-material_override = SubResource("StandardMaterial3D_hdia3")
-script = ExtResource("5_b65hq")
+material_override = SubResource("StandardMaterial3D_l8lrc")
+script = ExtResource("5_8rd21")
 _lifeSpan = 0.2
-_startColor = Color(0, 0, 1, 1)
-_endColor = Color(0, 0, 1, 0)
-
-[node name="Trail3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.168464)
-layers = 1023
-material_override = SubResource("StandardMaterial3D_hdia3")
-script = ExtResource("5_b65hq")
-_lifeSpan = 0.2
-_startColor = Color(0, 0, 1, 1)
-_endColor = Color(0, 0, 1, 0)
-
-[node name="Trail3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.05, 0, 0.168464)
-layers = 1023
-material_override = SubResource("StandardMaterial3D_hdia3")
-script = ExtResource("5_b65hq")
-_lifeSpan = 0.2
-_startColor = Color(0, 0, 1, 1)
-_endColor = Color(0, 0, 1, 0)
+_startColor = Color(1, 0, 0, 1)
+_endColor = Color(1, 0, 0, 0)

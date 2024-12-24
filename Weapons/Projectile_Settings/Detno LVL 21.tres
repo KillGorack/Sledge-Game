@@ -5,22 +5,32 @@
 [ext_resource type="PackedScene" uid="uid://ckqk5fedx0m3q" path="res://Explosive/explosions/Explosion_A/Explosion_A.tscn" id="2_v40de"]
 [ext_resource type="AudioStream" uid="uid://dksny4b258a2b" path="res://Sounds/Weapons/Explosion.wav" id="3_02ahw"]
 [ext_resource type="AudioStream" uid="uid://dlcv0qtnhvyrt" path="res://Sounds/Weapons/Launch.mp3" id="4_2iou7"]
-[ext_resource type="PackedScene" uid="uid://nvrjoc0qxoef" path="res://Weapons/Projectile Scenes/Detno.tscn" id="5_o3v6u"]
+[ext_resource type="PackedScene" uid="uid://nvrjoc0qxoef" path="res://Weapons/Projectile Scenes/missile_red.tscn" id="5_o3v6u"]
 [ext_resource type="Texture2D" uid="uid://b8qu83tcjs8x0" path="res://Weapons/Icons/Nuclear.png" id="7_hmmem"]
 
 [resource]
 script = ExtResource("1_rs7ru")
-weapon_name = "Nuclear Missile"
+weapon_name = "Detno LVL 15"
+weapon_type = 3
 weapon_icon = ExtResource("7_hmmem")
-level_req = 1
+level_req = 21
 sizing_scale = 1
+hit_points = 1000.0
+cool_down = 1.0
+projectile_prefab = ExtResource("5_o3v6u")
+explosion_prefab = ExtResource("2_v40de")
+bullet_hole_prefab = ExtResource("1_2f8g2")
+launch_sound = ExtResource("4_2iou7")
+hit_sound = ExtResource("3_02ahw")
 power_consumption = 0.0
 projectile_count_capacity = 5.0
 projectile_count_actual = 5.0
-weapon_type = 3
 projectile_pierce_count = 0
 projectile_ricochet_count = 0
 bounce_count = 0
+freeze_timer = 0.0
+projectile_force = 0.0
+bi_directional = false
 explosive_force = 400.0
 explosive_force_distance = 100.0
 body_collection_max = 1000
@@ -28,11 +38,6 @@ targeting_system = true
 targeting_system_require_marker = true
 target_rotation_speed = 12.0
 target_system_scan_radius = 40.0
-target_system_group = "Creative"
-freeze_timer = 0.0
-projectile_prefab = ExtResource("5_o3v6u")
-explosion_prefab = ExtResource("2_v40de")
-bullet_hole_prefab = ExtResource("1_2f8g2")
 projectile_count = 1
 projectile_spacing = 0.0
 projectile_start_angle = 0.0
@@ -40,16 +45,11 @@ projectile_recoil = 100.0
 projectile_range = 300.0
 projectile_speed = 45.0
 projectile_spin = 0.0
-projectile_force = 0.0
-bi_directional = false
-hit_points = 1000.0
-cool_down = 1.0
 launch_offset = -0.5
 projectile_fire_delay = 0.0
 projectile_destruction_delay = 0.0
 mass = 1.0
 use_gravity = false
-launch_sound = ExtResource("4_2iou7")
-hit_sound = ExtResource("3_02ahw")
+target_system_group = "Creative"
 layer = 3
 layer_mask = Array[int]([2, 4])

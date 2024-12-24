@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bvjinfvqppheq" path="res://Explosive/sparks_by_color/spark_blue.tscn" id="2_j0i6h"]
 [ext_resource type="AudioStream" uid="uid://bkwrnnr67s04s" path="res://Sounds/Weapons/Repulsor.mp3" id="3_svive"]
 [ext_resource type="AudioStream" uid="uid://dlcv0qtnhvyrt" path="res://Sounds/Weapons/Launch.mp3" id="4_abi46"]
-[ext_resource type="PackedScene" uid="uid://xr520jktmt5g" path="res://Weapons/Projectile Scenes/Force.tscn" id="5_0or3h"]
+[ext_resource type="PackedScene" uid="uid://xr520jktmt5g" path="res://Weapons/Projectile Scenes/missile_blue.tscn" id="5_0or3h"]
 [ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="6_y6qpv"]
 
 [resource]

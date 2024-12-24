@@ -16,23 +16,23 @@
 [ext_resource type="Resource" uid="uid://bmlj7n1wkbi8x" path="res://Weapons/Mine_Settings/freeze_mine.tres" id="8_ltp8t"]
 [ext_resource type="AudioStream" uid="uid://d0d4pvsfakwo7" path="res://Sounds/Engine Sounds/vehicle.wav" id="9_qwbfr"]
 [ext_resource type="Script" path="res://Crafts/_scripts/Turret.gd" id="12_8qt2c"]
-[ext_resource type="Resource" uid="uid://bsfkphymm8m2j" path="res://Weapons/Projectile_Settings/Directed Energy.tres" id="15_ldp3q"]
+[ext_resource type="Resource" uid="uid://bsfkphymm8m2j" path="res://Weapons/Projectile_Settings/Directed Energy LVL 12.tres" id="15_ldp3q"]
 [ext_resource type="Script" path="res://Weapons/_scripts/shoot.gd" id="15_sqmq3"]
-[ext_resource type="Resource" uid="uid://cdgxmt8vjytu2" path="res://Weapons/Projectile_Settings/Fracture.tres" id="16_m2vq0"]
+[ext_resource type="Resource" uid="uid://cdgxmt8vjytu2" path="res://Weapons/Projectile_Settings/Fracture LVL 21.tres" id="16_m2vq0"]
 [ext_resource type="Script" path="res://Crafts/_scripts/Stats.gd" id="16_xj1u6"]
 [ext_resource type="Script" path="res://Crafts/_scripts/hud.gd" id="17_b07pb"]
 [ext_resource type="Script" path="res://Crafts/_scripts/spedometer.gd" id="18_fvmo3"]
 [ext_resource type="Script" path="res://Crafts/_scripts/powermeter.gd" id="19_ca0p7"]
-[ext_resource type="Resource" uid="uid://c8lpdri1yqor8" path="res://Weapons/Projectile_Settings/RailGun.tres" id="19_qtgol"]
+[ext_resource type="Resource" uid="uid://c8lpdri1yqor8" path="res://Weapons/Projectile_Settings/Rail Gun LVL 07.tres" id="19_qtgol"]
 [ext_resource type="Script" path="res://Crafts/_scripts/creative.gd" id="19_sbwf8"]
 [ext_resource type="Resource" uid="uid://dnugewn0118pn" path="res://Creatives/Settings/RedBrick.tres" id="20_58b88"]
 [ext_resource type="Script" path="res://UI/_scripts/crosshairs.gd" id="20_p5iwy"]
 [ext_resource type="Texture2D" uid="uid://cnf121uecbsvr" path="res://UI/Graphics/Circle_(transparent).png" id="21_pxuip"]
 [ext_resource type="Resource" uid="uid://bxxoxcq5o2yd2" path="res://Creatives/Settings/MutedBrick.tres" id="21_s40gp"]
 [ext_resource type="Script" path="res://Crafts/_scripts/radar.gd" id="22_ef4q0"]
-[ext_resource type="Resource" uid="uid://b6q41js1vtad3" path="res://Weapons/Projectile_Settings/Howitzer.tres" id="22_fbjy6"]
+[ext_resource type="Resource" uid="uid://b6q41js1vtad3" path="res://Weapons/Projectile_Settings/Howitzer LVL 02.tres" id="22_fbjy6"]
 [ext_resource type="Resource" uid="uid://bg2fnc0rofyhh" path="res://Creatives/Settings/sandwich_block.tres" id="22_i5ceh"]
-[ext_resource type="Resource" uid="uid://dtnbonq5t6ay7" path="res://Weapons/Projectile_Settings/Nuclear.tres" id="23_ceg7e"]
+[ext_resource type="Resource" uid="uid://dtnbonq5t6ay7" path="res://Weapons/Projectile_Settings/Detno LVL 21.tres" id="23_ceg7e"]
 [ext_resource type="Resource" uid="uid://b81rlaovb0k8k" path="res://Creatives/Settings/glitz_blue.tres" id="23_qk46y"]
 [ext_resource type="Texture2D" uid="uid://268cdcw8dy0" path="res://Weapons/Icons/Detno.png" id="23_xioah"]
 [ext_resource type="Resource" uid="uid://ciq2ypg7b7hlt" path="res://Creatives/Settings/glitz_gray.tres" id="24_wf6rc"]
@@ -139,7 +139,7 @@ shape = SubResource("ConvexPolygonShape3D_peni3")
 
 [node name="Engine Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_qwbfr")
-pitch_scale = 0.01
+pitch_scale = 0.5
 autoplay = true
 
 [node name="GroundCheck" type="Area3D" parent="."]

@@ -7,6 +7,10 @@ var game_mode_index: int = 0
 var game_mode: String = game_modes[game_mode_index]
 var user_space_access: bool = false
 
+
+
+
+
 func _ready():
 	randomize()
 	for i in range(MAX_PLAYERS):
@@ -16,9 +20,17 @@ func _ready():
 		add_child(player)
 		audio_pool.append(player)
 
+
+
+
+
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("game_mode"):
 		Utilities.toggle_game_mode()
+
+
+
+
 
 func update_game_mode_label():
 	var player_nodes = get_tree().get_nodes_in_group("Player")
@@ -27,6 +39,7 @@ func update_game_mode_label():
 		var hud = player.get_node("HUD")
 		var lbl_game_mode = hud.get_node("lbl_game_mode")
 		lbl_game_mode.text = game_modes[game_mode_index]
+
 
 
 
@@ -48,6 +61,9 @@ func toggle_game_mode():
 	update_game_mode_label()
 
 
+
+
+
 func play_sound(audio_input: Variant, position: Vector3 = Vector3.ZERO):
 	var stream = null
 	if typeof(audio_input) == TYPE_STRING:
@@ -63,6 +79,9 @@ func play_sound(audio_input: Variant, position: Vector3 = Vector3.ZERO):
 		player.play()
 
 
+
+
+
 func get_free_player() -> AudioStreamPlayer3D:
 	for player in audio_pool:
 		if !player.is_playing():
@@ -70,9 +89,15 @@ func get_free_player() -> AudioStreamPlayer3D:
 	return null
 
 
+
+
+
 func _on_audio_finished(player: AudioStreamPlayer3D):
 	if player:
 		player.stream = null
+
+
+
 
 
 func GarbageCollection(node: Node, delay: float) -> void:
@@ -84,6 +109,9 @@ func GarbageCollection(node: Node, delay: float) -> void:
 	timer.start()
 
 
+
+
+
 func print_first_level_nodes() -> void:
 	var root = get_tree().root
 	print("Current First-Level Scene Nodes:")
@@ -91,6 +119,9 @@ func print_first_level_nodes() -> void:
 		print(child.name + " (" + child.get_class() + ")")
 		for grandchild in child.get_children():
 			print("    " + grandchild.name + " (" + grandchild.get_class() + ")")
+
+
+
 
 
 func collect_bodies(space_state: PhysicsDirectSpaceState3D, origin: Vector3, n: int, dist: float, target_group: String) -> Array:
@@ -104,6 +135,9 @@ func collect_bodies(space_state: PhysicsDirectSpaceState3D, origin: Vector3, n: 
 		if item.collider.is_in_group(target_group):
 			filtered_result.append(item)
 	return filtered_result
+
+
+
 
 
 func select_target(origin: Vector3, forward_direction: Vector3, radius: float, max_angle: float, target_group: String, targeting_system_require_marker: bool) -> Node:
@@ -126,6 +160,10 @@ func select_target(origin: Vector3, forward_direction: Vector3, radius: float, m
 		if potential_targets.size() > 0:
 			return potential_targets[randi() % potential_targets.size()]
 	return null
-	
+
+
+
+
+
 func set_user_space_access(switch_bit: bool) -> void:
 	user_space_access = switch_bit

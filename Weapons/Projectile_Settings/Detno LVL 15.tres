@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://btg44tgnf1ty3"]
+
+[ext_resource type="PackedScene" uid="uid://dhkttboqth4ak" path="res://Explosive/hit_marks/Crater.tscn" id="1_yqilu"]
+[ext_resource type="PackedScene" uid="uid://c8rq8euhyuhrk" path="res://Explosive/sparks_by_color/spark_red.tscn" id="2_i04yw"]
+[ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_xf7jb"]
+[ext_resource type="AudioStream" uid="uid://dlcv0qtnhvyrt" path="res://Sounds/Weapons/Launch.mp3" id="4_xf40m"]
+[ext_resource type="PackedScene" uid="uid://bbpqsd57otadw" path="res://Weapons/Projectile Scenes/missile_multi_color.tscn" id="5_q6b47"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="6_3ydag"]
+[ext_resource type="Texture2D" uid="uid://268cdcw8dy0" path="res://Weapons/Icons/Detno.png" id="7_y7pe6"]
+
+[resource]
+script = ExtResource("6_3ydag")
+weapon_name = "Detno LVL 15"
+weapon_type = 3
+weapon_icon = ExtResource("7_y7pe6")
+level_req = 15
+sizing_scale = 1
+hit_points = 25.0
+cool_down = 0.25
+projectile_prefab = ExtResource("5_q6b47")
+explosion_prefab = ExtResource("2_i04yw")
+bullet_hole_prefab = ExtResource("1_yqilu")
+launch_sound = ExtResource("4_xf40m")
+hit_sound = ExtResource("3_xf7jb")
+power_consumption = 0.0
+projectile_count_capacity = 1200.0
+projectile_count_actual = 1200.0
+projectile_pierce_count = 0
+projectile_ricochet_count = 0
+bounce_count = 0
+freeze_timer = 0.0
+projectile_force = 0.0
+bi_directional = false
+explosive_force = 75.0
+explosive_force_distance = 4.0
+body_collection_max = 75
+targeting_system = true
+targeting_system_require_marker = false
+target_rotation_speed = 6.0
+target_system_scan_radius = 120.0
+projectile_count = 6
+projectile_spacing = 0.125
+projectile_start_angle = 0.0
+projectile_recoil = 0.0
+projectile_range = 100.0
+projectile_speed = 45.0
+projectile_spin = 0.0
+launch_offset = -0.5
+projectile_fire_delay = 0.0
+projectile_destruction_delay = 0.0
+mass = 1.0
+use_gravity = false
+target_system_group = "Creative"
+layer = 3
+layer_mask = Array[int]([2, 4])

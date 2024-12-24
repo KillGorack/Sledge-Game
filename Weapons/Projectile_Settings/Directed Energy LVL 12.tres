@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://bsfkphymm8m2j"]
+
+[ext_resource type="PackedScene" uid="uid://l2c4j45shmen" path="res://Explosive/hit_marks/burnt_marks.tscn" id="1_6sfwy"]
+[ext_resource type="PackedScene" uid="uid://c8rq8euhyuhrk" path="res://Explosive/sparks_by_color/spark_red.tscn" id="2_0bl7g"]
+[ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_auvvd"]
+[ext_resource type="AudioStream" uid="uid://b5huqmt6xgapr" path="res://Sounds/Weapons/laser5.mp3" id="4_cwhox"]
+[ext_resource type="PackedScene" uid="uid://clas4r5ifsenh" path="res://Weapons/Projectile Scenes/laser_red.tscn" id="5_udovl"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="6_hx1xo"]
+[ext_resource type="Texture2D" uid="uid://cf64i8765jokm" path="res://Weapons/Icons/Directed Energy.png" id="7_24drp"]
+
+[resource]
+script = ExtResource("6_hx1xo")
+weapon_name = "Directed Energy LVL 12"
+weapon_type = 0
+weapon_icon = ExtResource("7_24drp")
+level_req = 12
+sizing_scale = 1
+hit_points = 50.0
+cool_down = 0.5
+projectile_prefab = ExtResource("5_udovl")
+explosion_prefab = ExtResource("2_0bl7g")
+bullet_hole_prefab = ExtResource("1_6sfwy")
+launch_sound = ExtResource("4_cwhox")
+hit_sound = ExtResource("3_auvvd")
+power_consumption = 10.0
+projectile_count_capacity = 0.0
+projectile_count_actual = 0.0
+projectile_pierce_count = 0
+projectile_ricochet_count = 0
+bounce_count = 0
+freeze_timer = 0.0
+projectile_force = 0.0
+bi_directional = false
+explosive_force = 0.0
+explosive_force_distance = 0.0
+body_collection_max = 0
+targeting_system = false
+targeting_system_require_marker = true
+target_rotation_speed = 0.0
+target_system_scan_radius = 40.0
+projectile_count = 4
+projectile_spacing = 0.2
+projectile_start_angle = 45.0
+projectile_recoil = 0.0
+projectile_range = 100.0
+projectile_speed = 65.0
+projectile_spin = 150.0
+launch_offset = 0.0
+projectile_fire_delay = 0.0
+projectile_destruction_delay = 0.0
+mass = 0.0
+use_gravity = false
+target_system_group = "Creative"
+layer = 3
+layer_mask = Array[int]([2, 4])

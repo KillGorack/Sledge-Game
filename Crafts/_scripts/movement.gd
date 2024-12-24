@@ -20,11 +20,11 @@ var engine_audio: AudioStreamPlayer
 var target_pitch = 2.0
 var target_volume = -30.0
 var pitch_transition_speed = 5.0
+var ui_pitch: float = 1
 var volume_transition_speed = 5.0
 var current_turn_speed = 0.0
 var original_friction: float = 1.0
 var stop_forces = false
-var physics_material: PhysicsMaterial
 
 @export var engine_audio_path: NodePath
 @onready var ground_check_area = $GroundCheck
@@ -40,6 +40,7 @@ func _ready():
 		engine_audio.play()
 	if physics_material_override:
 		original_friction = physics_material_override.friction
+		ui_pitch = engine_audio.pitch_scale
 
 func _physics_process(delta):
 	var forward_input = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -57,6 +58,11 @@ func _physics_process(delta):
 	update_engine_sound()
 	var ps = linear_velocity.length() / MAX_SPEED
 	speedometer_graphic.set_speed_ratio(ps)
+	
+	
+	
+	
+	
 
 func apply_damage(damage: float) -> void:
 	get_node("Health").apply_direct_damage(damage)
@@ -120,18 +126,25 @@ func update_engine_sound():
 	if engine_audio:
 		var speed : float = get_linear_velocity().length()
 		if isGrounded:
-			target_pitch = clamp(2.0 + speed / max(MAX_SPEED, 1.0) * 2.0, 2.0, 4.0)
+			target_pitch = clamp(2.0 + speed / max(MAX_SPEED, 1.0) * 2.0, 2.0, 4.0) * ui_pitch
 			target_volume = clamp(-20 + 10 * (speed / max(MAX_SPEED, 1.0)), -60.0, -20.0)
 		else:
-			target_pitch = 2.0
+			target_pitch = 2.0 * ui_pitch
 			target_volume = -20.0
+		
 		engine_audio.pitch_scale = lerp(engine_audio.pitch_scale, target_pitch, pitch_transition_speed * get_process_delta_time())
 		engine_audio.volume_db = lerp(engine_audio.volume_db, target_volume, volume_transition_speed * get_process_delta_time())
 
 
+
+
+
 func _set_friction(value: float) -> void:
-	if physics_material:
-		physics_material.friction = value
+	if physics_material_override:
+		physics_material_override.friction = value
+		
+		
+		
 		
 func apply_directional_force(impulse: Vector3) -> void:
 	stop_forces = true

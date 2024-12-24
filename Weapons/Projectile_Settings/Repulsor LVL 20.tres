@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://buk385qus0730"]
+
+[ext_resource type="PackedScene" uid="uid://c0g6dtgokldmd" path="res://Explosive/hit_marks/cracked.tscn" id="1_jerw4"]
+[ext_resource type="PackedScene" uid="uid://y4t1eft31wfl" path="res://Explosive/explosions/bubsplosion/bubsplosion.tscn" id="2_fytma"]
+[ext_resource type="AudioStream" uid="uid://bkwrnnr67s04s" path="res://Sounds/Weapons/Repulsor.mp3" id="3_svk05"]
+[ext_resource type="AudioStream" uid="uid://dlcv0qtnhvyrt" path="res://Sounds/Weapons/Launch.mp3" id="4_lekv0"]
+[ext_resource type="PackedScene" uid="uid://xr520jktmt5g" path="res://Weapons/Projectile Scenes/missile_blue.tscn" id="5_so8ej"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="6_7uhle"]
+[ext_resource type="Texture2D" uid="uid://dyfoa5sg2ovx4" path="res://Weapons/Icons/Force.png" id="7_cftyj"]
+
+[resource]
+script = ExtResource("6_7uhle")
+weapon_name = "Repulsor LVL 20"
+weapon_type = 1
+weapon_icon = ExtResource("7_cftyj")
+level_req = 20
+sizing_scale = 1
+hit_points = 50.0
+cool_down = 0.2
+projectile_prefab = ExtResource("5_so8ej")
+explosion_prefab = ExtResource("2_fytma")
+bullet_hole_prefab = ExtResource("1_jerw4")
+launch_sound = ExtResource("4_lekv0")
+hit_sound = ExtResource("3_svk05")
+power_consumption = 0.0
+projectile_count_capacity = 1200.0
+projectile_count_actual = 1200.0
+projectile_pierce_count = 0
+projectile_ricochet_count = 42
+bounce_count = 0
+freeze_timer = 0.0
+unfreeze = false
+projectile_force = 120.0
+bi_directional = false
+explosive_force = 75.0
+explosive_force_distance = 5.0
+body_collection_max = 10
+targeting_system = true
+targeting_system_require_marker = false
+target_rotation_speed = 3.0
+target_system_scan_radius = 120.0
+projectile_count = 6
+projectile_spacing = 0.125
+projectile_start_angle = 0.0
+projectile_recoil = 0.0
+projectile_range = 120.0
+projectile_speed = 45.0
+projectile_spin = 0.0
+launch_offset = -0.5
+projectile_fire_delay = 0.0
+projectile_destruction_delay = 0.0
+mass = 0.001
+use_gravity = false
+target_system_group = "Creative"
+layer = 3
+layer_mask = Array[int]([2, 4])

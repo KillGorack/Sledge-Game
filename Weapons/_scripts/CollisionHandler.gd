@@ -18,6 +18,10 @@ var guidedTarget: Node
 var exclusions = []
 var sf :float = 1
 
+
+
+
+
 func _ready():
 	current_direction = -global_transform.basis.z.normalized()
 	current_position = global_transform.origin
@@ -35,8 +39,6 @@ func _ready():
 			15, 
 			weapon_settings.target_system_group, 
 			weapon_settings.targeting_system_require_marker)
-
-
 
 
 
@@ -98,34 +100,54 @@ func set_weapon_settings(settings: WeaponSettings):
 
 
 
+
+
+
+
+
+
+
+
+
 func handleCollision():
+	
 	var destroy = true
-	match weapon_settings.weapon_type:
-		weapon_settings.WeaponType.Default:
-			applyDirectDamage(weapon_settings.hit_points)
-		weapon_settings.WeaponType.Force:
-			applyForce(weapon_settings.projectile_force)
-			setHitScene()
-			destroy = handleRicochet()
-		weapon_settings.WeaponType.Pierce:
-			applyDirectDamage(weapon_settings.hit_points)
-			setHitScene()
-			destroy = handlePierce()
-		weapon_settings.WeaponType.Explosive:
-			var result = Utilities.collect_bodies(
-				get_world_3d().direct_space_state, 
-				global_transform.origin, 
-				weapon_settings.body_collection_max, 
-				weapon_settings.explosive_force_distance, 
-				weapon_settings.target_system_group)
-			applyAOEDamage(result)
-			applyExplosiveForces(result)
-		weapon_settings.WeaponType.Bounce:
-			applyDirectDamage(weapon_settings.hit_points)
-			setHitScene()
-			destroy = handleBounce()
+	var result = []
+		
+	if (weapon_settings.explosive_force > 0 and weapon_settings.explosive_force_distance > 0) or weapon_settings.unfreeze == true:
+		result = Utilities.collect_bodies(
+			get_world_3d().direct_space_state, 
+			global_transform.origin, 
+			weapon_settings.body_collection_max, 
+			weapon_settings.explosive_force_distance, 
+			weapon_settings.target_system_group)
+			
+	if weapon_settings.unfreeze == true:
+		unfreeze_targets(result)
+		
 	if weapon_settings.freeze_timer > 0:
 		freeze_target()
+			
+	if weapon_settings.hit_points > 0:
+		applyDirectDamage(weapon_settings.hit_points)
+		
+	if weapon_settings.projectile_force > 0:
+		applyForce(weapon_settings.projectile_force)
+
+	if weapon_settings.projectile_ricochet_count > 0:
+		destroy = handleRicochet()
+		
+	if weapon_settings.projectile_pierce_count > 0:
+		destroy = handlePierce()
+
+	if weapon_settings.explosive_force > 0 and weapon_settings.explosive_force_distance > 0:
+		applyAOEDamage(result)
+		applyExplosiveForces(result)
+
+	if weapon_settings.bounce_count > 0:
+		destroy = handleBounce()
+
+	setHitScene()
 	create_bullet_hole()
 	if destroy == true:
 		destroy_self()
@@ -134,23 +156,33 @@ func handleCollision():
 
 
 
+func unfreeze_targets(result):
+	if weapon_settings.body_collection_max > 0 and weapon_settings.explosive_force_distance > 0:
+		for item in result:
+			var body = item.collider
+			if body and is_instance_valid(body):
+				if body != self:
+					if body.has_method("setFreezeState"):
+						body.call("setFreezeState", false)
+						
+
+
 func freeze_target():
-	if weapon_settings.freeze_timer > 0:
-		if collided_object and collided_object.has_method("setFreezeState"):
-			var existing_timer = collided_object.get_node_or_null("FreezeTimer")
-			if existing_timer:
-				existing_timer.wait_time += weapon_settings.freeze_timer
-				if not existing_timer.is_stopped():
-					existing_timer.start()
-			else:
-				var timer = Timer.new()
-				timer.name = "FreezeTimer"
-				timer.wait_time = weapon_settings.freeze_timer
-				timer.one_shot = true
-				collided_object.add_child(timer)
-				timer.timeout.connect(Callable(collided_object, "setFreezeState").bind(false))
-				collided_object.call("setFreezeState", true)
-				timer.start()
+	if collided_object and collided_object.has_method("setFreezeState"):
+		var existing_timer = collided_object.get_node_or_null("FreezeTimer")
+		if existing_timer:
+			existing_timer.wait_time += weapon_settings.freeze_timer
+			if not existing_timer.is_stopped():
+				existing_timer.start()
+		else:
+			var timer = Timer.new()
+			timer.name = "FreezeTimer"
+			timer.wait_time = weapon_settings.freeze_timer
+			timer.one_shot = true
+			collided_object.add_child(timer)
+			timer.timeout.connect(Callable(collided_object, "setFreezeState").bind(false))
+			collided_object.call("setFreezeState", true)
+			timer.start()
 
 
 
@@ -208,7 +240,7 @@ func applyExplosiveForces(result):
 
 func handleRicochet():
 	RicochetCount += 1
-	if collided_layer == 2 and RicochetCount <= weapon_settings.projectile_ricochet_count:
+	if RicochetCount <= weapon_settings.projectile_ricochet_count:
 		play_hit_sound()
 		var reflect_direction = current_direction.bounce(collision_normal).normalized()
 		current_direction = reflect_direction
@@ -272,12 +304,6 @@ func play_hit_sound() -> void:
 
 
 
-
-
-
-
-
-
 func selectTarget(radius: float, max_angle: float) -> void:
 	var target_beacons = get_tree().get_nodes_in_group("Target_Beacon")
 	if target_beacons.size() > 0:
@@ -307,8 +333,6 @@ func handleGuided(delta):
 	if guidedTarget and is_instance_valid(guidedTarget): 
 		guide_to_target(delta)
 		return
-
-
 
 
 

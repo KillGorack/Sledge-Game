@@ -3,7 +3,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://bwm66u3tk5o2" path="res://Physics/Physics_Projectile.tres" id="1_dpq4u"]
 [ext_resource type="Script" path="res://Weapons/_scripts/CollisionHandler.gd" id="2_uj6ji"]
 [ext_resource type="Material" uid="uid://cj7h5gmt3lmnm" path="res://Materials/base_pad_blue.material" id="3_lla02"]
-[ext_resource type="Script" path="res://Weapons/Projectile Scenes/TrailEffect.gd" id="4_32omo"]
+[ext_resource type="Script" path="res://Weapons/_scripts/TrailEffect.gd" id="4_32omo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c6lxp"]
 radius = 0.03

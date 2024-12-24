@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="WeaponSettings" load_steps=8 format=3 uid="uid://da4xqinuixih3"]
+
+[ext_resource type="PackedScene" uid="uid://c0g6dtgokldmd" path="res://Explosive/hit_marks/cracked.tscn" id="1_jyaah"]
+[ext_resource type="PackedScene" uid="uid://y4t1eft31wfl" path="res://Explosive/explosions/bubsplosion/bubsplosion.tscn" id="2_5ivdi"]
+[ext_resource type="AudioStream" uid="uid://c6m5q17iexhbh" path="res://Sounds/Weapons/hit.wav" id="3_01b5r"]
+[ext_resource type="AudioStream" uid="uid://dlcv0qtnhvyrt" path="res://Sounds/Weapons/Launch.mp3" id="4_h7286"]
+[ext_resource type="PackedScene" uid="uid://xr520jktmt5g" path="res://Weapons/Projectile Scenes/missile_blue.tscn" id="5_bd1yh"]
+[ext_resource type="Script" path="res://Weapons/_scripts/WeaponSettings.gd" id="6_y71xt"]
+[ext_resource type="Texture2D" uid="uid://cq4ec10xsricx" path="res://Weapons/Icons/Dekentifier.png" id="7_150p5"]
+
+[resource]
+script = ExtResource("6_y71xt")
+weapon_name = "Kinetic LVL 20"
+weapon_icon = ExtResource("7_150p5")
+level_req = 20
+sizing_scale = 1
+hit_points = 0.0
+cool_down = 0.5
+projectile_prefab = ExtResource("5_bd1yh")
+explosion_prefab = ExtResource("2_5ivdi")
+bullet_hole_prefab = ExtResource("1_jyaah")
+launch_sound = ExtResource("4_h7286")
+hit_sound = ExtResource("3_01b5r")
+power_consumption = 0.0
+projectile_count_capacity = 1200.0
+projectile_count_actual = 1200.0
+projectile_pierce_count = 0
+projectile_ricochet_count = 0
+bounce_count = 0
+freeze_timer = 0.0
+unfreeze = true
+projectile_force = 0.0
+bi_directional = false
+explosive_force = 120.0
+explosive_force_distance = 15.0
+body_collection_max = 256
+targeting_system = false
+targeting_system_require_marker = false
+target_rotation_speed = 3.0
+target_system_scan_radius = 120.0
+projectile_count = 1
+projectile_spacing = 0.0
+projectile_start_angle = 0.0
+projectile_recoil = 0.0
+projectile_range = 120.0
+projectile_speed = 70.0
+projectile_spin = 0.0
+launch_offset = -0.5
+projectile_fire_delay = 0.0
+projectile_destruction_delay = 0.0
+mass = 1.0
+use_gravity = false
+target_system_group = "Creative"
+layer = 3
+layer_mask = Array[int]([2, 4])

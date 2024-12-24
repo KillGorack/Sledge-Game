@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ckvics5bu7nu7"]
 
 [ext_resource type="Script" path="res://UTILS/_gc.gd" id="1_0ond4"]
-[ext_resource type="Script" path="res://Weapons/Projectile Scenes/pulse.gd" id="2_0kkjd"]
+[ext_resource type="Script" path="res://Weapons/_scripts/pulse.gd" id="2_0kkjd"]
 [ext_resource type="Material" uid="uid://losxwykmqfby" path="res://Materials/base_pad_green.material" id="2_stjjt"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_maoid"]

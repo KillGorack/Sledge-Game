@@ -10,6 +10,7 @@ var lbl_name: Label
 var current_mine_settings: Resource
 var mine_lay_timer: float = 0.0
 var this_node_enabled: bool = false
+@export var reload_sound: AudioStream
 
 func _ready() -> void:
 	if mine_settings_array.size() > 0:
@@ -83,3 +84,18 @@ func update_mine_label():
 	icon_mine.texture = current_mine_settings.mine_icon
 	lbl_name.text = current_mine_settings.mine_name
 	lbl_mines.text = str(current_mine_settings.count_actual) + " / " + str(current_mine_settings.count_capacity)
+	
+	
+
+
+
+func reload_all_mines():
+	var ps: bool = false
+	for weapon in mine_settings_array:
+		if weapon.count_capacity > weapon.count_actual:
+			ps = true
+		weapon.count_actual = weapon.count_capacity
+	if Utilities.game_mode_index == 1:
+		update_mine_label()
+	if reload_sound and ps:
+		Utilities.play_sound(reload_sound, global_transform.origin)
